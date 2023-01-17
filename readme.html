@@ -1,0 +1,249 @@
+<style>
+  .ul_direction_inlineStart {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 1ex;
+  }
+
+  .ul_direction_inlineStart li + li {
+    margin-inline-start: 4ch;
+  }
+
+  .ul_child_block_type_color li {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-block: 0.25ex;
+    padding-inline: 1ch;
+    border-radius: 0.5em;
+    border-width: 0.125em;
+    border-style: solid;
+  }
+
+  .ul_child_block_type_color li code {
+    line-height: 3.5ex;
+  }
+  
+  .ul_child_block_background_white li {
+    background-color: white;
+    border-color: #df0000;
+  }
+  
+  .ul_child_block_background_black li {
+    background-color: black;
+    border-color: #ff6060;
+  }
+</style>
+
+<h1>Monochromatic - frontend designs</h1>
+
+<!--region Introduction-->
+<h2>Introduction</h2>
+
+<p>
+  Monochromatic aims to define some sensible sets of styling for text-heavy websites.
+  <br>
+  For example, a personal blog made of blog posts or a manual organized in chapters.
+</p>
+<!--endregion-->
+
+<h2>
+  What is inside this repo?
+</h2>
+
+<h3>There are several top-level directories in this repo.</h3>
+
+<ul class="ul_direction_inlineStart">
+  <li><code>idea</code></li>
+  <li><code>design</code></li>
+  <li><code>code</code></li>
+</ul>
+
+<!--region idea-->
+<h4>Top-level Directory <code>idea</code></h4>
+
+<p>
+  Documentation of design decisions.
+</p>
+
+<p>A typical document would communicate:</p>
+
+<ol>
+  <li>
+    Which purposes the UI element should fulfill,
+    and which purposes the UI element should fail to fulfill.
+  </li>
+  <li>
+    How the UI element should be presented,
+    and how the UI element should not be presented.
+  </li>
+  <li>
+    The user interactions the UI element should be able to react to,
+    and the user interactions the UI interface should not be able to react to.
+  </li>
+</ol>
+<!--endregion-->
+
+<h4>Top-level Directory <code>design</code></h4>
+
+<p>
+  Implementation of design decisions in design software.
+</p>
+
+<h4>Top-level Directory <code>code</code></h4>
+
+<p>
+  Implementation of the result of design software.
+</p>
+
+<!--region subdirectories-->
+<h3>
+  Inside of those top-level directories, some subdirectories will be created for variants of "sensible set of
+  styling"
+</h3>
+
+<ul class="ul_direction_inlineStart">
+  <li><code>Afzelia</code></li>
+  <li><code>Buforrestia</code></li>
+  <li><code>Calochortus</code></li>
+  <li><code>Draba</code></li>
+</ul>
+
+<!--region Afzelia-->
+<h4>
+  Subdirectory <code>Afzelia</code>
+</h4>
+
+<p>
+  In this variant of "sensible set of styling",
+  only <strong>one</strong> color except black and white is allowed.
+  <br>
+  Specifically hex <code>#ff5e5e</code>.
+</p>
+
+<p>
+  Choosing hex <code>#ff5e5e</code> is because it's the closest color to pure red that
+  contrast against black enough to
+  <a href="https://www.learnui.design/tools/accessible-color-generator.html">meet WCAG AAA guidelines</a>.
+  <br>
+  This makes it possible to create a reasonable dark color scheme.
+</p>
+<!--endregion-->
+
+<h4>
+  Subdirectory <code>Buforrestia</code>
+</h4>
+
+<p>
+  hex <code>#ff0000</code>, pure red's transparency levels 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5% are allowed to be
+  used in this variant.
+</p>
+
+<h4>
+  Subdirectory <code>Calochortus</code>
+</h4>
+
+<p>
+  Pure red's shades are allowed to be used in this variant:
+</p>
+
+<ul class="ul_direction_inlineStart ul_child_block_type_color ul_child_block_background_white">
+  <li style="color: #ffdfdf;"><code>#ffdfdf</code></li>
+  <li style="color: #ffbfbf;"><code>#ffbfbf</code></li>
+  <li style="color: #ff9f9f;"><code>#ff9f9f</code></li>
+  <li style="color: #ff7f7f;"><code>#ff7f7f</code></li>
+  <li style="color: #ff6060;"><code>#ff6060</code></li>
+  <li style="color: #ff4040;"><code>#ff4040</code></li>
+  <li style="color: #ff2020;"><code>#ff2020</code></li>
+  <li style="color: #ff0000;"><code>#ff0000</code></li>
+  <li style="color: #ff0000;"><code>#ff0000</code></li>
+  <li style="color: #df0000;"><code>#df0000</code></li>
+  <li style="color: #bf0000;"><code>#bf0000</code></li>
+  <li style="color: #9f0000;"><code>#9f0000</code></li>
+  <li style="color: #800000;"><code>#800000</code></li>
+  <li style="color: #600000;"><code>#600000</code></li>
+  <li style="color: #400000;"><code>#400000</code></li>
+  <li style="color: #200000;"><code>#200000</code></li>
+</ul>
+
+<ul class="ul_direction_inlineStart ul_child_block_type_color ul_child_block_background_black">
+  <li style="color: #ffdfdf;"><code>#ffdfdf</code></li>
+  <li style="color: #ffbfbf;"><code>#ffbfbf</code></li>
+  <li style="color: #ff9f9f;"><code>#ff9f9f</code></li>
+  <li style="color: #ff7f7f;"><code>#ff7f7f</code></li>
+  <li style="color: #ff6060;"><code>#ff6060</code></li>
+  <li style="color: #ff4040;"><code>#ff4040</code></li>
+  <li style="color: #ff2020;"><code>#ff2020</code></li>
+  <li style="color: #ff0000;"><code>#ff0000</code></li>
+  <li style="color: #ff0000;"><code>#ff0000</code></li>
+  <li style="color: #df0000;"><code>#df0000</code></li>
+  <li style="color: #bf0000;"><code>#bf0000</code></li>
+  <li style="color: #9f0000;"><code>#9f0000</code></li>
+  <li style="color: #800000;"><code>#800000</code></li>
+  <li style="color: #600000;"><code>#600000</code></li>
+  <li style="color: #400000;"><code>#400000</code></li>
+  <li style="color: #200000;"><code>#200000</code></li>
+</ul>
+
+<h4>
+  Subdirectory <code>Draba</code>
+</h4>
+
+<p>
+  Allow both pure red's transparency and shades.
+</p>
+<!--endregion-->
+
+<!--region What this project is not-->
+<h2>What this project is not.</h2>
+
+<p>
+  The code written in this project is mainly used for demonstration.
+<p>
+  I<sup><a href="#footnote__1">1</a></sup> do not seek to write high-quality code.
+  Therefore, lots of coding standards are not followed and lots of common linters are not applied.
+  Expect lots of duplicated code and poor optimization.
+</p>
+<p>
+  However, due to the advance in modern devices' computing capacity, most of these code snippets should work well
+  enough,
+  if not faster, than using a heavyweight frontend framework.
+  Therefore, I believe it's still important and meaningful to publish my implementations.
+</p>
+<!--endregion-->
+
+<!--region License-->
+<h2>License - CC0</h2>
+
+<p>
+  I chose CC0 license for this project because:
+</p>
+<ol>
+  <li>
+    This project won't be well-maintained,
+  </li>
+  <li>
+    Citing this repo or asking my permissions is troublesome and non-rewarding,
+  </li>
+</ol>
+<p>
+  Therefore, I declare that:
+  <br>
+  You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+  <br>
+  See more at <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>
+</p>
+<!--endregion-->
+
+<hr>
+
+<section id="footnote">
+  <ol>
+    <li id="footnote__1">
+      "I" means Aquaticat, the creator and owner of this project, for simplicity&apos;s sake.
+      Using "we" would not be fitting
+      because I do not expect a potential future contributor to share my opinions on this project,
+      nor do I expect any contributor at all.
+    </li>
+  </ol>
+</section>
