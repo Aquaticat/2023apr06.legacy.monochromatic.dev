@@ -1,0 +1,59 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  blockquote {
+    /* background-color: grey; */
+    margin-inline: 0;
+    padding-inline: 1ch;
+    padding-block: 0.25ex;
+    border-inline-start-style: double;
+    border-block-style: solid;
+    border-block-width: thin;
+    border-inline-start-width: thick;
+    border-color: black;
+    border-inline-start-color: #ff5e5e;
+  }
+
+  figure {
+    margin-inline: 0;
+  }
+
+  figure figcaption {
+    padding-inline-start: 2ch;
+    border-inline-start-width: thick;
+    border-inline-start-style: double;
+    border-inline-start-color: rgba(0, 0, 0, 0%);
+  }
+</style>
+
+<h1><code>blockquote</code></h1>
+
+<p>
+  The <code>blockquote</code> HTML element indicates that the enclosed text is an extended quotation.
+  Usually, this is rendered visually by indentation (see Notes for how to change it).
+  A URL for the source of the quotation may be given using the cite attribute,
+  while a text representation of the source can be given using the <code>cite</code> element.
+</p>
+
+<figure>
+  <blockquote cite="https://www.huxley.net/bnw/four.html">
+    <p>Words can be like X-rays, if you use them properly—they&apos;ll go through anything. You read and you&apos;re pierced.</p>
+  </blockquote>
+  <figcaption>Aldous Huxley, <cite>Brave New World</cite></figcaption>
+</figure>
+
+<p>As usual, apply <code>box-sizing: border-box;</code> to all elements:</p>
+
+<pre><code>* {
+  box-sizing: border-box;
+}
+</code></pre>
+
+<p>Then apply a card to the blockquote</p>
+
+<pre><code>blockquote {
+  background-color: grey;
+}
+</code></pre>
