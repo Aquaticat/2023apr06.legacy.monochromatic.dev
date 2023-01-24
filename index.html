@@ -3,250 +3,516 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    row-gap: 1ex;
-  }
-
-  .ul_direction_inlineStart li + li {
-    margin-inline-start: 4ch;
-  }
-
-  .ul_child_block_type_color li {
-    font-size: 1.25em;
-    font-weight: bold;
-    padding-block: 0.25ex;
-    padding-inline: 1ch;
-    border-radius: 0.5em;
-    border-width: 0.125em;
-    border-style: solid;
-  }
-
-  .ul_child_block_type_color li code {
-    line-height: 3.5ex;
-  }
-
-  .ul_child_block_background_white li {
-    background-color: white;
-    border-color: #df0000;
-  }
-
-  .ul_child_block_background_black li {
-    background-color: black;
-    border-color: #ff6060;
+    row-gap: 1em;
+    column-gap: 2em;
   }
 </style>
 
 <h1>Monochromatic - frontend designs</h1>
 
-<!--region Introduction-->
-<h2>Introduction</h2>
+<details open
+         id="introduction">
+  <summary>
+    <h2>Introduction</h2>
+  </summary>
 
-<p>
-  Monochromatic aims to define some sensible sets of styling for text-heavy websites.
-  <br>
-  For example, a personal blog made of blog posts or a manual organized in chapters.
-</p>
-<!--endregion-->
+  <p>
+    Monochromatic aims to define some sensible sets of styling for text-heavy websites.
+    <br>
+    For example, a personal blog made of blog posts or a manual organized in chapters.
+  </p>
 
-<h2>
-  What is inside this repo?
-</h2>
+  <p>
+    Why choose this name?
+  </p>
 
-<h3>There are several top-level directories in this repo.</h3>
+  <ol>
+    <li>
+      Only <strong>pure black</strong> and <strong>pure white</strong> are allowed.
+    </li>
 
-<ul class="ul_direction_inlineStart">
-  <li><code>idea</code></li>
-  <li><code>design</code></li>
-  <li><code>code</code></li>
-</ul>
+    <li>
+      Only the styling necessary for conveying the semantic meaning of each element and its surrounding context are
+      made.
+    </li>
 
-<!--region idea-->
-<h4>Top-level Directory <code>idea</code></h4>
+    <li>
+      Only the animations that are necessary are allowed.
+      At the same time, the animation cannot be something that
+      updates too much of the view, takes too much time, or has too many <code>@keyframes</code>.
+    </li>
+  </ol>
+</details>
 
-<p>
-  Documentation of design decisions.
-</p>
 
-<p>A typical document would communicate:</p>
+<details open
+         id="what_s_inside_this_repo">
+  <summary>
+    <h2>
+      What&apos;s inside this repo?
+    </h2>
+  </summary>
 
-<ol>
-  <li>
-    Which purposes the UI element should fulfill,
-    and which purposes the UI element should fail to fulfill.
-  </li>
-  <li>
-    How the UI element should be presented,
-    and how the UI element should not be presented.
-  </li>
-  <li>
-    The user interactions the UI element should be able to react to,
-    and the user interactions the UI interface should not be able to react to.
-  </li>
-</ol>
-<!--endregion-->
+  <!-- How to make &lt;details&gt element unfold when using href="#id"? -->
+  <details id="top-level_directories">
+    <summary>
+      <h3>There are several top-level directories in this repo.</h3>
+    </summary>
 
-<h4>Top-level Directory <code>design</code></h4>
 
-<p>
-  Implementation of design decisions in design software.
-</p>
+    <ul class="ul_direction_inlineStart">
+      <li>
+        <a href="#top-level_directory_archive">
+          <code>archive</code>
+        </a>
+      </li>
 
-<h4>Top-level Directory <code>code</code></h4>
+      <li>
+        <a href="#top-level_directory_idea">
+          <code>idea</code>
+        </a>
+      </li>
 
-<p>
-  Implementation of the result of design software.
-</p>
+      <li>
+        <a href="#top-level_directory_design">
+          <code>design</code>
+        </a>
+      </li>
 
-<!--region subdirectories-->
-<h3>
-  Inside of those top-level directories, some subdirectories will be created for variants of "sensible set of
-  styling"
-</h3>
+      <li>
+        <a href="#top-level_directory_code">
+          <code>code</code>
+        </a>
+      </li>
+    </ul>
 
-<ul class="ul_direction_inlineStart">
-  <li><code>Afzelia</code></li>
-  <li><code>Buforrestia</code></li>
-  <li><code>Calochortus</code></li>
-  <li><code>Draba</code></li>
-</ul>
+    <details open
+             id="top-level_directory_archive">
+      <summary>
+        <h4>Top-level Directory <code>archive</code></h4>
+      </summary>
 
-<!--region Afzelia-->
-<h4>
-  Subdirectory <code>Afzelia</code>
-</h4>
+      <p>
+        An archive of abandoned content.
+        Including ideas, design choices, and design mockup with HTML.
+      </p>
 
-<p>
-  In this variant of "sensible set of styling",
-  only <strong>one</strong> color except black and white is allowed.
-  <br>
-  Specifically hex <code>#ff5e5e</code>.
-</p>
+      <ol>
+        <li>
+          <p>
+            For example, the <code>has_red_color</code> directory inside the <code>archive</code> directory is for
+            when the project was using color red other than black and white only.
+          </p>
+        </li>
+      </ol>
+    </details>
 
-<p>
-  Choosing hex <code>#ff5e5e</code> is because it&apos;s the closest color to pure red that
-  contrast against black enough to
-  <a href="https://www.learnui.design/tools/accessible-color-generator.html">meet WCAG AAA guidelines</a>.
-  <br>
-  This makes it possible to create a reasonable dark color scheme.
-</p>
-<!--endregion-->
+    <details open
+             id="top-level_directory_idea">
+      <summary>
+        <h4>Top-level Directory <code>idea</code></h4>
+      </summary>
 
-<h4>
-  Subdirectory <code>Buforrestia</code>
-</h4>
+      <p>
+        Documentation of design decisions.
+      </p>
 
-<p>
-  hex <code>#ff0000</code>, pure red&apos;s transparency levels 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5% are allowed to
-  be
-  used in this variant.
-</p>
+      <p>A typical document would communicate:</p>
 
-<h4>
-  Subdirectory <code>Calochortus</code>
-</h4>
+      <ol>
+        <li>
+          Which purposes the UI element should fulfill,
+          and which purposes the UI element should fail to fulfill.
+        </li>
+        <li>
+          How the UI element should be presented,
+          and how the UI element should not be presented.
+        </li>
+        <li>
+          The user interactions the UI element should be able to react to,
+          and the user interactions the UI interface should not be able to react to.
+        </li>
+      </ol>
+    </details>
 
-<p>
-  Pure red&apos;s shades are allowed to be used in this variant:
-</p>
+    <details open
+             id="top-level_directory_design">
+      <summary>
+        <h4>Top-level Directory <code>design</code></h4>
+      </summary>
 
-<ul class="ul_direction_inlineStart ul_child_block_type_color ul_child_block_background_white">
-  <li style="color: #ffdfdf;"><code>#ffdfdf</code></li>
-  <li style="color: #ffbfbf;"><code>#ffbfbf</code></li>
-  <li style="color: #ff9f9f;"><code>#ff9f9f</code></li>
-  <li style="color: #ff7f7f;"><code>#ff7f7f</code></li>
-  <li style="color: #ff6060;"><code>#ff6060</code></li>
-  <li style="color: #ff4040;"><code>#ff4040</code></li>
-  <li style="color: #ff2020;"><code>#ff2020</code></li>
-  <li style="color: #ff0000;"><code>#ff0000</code></li>
-  <li style="color: #ff0000;"><code>#ff0000</code></li>
-  <li style="color: #df0000;"><code>#df0000</code></li>
-  <li style="color: #bf0000;"><code>#bf0000</code></li>
-  <li style="color: #9f0000;"><code>#9f0000</code></li>
-  <li style="color: #800000;"><code>#800000</code></li>
-  <li style="color: #600000;"><code>#600000</code></li>
-  <li style="color: #400000;"><code>#400000</code></li>
-  <li style="color: #200000;"><code>#200000</code></li>
-</ul>
+      <p>
+        Implementation of design decisions in Figma (or other design software).
+      </p>
 
-<ul class="ul_direction_inlineStart ul_child_block_type_color ul_child_block_background_black">
-  <li style="color: #ffdfdf;"><code>#ffdfdf</code></li>
-  <li style="color: #ffbfbf;"><code>#ffbfbf</code></li>
-  <li style="color: #ff9f9f;"><code>#ff9f9f</code></li>
-  <li style="color: #ff7f7f;"><code>#ff7f7f</code></li>
-  <li style="color: #ff6060;"><code>#ff6060</code></li>
-  <li style="color: #ff4040;"><code>#ff4040</code></li>
-  <li style="color: #ff2020;"><code>#ff2020</code></li>
-  <li style="color: #ff0000;"><code>#ff0000</code></li>
-  <li style="color: #ff0000;"><code>#ff0000</code></li>
-  <li style="color: #df0000;"><code>#df0000</code></li>
-  <li style="color: #bf0000;"><code>#bf0000</code></li>
-  <li style="color: #9f0000;"><code>#9f0000</code></li>
-  <li style="color: #800000;"><code>#800000</code></li>
-  <li style="color: #600000;"><code>#600000</code></li>
-  <li style="color: #400000;"><code>#400000</code></li>
-  <li style="color: #200000;"><code>#200000</code></li>
-</ul>
+      <p>
+        Undecided on if I&apos;m going to keep this directory or not since I could just put everything into the
+        <code>idea</code>
+        directory.
+        That might even be better.
+      </p>
+    </details>
 
-<h4>
-  Subdirectory <code>Draba</code>
-</h4>
+    <details open
+             id="top-level_directory_code">
+      <summary>
+        <h4>Top-level Directory <code>code</code></h4>
+      </summary>
 
-<p>
-  Allow both pure red&apos;s transparency and shades.
-</p>
-<!--endregion-->
+      <p>
+        Implementation of the result of Figma (or other design software) mockups.
+      </p>
 
-<!--region What this project is not-->
-<h2>What this project is not.</h2>
+      <p>
+        Undecided on if I&apos;m going to keep this directory or not since I could just put everything into the
+        <code>idea</code>
+        directory.
+        That might even be better.
+      </p>
+    </details>
+  </details>
 
-<p>
-  The code written in this project is mainly used for demonstration.
-<p>
-  I<sup><a href="#footnote__1">1</a></sup> do not seek to write high-quality code.
-  Therefore, lots of coding standards are not followed and lots of common linters are not applied.
-  Expect lots of duplicated code and poor optimization.
-</p>
-<p>
-  However, due to the advance in modern devices&apos; computing capacity, most of these code snippets should work well
-  enough,
-  if not faster, than using a heavyweight frontend framework.
-  Therefore, I believe it&apos;s still important and meaningful to publish my implementations.
-</p>
-<!--endregion-->
+  <details id="subdirectories">
+    <summary>
+      <h3>
+        Inside of those top-level directories, some subdirectories will be created for variants of "sensible set of
+        styling"
+      </h3>
+    </summary>
 
-<!--region License-->
-<h2>License - CC0</h2>
+    <ul class="ul_direction_inlineStart">
+      <li>
+        <a href="#subdirectory_muscari">
+          <code><strong>M</strong>uscari</code>
+        </a>
+      </li>
 
-<p>
-  I chose CC0 license for this project because:
-</p>
-<ol>
-  <li>
-    This project won&apos;t be well-maintained,
-  </li>
-  <li>
-    I have not done the learnings I should have done.
-    Project will undergo huge changes after I learn more about UI and UX design.
-  </li>
-  <li>
-    Citing this repo or asking my permissions is troublesome and non-rewarding,
-  </li>
-</ol>
-<p>
-  Therefore, I declare that:
-  <br>
-  You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
-  <br>
-  See more at <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>
-</p>
-<!--endregion-->
+      <li>
+        <a href="#subdirectory_afzelia">
+          <code><strong>A</strong>fzelia</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_buforrestia">
+          <code><strong>B</strong>uforrestia</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_calochortus">
+          <code><strong>C</strong>alochortus</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_draba">
+          <code><strong>D</strong>raba</code>
+        </a>
+      </li>
+    </ul>
+
+    <details open
+             id="subdirectory_muscari">
+      <summary>
+        <h4>
+          Subdirectory <code>Muscari</code>
+        </h4>
+      </summary>
+
+      <p><strong>M</strong></p>
+
+      <p>
+        Why choose this name?
+      </p>
+
+      <p>
+        Both <code>Muscari</code> and <code>Monochromatic</code> start with the letter M.
+        <br>
+        Meaning this variant of &quot;sensible set of styling&quot; is closest to what the name of the project conveys.
+        Unassuming but still provides a modern reading experience.
+      </p>
+
+      <p>Specific rules:</p>
+
+      <ol>
+        <li>
+          Use the simplest style.
+          <br>
+          If using a simpler style, like using a normal border instead of using a double border,
+          would still sufficiently convey the semantic meaning of the element and the surrounding context,
+          <br>
+          use the simpler style instead of the fancier one
+          even when the fancier style can convey the meaning better or is more aesthetically pleasing.
+          <br>
+          This variant has the fewest requirements on how well the semantic meanings should be expressed.
+        </li>
+
+        <li>
+          Always use a sans-serif font.
+          <br>
+          For example, titles, paragraphs, references, comments.
+          Reasons:
+          <ol>
+            <li>
+              The font family <a href="https://rsms.me/inter">Inter</a> is specifically designed for modern electronic
+              devices.
+            </li>
+            <li>
+              Sans-serif fonts have much fewer details than serif fonts, by definition.
+            </li>
+            <li>
+              Using only one font family throughout the entire website reduces the data need to access it.
+              In other words, avoid performance loss.
+            </li>
+            <li>
+              People are used to reading sans-serif fonts on websites since most websites use them instead of serif
+              fonts.
+            </li>
+            <li>
+              Titles look more modern when using a sans-serif font family.
+            </li>
+            <li>
+              All Operating Systems' default sans-serif font families are readable.
+              If the external font fails to load, the website would still look okay-ish.
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <p>
+            No animations are allowed.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Use built-in styling and element appearance adjustments instead of removing them and put my own there
+            instead.
+          </p>
+
+          <p>
+
+          </p>
+        </li>
+      </ol>
+    </details>
+
+    <details open
+             id="subdirectory_afzelia">
+      <summary>
+        <h4>
+          Subdirectory <code>Afzelia</code>
+        </h4>
+      </summary>
+
+      <p><strong>A</strong></p>
+
+      <p>Why choose this name?</p>
+
+      <p>
+        The alphabet starts with <strong>A</strong>.
+      </p>
+
+      <p>
+        In this variant of &quot;sensible set of styling&quot;,
+        Fancier styling can be used
+        when there are big improvements to the expressiveness of semantic meanings compared to simpler styling.
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            For example, consider
+            using double borders on the <code>inline-start</code> side of the <code>&lt;blockquote&gt;</code> element
+            instead of using a normal, simple border
+            <br>
+            because a double border can better differentiate the appearance of blockquotes from message tip blocks.
+            A double border can also imply the content on the right side is a page from a book,
+            which is a desirable effect for blockquotes that are often quoted from books.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Sans-serif font can be used sparingly, like in some headings or comments.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Simple animations like animation the transformation of the <code>&lt;a&gt;</code> underlines to a rectangle
+            behind them is allowed.
+            Both the shape and the color.
+          </p>
+
+          <p>
+            The use of <code>animation-timing-function</code> is allowed.
+          </p>
+        </li>
+      </ol>
+    </details>
+
+    <details open
+             id="subdirectory_buforrestia">
+      <summary>
+        <h4>
+          Subdirectory <code>Buforrestia</code>
+        </h4>
+      </summary>
+
+      <p><strong>B</strong></p>
+
+      <p>
+        Not decided yet.
+        Maybe allow one gray?
+      </p>
+    </details>
+
+    <details open
+             id="subdirectory_calochortus">
+      <summary>
+        <h4>
+          Subdirectory <code>Calochortus</code>
+        </h4>
+      </summary>
+
+      <p><strong>C</strong></p>
+
+      <p>
+        Not decided yet.
+        Maybe allow one (or some, or many) gray and some (or one, or many) transparency levels?
+        Or allow CSS features that are mainly used for showing off like `clip-path`?
+        How about fancy animations?
+      </p>
+    </details>
+
+    <details open
+             id="subdirectory_draba">
+      <summary>
+        <h4>
+          Subdirectory <code>Draba</code>
+        </h4>
+      </summary>
+
+      <p><strong>D</strong></p>
+
+      <p>
+        (Same as above because I failed to come up with more ideas.)
+        Not decided yet.
+        Maybe allow one (or some, or many) gray and some (or one, or many) transparency levels?
+        Or allow CSS features that are mainly used for showing off like `clip-path`?
+        How about fancy animations?
+      </p>
+    </details>
+  </details>
+</details>
+
+<details open
+         id="what_this_project_is_not">
+  <summary>
+    <h2>What this project is not.</h2>
+  </summary>
+
+  <p>
+    The code written in this project is mainly used for demonstration.
+  </p>
+
+  <p>
+    I<sup><a href="#footnote_1">1</a></sup> do not seek to write high-quality code.
+    Therefore, lots of coding standards are not followed and lots of common linters are not applied.
+    Expect poor optimization and lots of duplicate code.
+  </p>
+
+  <p>
+    (For example, who writes documents in HTML instead of a modern lightweight markup language like Markdown?
+    Especially when they are more familiar with Markdown than with HTML?)
+  </p>
+
+  <p>
+    However, due to the advancements in modern devices&apos; computing capacity, most of these code snippets should work
+    well
+    enough,
+    if not faster, than using a heavyweight frontend framework.
+    Therefore, I believe it&apos;s still important and meaningful to publish my implementations.
+  </p>
+</details>
+
+<details open
+         id="license">
+  <summary>
+    <h2>License - CC0</h2>
+  </summary>
+
+  <p>
+    I chose CC0 license for this project because:
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        This project won&apos;t be well-maintained.
+      </p>
+
+      <p>
+        (I do wish that I can live longer than this project.)
+      </p>
+    </li>
+
+    <li>
+      <p>
+        I have not done the learnings I should have done.
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            Project will undergo huge changes after I learn more about UI and UX design.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Yeah,
+            and I should learn <a href="https://developers.google.com/tech-writing">how to write technical
+                                                                                    documentations</a>, too.
+            I&apos;m assuming writing so many &quot;I&quot;s would not make the document look serious.
+          </p>
+        </li>
+      </ol>
+
+      <p>
+        (Not going to promise anything here, though. We&apos;ll see how it goes.)
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Citing this repo or asking my permissions is troublesome and non-rewarding,
+      </p>
+
+      <p>
+        (As there&apos;s not much to cite or use in the first place...)
+      </p>
+    </li>
+  </ol>
+
+  <p>
+    Therefore, I declare that:
+    <br>
+    You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+    <br>
+    See more at <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>
+  </p>
+</details>
 
 <hr>
 
 <section id="footnote">
   <ol>
-    <li id="footnote__1">
-      "I" means Aquaticat, the creator and owner of this project, for simplicity&apos;s sake.
-      Using "we" would not be fitting
+    <li id="footnote_1">
+      &quot;I&quot; means Aquaticat, the creator and owner of this project, for simplicity&apos;s sake.
+      Using &quot;we&quot; would not be fitting
       because I do not expect a potential future contributor to share my opinions on this project,
       nor do I expect any contributor at all.
     </li>
