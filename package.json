@@ -1,0 +1,20 @@
+{
+  "name": "monochromatic",
+  "version": "0.0.1",
+  "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.",
+  "main": "idea/Muscari/index.js",
+  "scripts": {
+  },
+  "keywords": [
+    "design",
+    "design_system",
+    "design-system"
+  ],
+  "author": {
+    "name": "Aquaticat",
+    "email": "an@aquati.cat",
+    "url": "https://aquati.cat"
+  },
+  "license": "CC0-1.0",
+  "private": true
+}

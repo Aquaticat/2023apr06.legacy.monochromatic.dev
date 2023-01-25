@@ -28,18 +28,75 @@
 
   <ol>
     <li>
-      Only <strong>pure black</strong> and <strong>pure white</strong> are allowed.
+      <p>
+        Only <strong>pure black</strong> and <strong>pure white</strong> are allowed.
+      </p>
     </li>
 
     <li>
-      Only the styling necessary for conveying the semantic meaning of each element and its surrounding context are
-      made.
+      <p>
+        Only the styling necessary for conveying the semantic meaning of each element and its surrounding context are
+        made.
+      </p>
     </li>
 
     <li>
-      Only the animations that are necessary are allowed.
-      At the same time, the animation cannot be something that
-      updates too much of the view, takes too much time, or has too many <code>@keyframes</code>.
+      <p>
+        Only the animations that are necessary are allowed.
+        At the same time, the animation cannot be something that
+        updates too much of the view, takes too much time, or has too many <code>@keyframes</code>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Only one stylesheet and one script is allowed for each variation. This:
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            reduces maintenance costs
+          </p>
+        </li>
+        <li>
+          <p>
+            improves performance if the user visits more than one page.
+          </p>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <p>
+    Hence <code>&quot;Monochromatic&quot;</code>.
+  </p>
+
+  <p>
+    Why write documents in HTML instead of a lightweight markup language using Markdown?
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        HTML gives more control over Markdown. Here are some requirements only achievable using HTML.
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            Use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> for headings and its content in order to let user freely fold those sections.
+          </p>
+        </li>
+      </ol>
+
+      <ol>
+        <li>
+          <p>
+            Styling and scripting.
+          </p>
+        </li>
+      </ol>
     </li>
   </ol>
 </details>
@@ -422,11 +479,6 @@
     I<sup><a href="#footnote_1">1</a></sup> do not seek to write high-quality code.
     Therefore, lots of coding standards are not followed and lots of common linters are not applied.
     Expect poor optimization and lots of duplicate code.
-  </p>
-
-  <p>
-    (For example, who writes documents in HTML instead of a modern lightweight markup language like Markdown?
-    Especially when they are more familiar with Markdown than with HTML?)
   </p>
 
   <p>
