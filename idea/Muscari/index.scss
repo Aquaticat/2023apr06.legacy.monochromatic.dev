@@ -1,7 +1,137 @@
+/*
+ * IntelliJ Platform bug, false positive of "Mismatched property value" when using colors for border-block/inline.
+ *
+ * The design right now is horrible.
+ * Maybe I really should have designed in Figma first.
+ *
+ * Also not using the :has() selector right now because Firefox doesn't fully support it and doesn't enable it by default.
+ * Considering using it anyways because every other browser has support and [We plan to work on this in the first half of this year](https://bugzilla.mozilla.org/show_bug.cgi?id=418039#c62).
+ */
+
+* {
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+  letter-spacing: 0.125ch;
+  line-height: 3ex;
+
+  margin-block: 0;
+}
+
+* + * {
+  margin-block-start: 2rem;
+}
+
+body {
+  max-inline-size: 90ch;
+  box-sizing: content-box;
+  margin-inline: auto;
+  padding-inline: 4ch;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+hr {
+  height: 1rem;
+  border-inline: none;
+  border-block: 0.25rem solid black;
+  margin-block-start: 4rem;
+}
+
+* + hr {
+}
+
+/**
+ * FIXME: Still haven't figured out how to prevent flexbox from changing sizes when opening and closing <detail>.
+ */
+summary {
+  outline: none;
+  display: flex;
+  flex: {
+    wrap: nowrap;
+  }
+  justify-content: space-between;
+  column-gap: 1em;
+  align-items: center;
+  inline-size: calc(100% + 2rem);
+  transform: translateX(-1rem);
+  padding: 1rem;
+  border: {
+    style: solid;
+    color: black;
+    //noinspection CssInvalidPropertyValue
+    inline-start-color: white;
+    width: 0.25em;
+  }
+
+  > h2 {
+    flex-grow: 9;
+    text-align: center;
+  }
+}
+
+details {
+  +  details {
+    margin-block-start: 2.5rem;
+  }
+
+  > summary {
+    &::after {
+      content: '>';
+      transform: translateY(0.05em);
+      font-size: 2em;
+    }
+  }
+
+  &[open] {
+    > summary {
+      //noinspection CssInvalidPropertyValue
+      border: {
+        inline-start-color: black;
+        block-end-color: white;
+      }
+
+      &::after {
+        content: 'Λ';
+        transform: translateY(0.04em);
+        font-size: 1.6em;
+      }
+    }
+  }
+}
+
+
 .ul_direction_inlineStart {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex: {
+    direction: row;
+    wrap: wrap;
+  }
   row-gap: 1em;
   column-gap: 2em;
+  align-items: baseline;
+
+  > * + * {
+    margin-block-start: 0;
+  }
 }
