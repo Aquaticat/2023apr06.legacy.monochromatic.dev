@@ -215,3 +215,9 @@ dist
 *.sass.map
 *.scss.map
 
+###########################################################
+
+### Exclude files including personal information.
+
+# Using IntelliJ platform file watcher instead of something more sensible.
+/.idea/watcherTasks.xml
