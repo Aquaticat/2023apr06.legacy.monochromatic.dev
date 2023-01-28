@@ -2,15 +2,31 @@
 <html lang="en_US">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport"
+        content="width=device-width">
   <title>Monochromatic</title>
-  <link type="text/css" rel="stylesheet" blocking="render" fetchpriority="high" href="idea/Muscari/index.css">
-  <script type="module" rel="script" async src="idea/Muscari/index.mjs"></script>
+  <link type="text/css"
+        rel="stylesheet"
+        blocking="render"
+        fetchpriority="high"
+        href="idea/Muscari/index.css">
+  <script type="module"
+          rel="script"
+          async
+          src="idea/Muscari/index.mjs"></script>
 </head>
 <body>
 
-<h1>Monochromatic<br> - frontend designs</h1>
+<header>
+  <hgroup>
+    <h1 title="Monochromatic"
+        data-content="Mono&lt;hromᴧti&lt;">Mono&lt;hromᴧti&lt;
+    </h1>
+    <p>Frontend Designs</p>
+  </hgroup>
+</header>
 
+<main>
 <details open
          id="introduction">
   <summary>
@@ -23,83 +39,85 @@
     For example, a personal blog made of blog posts or a manual organized in chapters.
   </p>
 
-  <p>
-    Why choose this name?
-  </p>
+  <section id="why_choose_this_name">
+    <p>
+      Why choose this name?
+    </p>
 
-  <ol>
-    <li>
-      <p>
-        Only <strong>pure black</strong> and <strong>pure white</strong> are allowed.
-      </p>
-    </li>
+    <ol>
+      <li>
+        <p>
+          Only <strong>pure black</strong> and <strong>pure white</strong> are allowed.
+        </p>
+      </li>
 
-    <li>
-      <p>
-        Only the styling necessary for conveying the semantic meaning of each element and its surrounding context are
-        made.
-      </p>
-    </li>
+      <li>
+        <p>
+          Only the styling necessary for conveying the semantic meaning of each element and its surrounding context are
+          made.
+        </p>
+      </li>
 
-    <li>
-      <p>
-        Only the animations that are necessary are allowed.
-        At the same time, the animation cannot be something that
-        updates too much of the view, takes too much time, or has too many <code>@keyframes</code>.
-      </p>
-    </li>
+      <li>
+        <p>
+          Only the animations that are necessary are allowed.
+          At the same time, the animation cannot be something that
+          updates too much of the view, takes too much time, or has too many <code>@keyframes</code>.
+        </p>
+      </li>
 
-    <li>
-      <p>
-        Only one stylesheet and one script is allowed for each variation. This:
-      </p>
+      <li>
+        <p>
+          Only one stylesheet and one script is allowed for each variation. This:
+        </p>
 
-      <ol>
-        <li>
-          <p>
-            reduces maintenance costs
-          </p>
-        </li>
-        <li>
-          <p>
-            improves performance if the user visits more than one page.
-          </p>
-        </li>
-      </ol>
-    </li>
-  </ol>
+        <ol>
+          <li>
+            <p>
+              reduces maintenance costs
+            </p>
+          </li>
+          <li>
+            <p>
+              improves performance if the user visits more than one page.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
 
-  <p>
-    Hence <code>&quot;Monochromatic&quot;</code>.
-  </p>
+    <p>
+      Hence <code>&quot;Monochromatic&quot;</code>.
+    </p>
+  </section>
 
-  <p>
-    Why write documents in HTML instead of a lightweight markup language using Markdown?
-  </p>
+  <section id="why_write_documents_in_html">
+    <p>
+      Why write documents in HTML instead of a lightweight markup language using Markdown?
+    </p>
 
-  <ol>
-    <li>
-      <p>
-        HTML gives more control over Markdown. Here are some requirements only achievable using HTML.
-      </p>
+    <ol>
+      <li>
+        <p>
+          HTML gives more control over Markdown. Here are some requirements only achievable using HTML.
+        </p>
 
-      <ol>
-        <li>
-          <p>
-            Use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> for headings and its content in order to let user freely fold those sections.
-          </p>
-        </li>
-      </ol>
-
-      <ol>
-        <li>
-          <p>
-            Styling and scripting.
-          </p>
-        </li>
-      </ol>
-    </li>
-  </ol>
+        <ol>
+          <li>
+            <p>
+              Use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> for headings and its content in order to
+              let user freely fold those sections.
+            </p>
+          </li>
+          <li>
+            <p>
+              Styling and scripting.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </section>
 </details>
 
 
@@ -149,19 +167,21 @@
         <h4>Top-level Directory <code>archive</code></h4>
       </summary>
 
-      <p>
-        An archive of abandoned content.
-        Including ideas, design choices, and design mockup with HTML.
-      </p>
+      <section>
+        <p>
+          An archive of abandoned content.
+          Including ideas, design choices, and design mockup with HTML.
+        </p>
 
-      <ol>
-        <li>
-          <p>
-            For example, the <code>has_red_color</code> directory inside the <code>archive</code> directory is for
-            when the project was using color red other than black and white only.
-          </p>
-        </li>
-      </ol>
+        <ol>
+          <li>
+            <p>
+              For example, the <code>has_red_color</code> directory inside the <code>archive</code> directory is for
+              when the project was using color red other than black and white only.
+            </p>
+          </li>
+        </ol>
+      </section>
     </details>
 
     <details open
@@ -174,22 +194,24 @@
         Documentation of design decisions.
       </p>
 
-      <p>A typical document would communicate:</p>
+      <section>
+        <p>A typical document would communicate:</p>
 
-      <ol>
-        <li>
-          Which purposes the UI element should fulfill,
-          and which purposes the UI element should fail to fulfill.
-        </li>
-        <li>
-          How the UI element should be presented,
-          and how the UI element should not be presented.
-        </li>
-        <li>
-          The user interactions the UI element should be able to react to,
-          and the user interactions the UI interface should not be able to react to.
-        </li>
-      </ol>
+        <ol>
+          <li>
+            Which purposes the UI element should fulfill,
+            and which purposes the UI element should fail to fulfill.
+          </li>
+          <li>
+            How the UI element should be presented,
+            and how the UI element should not be presented.
+          </li>
+          <li>
+            The user interactions the UI element should be able to react to,
+            and the user interactions the UI interface should not be able to react to.
+          </li>
+        </ol>
+      </section>
     </details>
 
     <details open
@@ -286,73 +308,76 @@
       <p>
         Both <code>Muscari</code> and <code>Monochromatic</code> start with the letter M.
         <br>
-        Meaning this variant of &quot;sensible set of styling&quot; is closest to what the name of the project conveys.
+        Meaning this variant of &quot;sensible set of styling&quot; is closest to what the name of the project
+        conveys.
         Unassuming but still provides a modern reading experience.
       </p>
 
-      <p>Specific rules:</p>
+      <section id="specific_rules">
+        <p>Specific rules:</p>
 
-      <ol>
-        <li>
-          Use the simplest style.
-          <br>
-          If using a simpler style, like using a normal border instead of using a double border,
-          would still sufficiently convey the semantic meaning of the element and the surrounding context,
-          <br>
-          use the simpler style instead of the fancier one
-          even when the fancier style can convey the meaning better or is more aesthetically pleasing.
-          <br>
-          This variant has the fewest requirements on how well the semantic meanings should be expressed.
-        </li>
+        <ol>
+          <li>
+            Use the simplest style.
+            <br>
+            If using a simpler style, like using a normal border instead of using a double border,
+            would still sufficiently convey the semantic meaning of the element and the surrounding context,
+            <br>
+            use the simpler style instead of the fancier one
+            even when the fancier style can convey the meaning better or is more aesthetically pleasing.
+            <br>
+            This variant has the fewest requirements on how well the semantic meanings should be expressed.
+          </li>
 
-        <li>
-          Always use a sans-serif font.
-          <br>
-          For example, titles, paragraphs, references, comments.
-          Reasons:
-          <ol>
-            <li>
-              The font family <a href="https://rsms.me/inter">Inter</a> is specifically designed for modern electronic
-              devices.
-            </li>
-            <li>
-              Sans-serif fonts have much fewer details than serif fonts, by definition.
-            </li>
-            <li>
-              Using only one font family throughout the entire website reduces the data need to access it.
-              In other words, avoid performance loss.
-            </li>
-            <li>
-              People are used to reading sans-serif fonts on websites since most websites use them instead of serif
-              fonts.
-            </li>
-            <li>
-              Titles look more modern when using a sans-serif font family.
-            </li>
-            <li>
-              All Operating Systems' default sans-serif font families are readable.
-              If the external font fails to load, the website would still look okay-ish.
-            </li>
-          </ol>
-        </li>
+          <li>
+            Always use a sans-serif font.
+            <br>
+            For example, titles, paragraphs, references, comments.
+            Reasons:
+            <ol>
+              <li>
+                The font family <a href="https://rsms.me/inter">Inter</a> is specifically designed for modern electronic
+                devices.
+              </li>
+              <li>
+                Sans-serif fonts have much fewer details than serif fonts, by definition.
+              </li>
+              <li>
+                Using only one font family throughout the entire website reduces the data need to access it.
+                In other words, avoid performance loss.
+              </li>
+              <li>
+                People are used to reading sans-serif fonts on websites since most websites use them instead of serif
+                fonts.
+              </li>
+              <li>
+                Titles look more modern when using a sans-serif font family.
+              </li>
+              <li>
+                All Operating Systems' default sans-serif font families are readable.
+                If the external font fails to load, the website would still look okay-ish.
+              </li>
+            </ol>
+          </li>
 
-        <li>
-          <p>
-            No animations are allowed.
-          </p>
-        </li>
+          <li>
+            <p>
+              No animations are allowed.
+            </p>
+          </li>
 
-        <li>
-          <p>
-            Use built-in styling and element appearance adjustments instead of removing them and put my own there
-            instead.
-          </p>
+          <li>
+            <p>
+              Use built-in styling and element appearance adjustments instead of removing them and put my own there
+              instead.
+            </p>
 
-          <p>
+            <p>
 
-          </p>
-        </li>
-      </ol>
+            </p>
+          </li>
+        </ol>
+      </section>
     </details>
 
     <details open
@@ -371,43 +396,46 @@
         The alphabet starts with <strong>A</strong>.
       </p>
 
-      <p>
-        In this variant of &quot;sensible set of styling&quot;,
-        Fancier styling can be used
-        when there are big improvements to the expressiveness of semantic meanings compared to simpler styling.
-      </p>
+      <section>
+        <p>
+          In this variant of &quot;sensible set of styling&quot;,
+          Fancier styling can be used
+          when there are big improvements to the expressiveness of semantic meanings compared to simpler styling.
+        </p>
 
-      <ol>
-        <li>
-          <p>
-            For example, consider
-            using double borders on the <code>inline-start</code> side of the <code>&lt;blockquote&gt;</code> element
-            instead of using a normal, simple border
-            <br>
-            because a double border can better differentiate the appearance of blockquotes from message tip blocks.
-            A double border can also imply the content on the right side is a page from a book,
-            which is a desirable effect for blockquotes that are often quoted from books.
-          </p>
-        </li>
+        <ol>
+          <li>
+            <p>
+              For example, consider
+              using double borders on the <code>inline-start</code> side of the <code>&lt;blockquote&gt;</code> element
+              instead of using a normal, simple border
+              <br>
+              because a double border can better differentiate the appearance of blockquotes from message tip blocks.
+              A double border can also imply the content on the right side is a page from a book,
+              which is a desirable effect for blockquotes that are often quoted from books.
+            </p>
+          </li>
 
-        <li>
-          <p>
-            Sans-serif font can be used sparingly, like in some headings or comments.
-          </p>
-        </li>
+          <li>
+            <p>
+              Sans-serif font can be used sparingly, like in some headings or comments.
+            </p>
+          </li>
 
-        <li>
-          <p>
-            Simple animations like animation the transformation of the <code>&lt;a&gt;</code> underlines to a rectangle
-            behind them is allowed.
-            Both the shape and the color.
-          </p>
+          <li>
+            <p>
+              Simple animations like animation the transformation of the <code>&lt;a&gt;</code> underlines to a
+              rectangle
+              behind them is allowed.
+              Both the shape and the color.
+            </p>
 
-          <p>
-            The use of <code>animation-timing-function</code> is allowed.
-          </p>
-        </li>
-      </ol>
+            <p>
+              The use of <code>animation-timing-function</code> is allowed.
+            </p>
+          </li>
+        </ol>
+      </section>
     </details>
 
     <details open
@@ -482,7 +510,8 @@
   </p>
 
   <p>
-    However, due to the advancements in modern devices&apos; computing capacity, most of these code snippets should work
+    However, due to the advancements in modern devices&apos; computing capacity, most of these code snippets should
+    work
     well
     enough,
     if not faster, than using a heavyweight frontend framework.
@@ -496,69 +525,72 @@
     <h2>License - CC0</h2>
   </summary>
 
-  <p>
-    I chose CC0 license for this project because:
-  </p>
+  <section id="cc0_reason">
+    <p>
+      I chose CC0 license for this project because:
+    </p>
 
-  <ol>
-    <li>
-      <p>
-        This project won&apos;t be well-maintained.
-      </p>
+    <ol>
+      <li>
+        <p>
+          This project won&apos;t be well-maintained.
+        </p>
 
-      <p>
-        (For personal reasons.)
-      </p>
-    </li>
+        <p>
+          (For personal reasons.)
+        </p>
+      </li>
 
-    <li>
-      <p>
-        I have not done the learnings I should have done.
-      </p>
+      <li>
+        <p>
+          I have not done the learnings I should have done.
+        </p>
 
-      <ol>
-        <li>
-          <p>
-            <strong>
-              The designs I have came up with right now are horrible.
-            </strong>
-          </p>
+        <ol>
+          <li>
+            <p>
+              <strong>
+                The designs I have came up with right now are horrible.
+              </strong>
+            </p>
 
-          <p>
-            Project will undergo huge changes after I learn more about UI and UX design.
-          </p>
-        </li>
+            <p>
+              Project will undergo huge changes after I learn more about UI and UX design.
+            </p>
+          </li>
 
-        <li>
-          <p>
-            Yeah,
-            and I should learn <a href="https://developers.google.com/tech-writing">how to write technical
-                                                                                    documentations</a>, too.
-            I&apos;m assuming writing so many &quot;I&quot;s would not make the document look serious.
-          </p>
-        </li>
-      </ol>
+          <li>
+            <p>
+              Yeah,
+              and I should learn <a href="https://developers.google.com/tech-writing">how to write technical
+                                                                                      documentations</a>, too.
+              I&apos;m assuming writing so many &quot;I&quot;s would not make the document look serious.
+            </p>
+          </li>
+        </ol>
 
-      <p>
-        (Not going to promise anything here, though. We&apos;ll see how it goes.)
-      </p>
-    </li>
+        <p>
+          (Not going to promise anything here, though. We&apos;ll see how it goes.)
+        </p>
+      </li>
 
-    <li>
-      <p>
-        Citing this repo or asking my permissions is troublesome and non-rewarding,
-      </p>
+      <li>
+        <p>
+          Citing this repo or asking my permissions is troublesome and non-rewarding,
+        </p>
 
-      <p>
-        (As there&apos;s not much to cite or use in the first place...)
-      </p>
-    </li>
-  </ol>
+        <p>
+          (As there&apos;s not much to cite or use in the first place...)
+        </p>
+      </li>
+    </ol>
+  </section>
 
   <p>
     Therefore, I declare that:
     <br>
-    You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+    You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking
+    permission.
     <br>
     See more at <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>
   </p>
@@ -576,6 +608,7 @@
     </li>
   </ol>
 </section>
+</main>
 
 </body>
 </html>
