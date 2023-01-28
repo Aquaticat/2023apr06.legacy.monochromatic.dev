@@ -9,23 +9,20 @@
         rel="stylesheet"
         blocking="render"
         fetchpriority="high"
-        href="variants/Muscari/index.css">
+        href="idea/Muscari/index.css">
   <script type="module"
           rel="script"
           async
-          src="variants/Muscari/index.mjs"></script>
+          src="idea/Muscari/index.mjs"></script>
 </head>
 <body>
 
 <header>
   <hgroup>
     <h1 title="Monochromatic"
-        data-content="Mono&lt;hromᴧti&lt;">
-      Mono&lt;hromᴧti&lt;
+        data-content="Mono&lt;hromᴧti&lt;">Mono&lt;hromᴧti&lt;
     </h1>
-    <p>
-      Frontend Designs
-    </p>
+    <p>Frontend Designs</p>
   </hgroup>
 </header>
 
@@ -146,8 +143,20 @@
       </li>
 
       <li>
-        <a href="#top-level_directory_variants">
+        <a href="#top-level_directory_idea">
           <code>idea</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#top-level_directory_design">
+          <code>design</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#top-level_directory_code">
+          <code>code</code>
         </a>
       </li>
     </ul>
@@ -176,51 +185,69 @@
     </details>
 
     <details open
-             id="top-level_directory_variants">
+             id="top-level_directory_idea">
       <summary>
-        <h4>Top-level Directory <code>variants</code></h4>
+        <h4>Top-level Directory <code>idea</code></h4>
       </summary>
 
-      <p>Stores all documentations of design decisions, design software mockups, and implementations of those mockups
-         with Sass and JavaScript.
+      <p>
+        Documentation of design decisions.
       </p>
 
-      <section id="idea">
-        <h5>
-          Documentation of design decisions.
-        </h5>
+      <section>
+        <p>A typical document would communicate:</p>
 
-        <section>
-          <p>A typical document would communicate:</p>
-
-          <ol>
-            <li>
-              Which purposes the UI element should fulfill,
-              and which purposes the UI element should fail to fulfill.
-            </li>
-            <li>
-              How the UI element should be presented,
-              and how the UI element should not be presented.
-            </li>
-            <li>
-              The user interactions the UI element should be able to react to,
-              and the user interactions the UI interface should not be able to react to.
-            </li>
-          </ol>
-        </section>
+        <ol>
+          <li>
+            Which purposes the UI element should fulfill,
+            and which purposes the UI element should fail to fulfill.
+          </li>
+          <li>
+            How the UI element should be presented,
+            and how the UI element should not be presented.
+          </li>
+          <li>
+            The user interactions the UI element should be able to react to,
+            and the user interactions the UI interface should not be able to react to.
+          </li>
+        </ol>
       </section>
+    </details>
 
-      <section id="design">
-        <h5>
-          Implementation of design decisions in Figma (or other design software).
-        </h5>
-      </section>
+    <details open
+             id="top-level_directory_design">
+      <summary>
+        <h4>Top-level Directory <code>design</code></h4>
+      </summary>
 
-      <section id="code">
-        <h5>
-          Implementation of the result of Figma (or other design software) mockups with Sass and JavaScript.
-        </h5>
-      </section>
+      <p>
+        Implementation of design decisions in Figma (or other design software).
+      </p>
+
+      <p>
+        Undecided on if I&apos;m going to keep this directory or not since I could just put everything into the
+        <code>idea</code>
+        directory.
+        That might even be better.
+      </p>
+    </details>
+
+    <details open
+             id="top-level_directory_code">
+      <summary>
+        <h4>Top-level Directory <code>code</code></h4>
+      </summary>
+
+      <p>
+        Implementation of the result of Figma (or other design software) mockups.
+      </p>
+
+      <p>
+        Undecided on if I&apos;m going to keep this directory or not since I could just put everything into the
+        <code>idea</code>
+        directory.
+        That might even be better.
+      </p>
     </details>
   </details>
 
@@ -561,12 +588,10 @@
 
   <p>
     Therefore, I declare that:
-  </p>
-  <p>
-    You can copy, modify, distribute and perform the work, even for commercial purposes,
-    all without asking permissions.
-  </p>
-  <p>
+    <br>
+    You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking
+    permission.
+    <br>
     See more at <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>
   </p>
 </details>

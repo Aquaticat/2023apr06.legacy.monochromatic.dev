@@ -2,7 +2,7 @@
   "name": "monochromatic",
   "version": "0.0.1",
   "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.",
-  "main": "idea/Muscari/index.mjs",
+  "main": "variants/Muscari/index.mjs",
   "scripts": {},
   "keywords": [
     "design",
