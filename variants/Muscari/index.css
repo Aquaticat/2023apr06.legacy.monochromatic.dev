@@ -8,6 +8,18 @@
  * Also not using the :has() selector right now because Firefox doesn't fully support it and doesn't enable it by default.
  * Considering using it anyways because every other browser has support and [We plan to work on this in the first half of this year](https://bugzilla.mozilla.org/show_bug.cgi?id=418039#c62).
  */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: white;
+    --background: black;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground: black;
+    --background: white;
+  }
+}
 :root * + section {
   margin-block-start: 3rem;
 }
@@ -22,12 +34,19 @@
   margin-block-start: 1rem;
 }
 
+x-wrapper {
+  display: block;
+  color-scheme: light dark;
+}
+
 * {
   box-sizing: border-box;
   margin-block: 0;
 }
 
 html {
+  color: var(--foreground);
+  background-color: var(--background);
   font-family: sans-serif;
   letter-spacing: 0.1ch;
   line-height: 1.5;
@@ -41,6 +60,7 @@ header {
   color: white;
   background-color: black;
   padding-block: 5rem;
+  border-block-end: var(--foreground) solid 0.5rem;
 }
 header > hgroup {
   text-align: unset;
@@ -117,7 +137,7 @@ h5 {
 hr {
   height: 1rem;
   border-inline: none;
-  border-block: 0.25rem solid black;
+  border-block: 0.25rem solid var(--foreground);
   margin-block: clamp(0.75rem, 3rem, 5vw);
   text-align: center;
   inline-size: calc(100% + 2rem);
@@ -126,10 +146,10 @@ hr {
 }
 hr::after {
   content: "§";
-  color: black;
+  color: var(--foreground);
   font-size: 1.75rem;
   font-weight: bold;
-  background-color: white;
+  background-color: var(--background);
   padding-inline: 0.5rem;
   position: relative;
   top: -1.25rem;
@@ -150,18 +170,21 @@ summary {
   padding-inline: 1rem;
   padding-block: 0.5rem;
   border-style: solid;
-  border-color: black;
-  border-inline-start-color: white;
-  border-width: 0.25em;
+  border-color: var(--foreground);
+  border-inline-start-color: var(--background);
+  border-width: 0.25rem;
+}
+summary:has(h2) {
+  border-width: 0.5rem;
 }
 summary:has(h4) {
-  border-block-end-color: white;
+  border-block-end-color: var(--background);
   padding-block: 0.25rem;
   inline-size: calc(100% + 0.5rem);
   transform: translateX(-0.25rem);
 }
 summary:has(h5) {
-  border-block-color: white;
+  border-block-color: var(--background);
   padding-block: 0;
   inline-size: calc(100% + 0.25rem);
   transform: translateX(-0.125rem);
@@ -183,8 +206,8 @@ details > summary::after {
   font-size: 2em;
 }
 details[open] > summary {
-  border-inline-start-color: black;
-  border-block-end-color: white;
+  border-inline-start-color: var(--foreground);
+  border-block-end-color: var(--background);
 }
 details[open] > summary::after {
   content: "Λ";
@@ -220,15 +243,15 @@ section + * {
 }
 
 a {
-  color: black;
+  color: var(--foreground);
   text-underline-offset: 0.5ex;
 }
 a:focus, a:hover, a:active {
   font-size: unset;
-  color: white;
-  background-color: black;
-  padding-block: 0.125ex;
-  text-shadow: white 0 0 0.125em;
+  color: var(--background);
+  background-color: var(--foreground);
+  box-shadow: 0.2ch 0 0 0 var(--foreground), -0.2ch 0 0 0 var(--foreground), 0 0.2ex 0 0 var(--foreground), 0 -0.2ex 0 0 var(--foreground), 0.2ch 0.2ex 0 0 var(--foreground), -0.2ch 0.2ex 0 0 var(--foreground), 0.2ch -0.2ex 0 0 var(--foreground), -0.2ch -0.2ex 0 0 var(--foreground);
+  text-shadow: -0.01ch 0 0 var(--background), 0.01ch 0 0 var(--background), 0 0.01ex 0 var(--background), 0 -0.01ex 0 var(--background);
 }
 
 :is(pre, code) {
@@ -245,6 +268,54 @@ a:focus, a:hover, a:active {
 }
 .ul_direction_inlineStart > * + * {
   margin-block-start: 0;
+}
+
+label.button_importance_tertiary {
+  background-color: black;
+  text-transform: uppercase;
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace;
+  font-weight: bold;
+  padding-block: clamp(0.3em, 0.4em, 1vw);
+  padding-inline: clamp(0.5em, 0.75em, 1.5vw);
+  border-color: white;
+  border-style: solid;
+  border-width: 0.2em;
+  font-size: clamp(1em, 1.2em, 2.5vw);
+}
+label.button_importance_tertiary:focus, label.button_importance_tertiary:hover, label.button_importance_tertiary:active {
+  color: black;
+  background-color: white;
+  font-weight: 900;
+}
+label.button_importance_tertiary input {
+  visibility: hidden;
+  position: absolute;
+  left: -9999;
+}
+
+#colorSchemeToggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+#colorSchemeToggle::after {
+  content: "= theme";
+}
+#colorSchemeToggle:focus::after, #colorSchemeToggle:hover::after, #colorSchemeToggle:active::after {
+  content: " !theme";
+}
+#colorSchemeToggle::before {
+  font-size: 1.5em;
+  content: "☉";
+  height: 1em;
+  width: 1em;
+  transform: translate(-0.2ch, -0.45ex);
+}
+#colorSchemeToggle:has(input[type=checkbox]:checked)::before {
+  font-size: 1.4em;
+  content: "☽";
+  transform: translate(0, -0.4ex);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -9,6 +9,15 @@
  */
 
 :root {
+  @media (prefers-color-scheme: dark) {
+    --foreground: white;
+    --background: black;
+  }
+  @media (prefers-color-scheme: light) {
+    --foreground: black;
+    --background: white;
+  }
+
   * + {
     section {
       margin-block-start: 3rem;
@@ -31,6 +40,13 @@
   }
 }
 
+x-wrapper {
+  display: block;
+
+  // FIXME: Still couldn't figure out a pure CSS solution for toggling themes.
+  color-scheme: light dark;
+}
+
 * {
   box-sizing: border-box;
 
@@ -38,6 +54,11 @@
 }
 
 html {
+  // FIXedME: HTML and body has space in between?
+  //          Update: Got it. <main>'s margin-block caused it.
+  //          Next time consider using * { border:1px solid red; } to debug.
+  color: var(--foreground);
+  background-color: var(--background);
   font-family: sans-serif;
   letter-spacing: 0.1ch;
   line-height: 1.5;
@@ -51,6 +72,7 @@ header {
   color: white;
   background-color: black;
   padding-block: 5rem;
+  border-block-end: var(--foreground) solid 0.5rem;
 
   // FIXME: Why would setting font-size would cause the <p> to take the whole width?
   //        Setting font-size: 2rem; inside > hgroup or inside > hgroup > * causes the same issue.
@@ -145,11 +167,10 @@ h5 {
 }
 
 
-
 hr {
   height: 1rem;
   border-inline: none;
-  border-block: 0.25rem solid black;
+  border-block: 0.25rem solid var(--foreground);
   margin-block: clamp(0.75rem, 3rem, 5vw);
   text-align: center;
   inline-size: calc(100% + 2rem);
@@ -161,10 +182,10 @@ hr {
 
   &::after {
     content: '§';
-    color: black;
+    color: var(--foreground);
     font-size: 1.75rem;
     font-weight: bold;
-    background-color: white;
+    background-color: var(--background);
     padding-inline: 0.5rem;
     position: relative;
     top: -1.25rem;
@@ -189,21 +210,28 @@ summary {
   padding-block: 0.5rem;
   border: {
     style: solid;
-    color: black;
+    color: var(--foreground);
     // noinspection CssInvalidPropertyValue
-    inline-start-color: white;
-    width: 0.25em;
+    inline-start-color: var(--background);
+    width: 0.25rem;
+  }
+
+  &:has(h2) {
+    // FIXME: Somehow, using box-sizing: content-box and more translateX to achieve a "wider than content" appearance
+    //        would cause it to overflow (hidden) when vw is small?
+    // box-sizing: content-box;
+    border-width: 0.5rem;
   }
 
   &:has(h4) {
-    border-block-end-color: white;
+    border-block-end-color: var(--background);
     padding-block: 0.25rem;
     inline-size: calc(100% + 0.5rem);
     transform: translateX(-0.25rem);
   }
 
   &:has(h5) {
-    border-block-color: white;
+    border-block-color: var(--background);
     padding-block: 0;
     inline-size: calc(100% + 0.25rem);
     transform: translateX(-0.125rem);
@@ -238,8 +266,8 @@ details {
     > summary {
       // noinspection CssInvalidPropertyValue
       border: {
-        inline-start-color: black;
-        block-end-color: white;
+        inline-start-color: var(--foreground);
+        block-end-color: var(--background);
       }
 
       &::after {
@@ -288,17 +316,28 @@ section + * {
 }
 
 a {
-  color: black;
+  color: var(--foreground);
   text-underline-offset: 0.5ex;
 
   &:focus,
   &:hover,
   &:active {
     font-size: unset;
-    color: white;
-    background-color: black;
-    padding-block: 0.125ex;
-    text-shadow: white 0 0 0.125em;
+    color: var(--background);
+    background-color: var(--foreground);
+    box-shadow: 0.2ch 0 0 0 var(--foreground),
+    -0.2ch 0 0 0 var(--foreground),
+    0 0.2ex 0 0 var(--foreground),
+    0 -0.2ex 0 0 var(--foreground),
+    0.2ch 0.2ex 0 0 var(--foreground),
+    -0.2ch 0.2ex 0 0 var(--foreground),
+    0.2ch -0.2ex 0 0 var(--foreground),
+    -0.2ch -0.2ex 0 0 var(--foreground);
+
+    text-shadow: -0.01ch 0 0 var(--background),
+    0.01ch 0 0 var(--background),
+    0 0.01ex 0 var(--background),
+    0 -0.01ex 0 var(--background);
   }
 }
 
@@ -318,5 +357,69 @@ a {
 
   > * + * {
     margin-block-start: 0;
+  }
+}
+
+
+label {
+  &.button_importance_tertiary {
+    background-color: black;
+    text-transform: uppercase;
+    font-family: 'Source Code Pro', 'SF Mono', Monaco, Inconsolata, 'Fira Mono', 'Droid Sans Mono', monospace;
+    font-weight: bold;
+    padding-block: clamp(0.3em, 0.4em, 1vw);
+    padding-inline: clamp(0.5em, 0.75em, 1.5vw);
+    border-color: white;
+    border-style: solid;
+    border-width: 0.2em;
+    font-size: clamp(1em, 1.2em, 2.5vw);
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: black;
+      background-color: white;
+      font-weight: 900;
+
+    }
+
+    input {
+      visibility: hidden;
+      position: absolute;
+      left: -9999;
+    }
+  }
+}
+
+#colorSchemeToggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+
+  &::after {
+    content: '= theme';
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    &::after {
+      content: '\00a0!theme';
+    }
+  }
+
+  &::before {
+    font-size: 1.5em;
+    content: '☉';
+    height: 1em;
+    width: 1em;
+    transform: translate(-0.2ch, -0.45ex);
+  }
+
+  &:has(input[type='checkbox']:checked)::before {
+    font-size: 1.4em;
+    content: '☽';
+    transform: translate(0, -0.4ex);
   }
 }

@@ -25,3 +25,21 @@ window.onhashchange = () => {
     parentElement = parentElement.parentElement;
   }
 };
+
+const colorSchemeToggleInputElement = document.querySelector('#colorSchemeToggle input');
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  colorSchemeToggleInputElement.checked = true;
+}
+
+colorSchemeToggleInputElement.addEventListener('change', () => {
+  colorSchemeToggleInputElement.checked
+    ? (() => {
+        document.documentElement.style.setProperty('--foreground', 'white');
+        document.documentElement.style.setProperty('--background', 'black');
+      })()
+    : (() => {
+        document.documentElement.style.setProperty('--foreground', 'black');
+        document.documentElement.style.setProperty('--background', 'white');
+      })();
+});
