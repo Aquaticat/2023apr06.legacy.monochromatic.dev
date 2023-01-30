@@ -9,7 +9,12 @@
     "variants/A/index.css",
     "variants/B/index.css",
     "variants/C/index.css",
-    "variants/D/index.css"
+    "variants/D/index.css",
+    "variants/M/index.mjs",
+    "variants/A/index.mjs",
+    "variants/B/index.mjs",
+    "variants/C/index.mjs",
+    "variants/D/index.mjs"
   ],
   "repository": {
     "type": "git",
