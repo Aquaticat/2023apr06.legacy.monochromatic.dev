@@ -164,7 +164,7 @@ main * + * {
 h1 {
   line-height: 2;
   font-size: clamp(2.5rem, 4rem, 8vw);
-  font-family: x-monospace, monospace;
+  font-family: x-monospace, monospace, x-sans-serif, sans-serif;
   font-weight: 900;
   text-align: center;
   margin-block-end: clamp(2rem, 4rem, 5vw);
@@ -342,6 +342,8 @@ address {
   border-style: solid;
   border-width: 0.2em;
   background-color: inherit;
+  display: flex;
+  align-items: center;
   position: absolute;
   right: 0.2em;
   top: 0.2em;
@@ -356,14 +358,10 @@ address {
   font-weight: 900;
 }
 #colorSchemeToggle input {
+  position: absolute;
   visibility: hidden;
   height: 2ex;
   width: 4ch;
-}
-#colorSchemeToggle::before {
-  position: absolute;
-  top: 0;
-  left: 1ch;
 }
 #colorSchemeToggle::after {
   content: "= theme";
@@ -372,16 +370,16 @@ address {
   content: " !theme";
 }
 #colorSchemeToggle::before {
-  top: -0.4ex;
-  left: 0.5ch;
   font-size: 2em;
   content: "☉";
+  block-size: 0;
+  inline-size: 0;
+  margin-inline-end: 1em;
+  transform: translateX(-0.1em) translateY(-0.8em);
 }
 #colorSchemeToggle:has(input[type=checkbox]:checked)::before {
-  font-size: 1.4em;
   content: "☽";
-  top: calc(-0.2ex + 0.3vw);
-  left: 1.2ch;
+  transform: scale(0.8) translateX(0.1em) translateY(-0.8em);
 }
 #colorSchemeToggle:has(input[type=checkbox]:focus), #colorSchemeToggle:focus {
   outline-color: var(--light);
