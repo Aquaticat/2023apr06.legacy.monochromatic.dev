@@ -20,6 +20,11 @@
  *       At least make <summary> containing h2 wider than the rest!
  */
 
+@use '../../node_modules/@fontsource/inter/variable.css' as x-InterVariable;
+@use '../../node_modules/@fontsource/inter/index.css' as x-Inter;
+@use '../../node_modules/@fontsource/fira-code/variable.css' as x-FiraCodeVariable;
+@use '../../node_modules/@fontsource/fira-code/index.css' as x-FiraCode;
+
 @mixin element_theme_alwaysDark() {
   color: var(--light);
   background-color: var(--dark);
@@ -106,7 +111,7 @@
 // TODO: Use https://fontsource.org/ to load fonts from same origin.
 @font-face {
   font-family: x-sans-serif;
-  src: local(Inter var), local(Inter), local(sans-serif);
+  src: local(x-InterVariable), local(InterVariable), local(Inter var), local(x-Inter), local(Inter), local(sans-serif);
 }
 
 @font-face {
@@ -116,7 +121,7 @@
 
 @font-face {
   font-family: x-monospace;
-  src: local(Fira Code VF), local(Fira Code), local(monospace);
+  src: local(x-FiraCodeVariable), local(FiraCodeVariable), local(Fira CodeVariable), local(Fira Code VF), local(x-FiraCode), local(FiraCode), local(Fira Code), local(monospace);
 }
 
 :root {
