@@ -2,7 +2,7 @@
   "name": "monochromatic",
   "version": "0.0.1",
   "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.",
-  "main": "variants/Muscari/index.mjs",
+  "main": "variants/M/index.css",
   "scripts": {},
   "keywords": [
     "design",
@@ -15,8 +15,5 @@
     "url": "https://aquati.cat"
   },
   "license": "CC0-1.0",
-  "private": true,
-  "devDependencies": {
-    "sass": "^1.57.1"
-  }
+  "private": true
 }

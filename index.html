@@ -4,27 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width">
-  <title>Monochromatic</title>
+  <title>ΛΛono&lt;hromᴧti&lt;</title>
   <link type="text/css"
         rel="stylesheet"
         blocking="render"
         fetchpriority="high"
-        href="variants/Muscari/index.css">
+        href="variants/M/index.css">
+  <!-- Using HTML link tag to import stylesheet instead of using @import rule in CSS. -->
+  <link type="text/css"
+        rel="stylesheet"
+        fetchpriority="low"
+        href="https://rsms.me/inter/inter.css">
+  <link type="text/css"
+        rel="stylesheet"
+        fetchpriority="low"
+        href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
   <script type="module"
           rel="script"
           async
-          src="variants/Muscari/index.mjs"></script>
+          src="variants/M/index.mjs"></script>
 </head>
 <body>
 <x-wrapper>
-<header>
+<header id="header">
+  <!-- Using aria-hidden="true" because toggling light and dark color schemes is unnecessary when using a screen reader.
+       Line Separator takes up space? -->
   <label aria-hidden="true"
-         id="colorSchemeToggle" class="button_importance_tertiary">
-    <input type="checkbox">
-    theme  =
-  </label>
+         id="colorSchemeToggle"
+         tabindex="1"
+  ><input type="checkbox">theme&nbsp;=</label>
   <hgroup>
-    <h1 title="Monochromatic"
+    <h1 aria-label="Monochromatic"
+        title="Monochromatic"
         data-content="ΛΛono&lt;hromᴧti&lt;">
       ΛΛono&lt;hromᴧti&lt;
     </h1>
@@ -98,6 +109,33 @@
     <p>
       Hence <code>&quot;Monochromatic&quot;</code>.
     </p>
+  </section>
+
+  <section>
+    <p>
+      Why are you placing so many restrictions?
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          There's some appeal about having the option of using something but avoid using it and get the job done
+          anyway.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          More restrictions means fewer considerations.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Only using pure white and pure black automatically satisfies the high-contrast requirement.
+        </p>
+      </li>
+    </ol>
   </section>
 
   <section id="why_write_documents_in_html">
@@ -241,41 +279,41 @@
 
     <ul class="ul_direction_inlineStart">
       <li>
-        <a href="#subdirectory_muscari">
-          <code><strong>M</strong>uscari</code>
+        <a href="#subdirectory_m">
+          <code><strong>M</strong></code>
         </a>
       </li>
 
       <li>
-        <a href="#subdirectory_afzelia">
-          <code><strong>A</strong>fzelia</code>
+        <a href="#subdirectory_a">
+          <code><strong>A</strong></code>
         </a>
       </li>
 
       <li>
-        <a href="#subdirectory_buforrestia">
-          <code><strong>B</strong>uforrestia</code>
+        <a href="#subdirectory_b">
+          <code><strong>B</strong></code>
         </a>
       </li>
 
       <li>
-        <a href="#subdirectory_calochortus">
-          <code><strong>C</strong>alochortus</code>
+        <a href="#subdirectory_c">
+          <code><strong>C</strong></code>
         </a>
       </li>
 
       <li>
-        <a href="#subdirectory_draba">
-          <code><strong>D</strong>raba</code>
+        <a href="#subdirectory_d">
+          <code><strong>D</strong></code>
         </a>
       </li>
     </ul>
 
     <details open
-             id="subdirectory_muscari">
+             id="subdirectory_m">
       <summary>
         <h4>
-          Subdirectory <code>Muscari</code>
+          Subdirectory <code>M</code>
         </h4>
       </summary>
 
@@ -286,7 +324,7 @@
       </p>
 
       <p>
-        Both <code>Muscari</code> and <code>Monochromatic</code> start with the letter M.
+        <code>Monochromatic</code> start with the letter M.
         <br>
         Meaning this variant of &quot;sensible set of styling&quot; is closest to what the name of the project
         conveys.
@@ -362,10 +400,10 @@
     </details>
 
     <details open
-             id="subdirectory_afzelia">
+             id="subdirectory_a">
       <summary>
         <h4>
-          Subdirectory <code>Afzelia</code>
+          Subdirectory <code>A</code>
         </h4>
       </summary>
 
@@ -421,10 +459,10 @@
     </details>
 
     <details open
-             id="subdirectory_buforrestia">
+             id="subdirectory_b">
       <summary>
         <h4>
-          Subdirectory <code>Buforrestia</code>
+          Subdirectory <code>B</code>
         </h4>
       </summary>
 
@@ -437,10 +475,10 @@
     </details>
 
     <details open
-             id="subdirectory_calochortus">
+             id="subdirectory_c">
       <summary>
         <h4>
-          Subdirectory <code>Calochortus</code>
+          Subdirectory <code>C</code>
         </h4>
       </summary>
 
@@ -455,10 +493,10 @@
     </details>
 
     <details open
-             id="subdirectory_draba">
+             id="subdirectory_d">
       <summary>
         <h4>
-          Subdirectory <code>Draba</code>
+          Subdirectory <code>D</code>
         </h4>
       </summary>
 
@@ -593,6 +631,28 @@
   </ol>
 </section>
 </main>
+
+<footer id="footer">
+  <article id="copyright">
+    <h2>
+      Copyright (&lt;)
+    </h2>
+    <address>
+      <p aria-label="Aquaticat"
+         title="Aquaticat">
+        Λquᴧti&lt;&lt;ᴧt
+      </p>
+      <p class="email">
+        <span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span><span>@</span><span>a</span><span>q</span><span>u</span><span>a</span><span>t</span><span>i</span><span>.</span><span>c</span><span>a</span><span>t</span><span title="Copy my mailto link."><button aria-label="Copy my mailto link.">⎘</button></span>
+      </p>
+    </address>
+    <p>
+      <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">
+        CC0
+      </a>
+    </p>
+  </article>
+</footer>
 </x-wrapper>
 </body>
 </html>
