@@ -271,7 +271,7 @@ footer {
   }
 
   //noinspection CssInvalidPropertyValue
-  padding-block:{
+  padding-block: {
     start: 2rem;
     end: 1rem;
   }
@@ -551,8 +551,7 @@ address {
   // If set :focus, on mobile devices, the state would be continuously active until user clicks elsewhere.
   // So no.
   // &:focus,
-  &:hover,
-  &:active {
+  &:hover {
     &::after {
       content: '\00a0!theme';
     }

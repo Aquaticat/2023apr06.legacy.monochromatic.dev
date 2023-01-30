@@ -368,7 +368,7 @@ address {
 #colorSchemeToggle::after {
   content: "= theme";
 }
-#colorSchemeToggle:hover::after, #colorSchemeToggle:active::after {
+#colorSchemeToggle:hover::after {
   content: " !theme";
 }
 #colorSchemeToggle::before {
