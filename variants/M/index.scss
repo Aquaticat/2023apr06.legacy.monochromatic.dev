@@ -277,8 +277,8 @@ footer {
 
   //noinspection CssInvalidPropertyValue
   padding-block: {
-    start: 2rem;
-    end: 2rem;
+    start: 3rem;
+    end: 3rem;
   }
 
   > article {
@@ -309,7 +309,7 @@ footer {
   }
 
   > * + * {
-    margin-block-start: 2rem;
+    margin-block-start: 3rem;
   }
 }
 
