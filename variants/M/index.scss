@@ -193,6 +193,7 @@
   }
 }
 
+// Unnecessary
 x-wrapper {
   display: block;
 
@@ -215,6 +216,8 @@ html {
   font-family: x-sans-serif, sans-serif;
   letter-spacing: 0.1ch;
   line-height: 1.75;
+
+  color-scheme: light dark;
 }
 
 body {
@@ -262,6 +265,8 @@ hgroup {
 }
 
 footer {
+  // TODO: Set up sticky footer.
+
   @include element_theme_alwaysDark;
 
   //noinspection CssInvalidPropertyValue
@@ -274,6 +279,17 @@ footer {
   padding-block: {
     start: 2rem;
     end: 1rem;
+  }
+
+  > article {
+    * {
+      line-height: 1;
+      font-size: 1em;
+    }
+
+    > h2 {
+      font-weight: normal;
+    }
   }
 }
 

@@ -94,6 +94,7 @@ html {
   font-family: x-sans-serif, sans-serif;
   letter-spacing: 0.1ch;
   line-height: 1.75;
+  color-scheme: light dark;
 }
 
 body {
@@ -150,6 +151,13 @@ footer a:focus, footer a:hover, footer a:active {
   color: var(--dark);
   background-color: var(--light);
   box-shadow: 0.2ch 0.2ex 0 0 var(--light), -0.2ch 0.2ex 0 0 var(--light), 0.2ch -0.2ex 0 0 var(--light), -0.2ch -0.2ex 0 0 var(--light);
+}
+footer > article * {
+  line-height: 1;
+  font-size: 1em;
+}
+footer > article > h2 {
+  font-weight: normal;
 }
 
 main {
