@@ -140,8 +140,8 @@ footer {
   border-color: var(--light);
   border-block-start-style: solid;
   border-block-start-width: 0.5rem;
-  padding-block-start: 3rem;
-  padding-block-end: 3rem;
+  padding-block-start: 4rem;
+  padding-block-end: 4rem;
 }
 footer a {
   color: var(--light);
@@ -172,7 +172,7 @@ footer > article li > p > * + * {
   margin-inline-start: 1em;
 }
 footer > * + * {
-  margin-block-start: 3rem;
+  margin-block-start: 4rem;
 }
 
 main {
