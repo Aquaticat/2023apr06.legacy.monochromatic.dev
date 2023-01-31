@@ -168,7 +168,7 @@ footer > article * {
 footer > article > h2 {
   font-weight: normal;
 }
-footer > article > li > p > * + * {
+footer > article li > p > * + * {
   margin-inline-start: 1em;
 }
 
