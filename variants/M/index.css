@@ -141,7 +141,7 @@ footer {
   border-block-start-style: solid;
   border-block-start-width: 0.5rem;
   padding-block-start: 2rem;
-  padding-block-end: 1rem;
+  padding-block-end: 2rem;
 }
 footer a {
   color: var(--light);
@@ -170,6 +170,9 @@ footer > article > h2 {
 }
 footer > article li > p > * + * {
   margin-inline-start: 1em;
+}
+footer > * + * {
+  margin-block-start: 2rem;
 }
 
 main {
@@ -434,6 +437,7 @@ address {
 }
 
 #copyright {
+  flex-direction: row;
   flex-wrap: wrap;
   column-gap: 1ch;
   align-items: baseline;

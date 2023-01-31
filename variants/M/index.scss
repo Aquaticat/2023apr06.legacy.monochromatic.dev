@@ -278,7 +278,7 @@ footer {
   //noinspection CssInvalidPropertyValue
   padding-block: {
     start: 2rem;
-    end: 1rem;
+    end: 2rem;
   }
 
   > article {
@@ -306,6 +306,10 @@ footer {
         }
       }
     }
+  }
+
+  > * + * {
+    margin-block-start: 2rem;
   }
 }
 
@@ -652,6 +656,7 @@ address {
 
 // FIXME: Wanted to use https://every-layout.dev/layouts/switcher/ for this but somehow it didn't work and I had to give up.
 #copyright {
+  flex-direction: row;
   flex-wrap: wrap;
   column-gap: 1ch;
   align-items: baseline;
