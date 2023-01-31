@@ -152,12 +152,24 @@ footer a:focus, footer a:hover, footer a:active {
   background-color: var(--light);
   box-shadow: 0.2ch 0.2ex 0 0 var(--light), -0.2ch 0.2ex 0 0 var(--light), 0.2ch -0.2ex 0 0 var(--light), -0.2ch -0.2ex 0 0 var(--light);
 }
+footer > article {
+  box-sizing: content-box;
+  max-inline-size: 90ch;
+  padding-inline: 16ch;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 footer > article * {
   line-height: 1;
   font-size: 1em;
 }
 footer > article > h2 {
   font-weight: normal;
+}
+footer > article > li > p > * + * {
+  margin-inline-start: 1em;
 }
 
 main {
@@ -422,13 +434,9 @@ address {
 }
 
 #copyright {
-  display: flex;
   flex-wrap: wrap;
   column-gap: 1ch;
   align-items: baseline;
-  margin-inline: auto;
-  padding-inline: 16ch;
-  box-sizing: content-box;
   justify-content: center;
   max-inline-size: 60ch;
   white-space: nowrap;
