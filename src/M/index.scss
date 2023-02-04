@@ -107,6 +107,7 @@
   font-family: x-sans-serif;
   font-style: normal;
   font-weight: 100 900;
+  //noinspection CssUnknownTarget
   src: local(Inter var),
   local(Inter),
   // From https://www.npmjs.com/package/@fontsource/inter/variable.css
@@ -122,6 +123,7 @@
 
 @font-face {
   font-family: x-monospace;
+  //noinspection CssUnknownTarget
   src: local(Fira Code VF),
   local(Fira Code),
   url('https://cdn.jsdelivr.net/npm/firacode/distr/woff2/FiraCode-VF.woff2') format('woff2-variations'),
@@ -212,7 +214,7 @@ html {
   //          Update: Got it. <main>'s margin-block caused it.
   //                  Next time consider using * { border:1px solid red; } to debug.
   color: var(--foreground);
-  background-color: var(--background);
+  background-color: var(--dark);
   font-family: x-sans-serif, sans-serif;
   letter-spacing: 0.1ch;
   line-height: 1.75;
@@ -222,6 +224,7 @@ html {
 
 body {
   margin-inline: 0;
+  background-color: var(--background);
 }
 
 header {

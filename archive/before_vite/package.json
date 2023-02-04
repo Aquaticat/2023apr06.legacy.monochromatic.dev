@@ -1,0 +1,36 @@
+{
+  "name": "monochromatic",
+  "version": "0.0.9",
+  "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.",
+  "browser": "index.html",
+  "files": [
+    "index.html",
+    "variants/M/index.css",
+    "variants/A/index.css",
+    "variants/B/index.css",
+    "variants/C/index.css",
+    "variants/D/index.css",
+    "variants/M/index.mjs",
+    "variants/A/index.mjs",
+    "variants/B/index.mjs",
+    "variants/C/index.mjs",
+    "variants/D/index.mjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github:Aquaticat/Monochromatic"
+  },
+  "scripts": {},
+  "keywords": [
+    "design",
+    "design_system",
+    "design-system"
+  ],
+  "author": {
+    "name": "Aquaticat",
+    "email": "an@aquati.cat",
+    "url": "https://aquati.cat"
+  },
+  "license": "CC0-1.0",
+  "private": false
+}

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width">
+  <title>ΛΛono&lt;hromᴧti&lt;</title>
+  
+  
+  <link rel="icon" href="monochromatic_icon_1-lightFg_darkBg.svg">
+  <script async type="module" src="assets/index.js"></script>
+  <link rel="stylesheet" href="assets/style.css" blocking="render">
+</head>
+<body>
+<header id="header">
+  
+  <label aria-hidden="true"
+         id="colorSchemeToggle"
+         tabindex="1"
+  ><input type="checkbox">theme&nbsp;=</label>
+  <hgroup>
+    <h1 aria-label="Monochromatic"
+        title="Monochromatic"
+        data-content="ΛΛono&lt;hromᴧti&lt;">
+      ΛΛono&lt;hromᴧti&lt;
+    </h1>
+    <p>
+      Frontend Designs
+    </p>
+  </hgroup>
+</header>
+
+<main>
+<details open
+         id="introduction">
+  <summary>
+    <h2>Introduction</h2>
+  </summary>
+
+  <p>
+    Monochromatic aims to define some sensible sets of styling for text-heavy websites.
+    <br>
+    For example, a personal blog made of blog posts or a manual organized in chapters.
+  </p>
+
+  <section id="why_choose_this_name">
+    <p>
+      Why choose this name?
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          Only <strong>pure black</strong> and <strong>pure white</strong> are allowed.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Only the styling necessary for conveying the semantic meaning of each element and its surrounding context
+          are
+          made.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Only the animations that are necessary are allowed.
+          At the same time, the animation cannot be something that
+          updates too much of the view, takes too much time, or has too many <code>@keyframes</code>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Only one stylesheet and one script are allowed for each variation. This:
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              reduces maintenance costs
+            </p>
+          </li>
+          <li>
+            <p>
+              improves performance if the user visits more than one page.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <p>
+      Hence <code>&quot;Monochromatic&quot;</code>.
+    </p>
+  </section>
+
+  <section>
+    <p>
+      Why are you placing so many restrictions?
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          There's some appeal about having the option of using something but avoid using it and get the job done
+          anyway.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          More restrictions means fewer considerations.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Only using pure white and pure black automatically satisfies the high-contrast requirement.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="why_write_documents_in_html">
+    <p>
+      Why write documents in HTML instead of a lightweight markup language using Markdown?
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          HTML gives more control over Markdown. Here are some requirements only achievable using HTML.
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              Use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> for headings and its content in order
+              to
+              let user freely fold those sections.
+            </p>
+          </li>
+          <li>
+            <p>
+              Styling and scripting.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </section>
+</details>
+
+
+<details open
+         id="what_s_inside_this_repo">
+  <summary>
+    <h2>
+      What&apos;s inside this repo?
+    </h2>
+  </summary>
+
+  
+  <details id="top-level_directories">
+    <summary>
+      <h3>There are several top-level directories in this repo.</h3>
+    </summary>
+
+    <ul class="ul_direction_inlineStart">
+      <li>
+        <a href="#top-level_directory_archive">
+          <code>archive</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#top-level_directory_src">
+          <code>idea</code>
+        </a>
+      </li>
+    </ul>
+
+    <details open
+             id="top-level_directory_archive">
+      <summary>
+        <h4>Top-level Directory <code>archive</code></h4>
+      </summary>
+
+      <section>
+        <p>
+          An archive of abandoned content.
+          Including ideas, design choices, and design mockup with HTML.
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              For example, the <code>has_red_color</code> directory inside the <code>archive</code> directory is for
+              when the project was using color red other than black and white only.
+            </p>
+          </li>
+        </ol>
+      </section>
+    </details>
+
+    <details open
+             id="top-level_directory_src">
+      <summary>
+        <h4>Top-level Directory <code>src</code></h4>
+      </summary>
+
+      <p>Stores the source code of this HTML document.</p>
+
+      <p>Stores all documentations of design decisions, design software mockups, and implementations of those mockups
+         with Sass and JavaScript.
+      </p>
+
+      <section id="idea">
+        <h5>
+          Documentation of design decisions.
+        </h5>
+
+        <section>
+          <p>A typical document would communicate:</p>
+
+          <ol>
+            <li>
+              Which purposes the UI element should fulfill,
+              and which purposes the UI element should fail to fulfill.
+            </li>
+            <li>
+              How the UI element should be presented,
+              and how the UI element should not be presented.
+            </li>
+            <li>
+              The user interactions the UI element should be able to react to,
+              and the user interactions the UI interface should not be able to react to.
+            </li>
+          </ol>
+        </section>
+      </section>
+
+      <section id="design">
+        <h5>
+          Implementation of design decisions in Figma (or other design software).
+        </h5>
+      </section>
+
+      <section id="code">
+        <h5>
+          Implementation of the result of Figma (or other design software) mockups with Sass and JavaScript.
+        </h5>
+      </section>
+    </details>
+  </details>
+
+  <details id="subdirectories">
+    <summary>
+      <h3>
+        Inside of those top-level directories, some subdirectories will be created for variants of "sensible set of
+        styling"
+      </h3>
+    </summary>
+
+    <ul class="ul_direction_inlineStart">
+      <li>
+        <a href="#subdirectory_m">
+          <code><strong>M</strong></code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_a">
+          <code><strong>A</strong></code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_b">
+          <code><strong>B</strong></code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_c">
+          <code><strong>C</strong></code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_d">
+          <code><strong>D</strong></code>
+        </a>
+      </li>
+    </ul>
+
+    <details open
+             id="subdirectory_m">
+      <summary>
+        <h4>
+          Subdirectory <code>M</code>
+        </h4>
+      </summary>
+
+      <p><strong>M</strong></p>
+
+      <p>
+        Why choose this name?
+      </p>
+
+      <p>
+        <code>Monochromatic</code> start with the letter M.
+        <br>
+                                   Meaning this variant of &quot;sensible set of styling&quot; is closest to what the
+                                   name of the project
+                                   conveys.
+                                   Unassuming but still provides a modern reading experience.
+      </p>
+
+      <section id="specific_rules">
+        <p>Specific rules:</p>
+
+        <ol>
+          <li>
+            Use the simplest style.
+            <br>
+            If using a simpler style, like using a normal border instead of using a double border,
+            would still sufficiently convey the semantic meaning of the element and the surrounding context,
+            <br>
+            use the simpler style instead of the fancier one
+            even when the fancier style can convey the meaning better or is more aesthetically pleasing.
+            <br>
+            This variant has the fewest requirements on how well the semantic meanings should be expressed.
+          </li>
+
+          <li>
+            Always use a sans-serif font.
+            <br>
+            For example, titles, paragraphs, references, comments.
+            Reasons:
+            <ol>
+              <li>
+                The font family <a href="https://rsms.me/inter">Inter</a> is specifically designed for modern
+                electronic
+                devices.
+              </li>
+              <li>
+                Sans-serif fonts have much fewer details than serif fonts, by definition.
+              </li>
+              <li>
+                Using only one font family throughout the entire website reduces the data need to access it.
+                In other words, avoid performance loss.
+              </li>
+              <li>
+                People are used to reading sans-serif fonts on websites since most websites use them instead of serif
+                fonts.
+              </li>
+              <li>
+                Titles look more modern when using a sans-serif font family.
+              </li>
+              <li>
+                All Operating Systems' default sans-serif font families are readable.
+                If the external font fails to load, the website would still look okay-ish.
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <p>
+              No animations are allowed.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Use built-in styling and element appearance adjustments instead of removing them and put my own there
+              instead.
+            </p>
+
+            <p>
+
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <p>jsDelivr URL: <a href="https://cdn.jsdelivr.net/npm/monochromatic/variants/M/index.css">https://cdn.jsdelivr.net/npm/monochromatic/variants/M/index.css</a>
+      </p>
+    </details>
+
+    <details open
+             id="subdirectory_a">
+      <summary>
+        <h4>
+          Subdirectory <code>A</code>
+        </h4>
+      </summary>
+
+      <p><strong>A</strong></p>
+
+      <p>Why choose this name?</p>
+
+      <p>
+        The alphabet starts with <strong>A</strong>.
+      </p>
+
+      <section>
+        <p>
+          In this variant of &quot;sensible set of styling&quot;,
+          Fancier styling can be used
+          when there are big improvements to the expressiveness of semantic meanings compared to simpler styling.
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              For example, consider
+              using double borders on the <code>inline-start</code> side of the <code>&lt;blockquote&gt;</code>
+              element
+              instead of using a normal, simple border
+              <br>
+              because a double border can better differentiate the appearance of blockquotes from message tip blocks.
+              A double border can also imply the content on the right side is a page from a book,
+              which is a desirable effect for blockquotes that are often quoted from books.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Sans-serif font can be used sparingly, like in some headings or comments.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Simple animations like animation the transformation of the <code>&lt;a&gt;</code> underlines to a
+              rectangle
+              behind them is allowed.
+              Both the shape and the color.
+            </p>
+
+            <p>
+              The use of <code>animation-timing-function</code> is allowed.
+            </p>
+          </li>
+        </ol>
+      </section>
+    </details>
+
+    <details open
+             id="subdirectory_b">
+      <summary>
+        <h4>
+          Subdirectory <code>B</code>
+        </h4>
+      </summary>
+
+      <p><strong>B</strong></p>
+
+      <p>
+        Not decided yet.
+        Maybe allow one gray?
+      </p>
+    </details>
+
+    <details open
+             id="subdirectory_c">
+      <summary>
+        <h4>
+          Subdirectory <code>C</code>
+        </h4>
+      </summary>
+
+      <p><strong>C</strong></p>
+
+      <p>
+        Not decided yet.
+        Maybe allow one (or some, or many) gray and some (or one, or many) transparency levels?
+        Or allow CSS features that are mainly used for showing off like `clip-path`?
+        How about fancy animations?
+      </p>
+    </details>
+
+    <details open
+             id="subdirectory_d">
+      <summary>
+        <h4>
+          Subdirectory <code>D</code>
+        </h4>
+      </summary>
+
+      <p><strong>D</strong></p>
+
+      <p>
+        (Same as above because I failed to come up with more ideas.)
+        Not decided yet.
+        Maybe allow one (or some, or many) gray and some (or one, or many) transparency levels?
+        Or allow CSS features that are mainly used for showing off like `clip-path`?
+        How about fancy animations?
+      </p>
+    </details>
+  </details>
+</details>
+
+<details open
+         id="what_this_project_is_not">
+  <summary>
+    <h2>What this project is not.</h2>
+  </summary>
+
+  <p>
+    The code written in this project is mainly used for demonstration.
+  </p>
+
+  <p>
+    I<sup><a href="#footnote_1">1</a></sup> do not seek to write high-quality code.
+    Therefore, lots of coding standards are not followed and lots of common linters are not applied.
+    Expect poor optimization and lots of duplicate code.
+  </p>
+
+  <p>
+    However, due to the advancements in modern devices&apos; computing capacity, most of these code snippets should
+    work
+    well
+    enough,
+    if not faster, than using a heavyweight frontend framework.
+    Therefore, I believe it&apos;s still important and meaningful to publish my implementations.
+  </p>
+</details>
+
+<details open
+         id="license">
+  <summary>
+    <h2>License - CC0</h2>
+  </summary>
+
+  <section id="cc0_reason">
+    <p>
+      I chose CC0 license for this project because:
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          This project won&apos;t be well-maintained.
+        </p>
+
+        <p>
+          (For personal reasons.)
+        </p>
+      </li>
+
+      <li>
+        <p>
+          I have not done the learnings I should have done.
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              <strong>
+                The designs I have came up with right now are horrible.
+              </strong>
+            </p>
+
+            <p>
+              Project will undergo huge changes after I learn more about UI and UX design.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Yeah,
+              and I should learn <a href="https://developers.google.com/tech-writing">how to write technical
+                                                                                      documentations</a>, too.
+              I&apos;m assuming writing so many &quot;I&quot;s would not make the document look serious.
+            </p>
+          </li>
+        </ol>
+
+        <p>
+          (Not going to promise anything here, though. We&apos;ll see how it goes.)
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Citing this repo or asking my permissions is troublesome and non-rewarding,
+        </p>
+
+        <p>
+          (As there&apos;s not much to cite or use in the first place...)
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <p>
+    Therefore, I declare that:
+  </p>
+  <p>
+    You can copy, modify, distribute and perform the work, even for commercial purposes,
+    all without asking permissions.
+  </p>
+  <p>
+    See more at <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>
+  </p>
+</details>
+
+<hr>
+
+<section id="footnote">
+  <ol>
+    <li id="footnote_1">
+      &quot;I&quot; means Aquaticat, the creator and owner of this project, for simplicity&apos;s sake.
+      Using &quot;we&quot; would not be fitting
+      because I do not expect a potential future contributor to share my opinions on this project,
+      nor do I expect any contributor at all.
+    </li>
+  </ol>
+</section>
+</main>
+
+<footer id="footer">
+  <article id="copyright">
+    <h2>
+      Copyright (&lt;)
+    </h2>
+    <ul>
+      <li>
+        <address>
+          <span aria-label="Aquaticat"
+                title="Aquaticat">Λquᴧti&lt;&lt;ᴧt</span><span class="email"><span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span><span>@</span><span>a</span><span>q</span><span>u</span><span>a</span><span>t</span><span>i</span><span>.</span><span>c</span><span>a</span><span>t</span><span title="Copy my mailto link."><button aria-label="Copy my mailto link.">⎘</button></span></span>
+        </address>
+        <p>
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">
+            CC0
+          </a>
+        </p>
+      </li>
+    </ul>
+  </article>
+</footer>
+</body>
+</html>

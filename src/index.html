@@ -9,26 +9,14 @@
         rel="stylesheet"
         blocking="render"
         fetchpriority="high"
-        href="variants/M/index.css">
-  <!-- Using HTML link tag to import stylesheet instead of using @import rule in CSS. -->
-  <!-- Update: Now using fontsource.org and Sass mixins for fonts. -->
-  <!-- Update: Switched back because fonts were actually not included. Not for me to figure out how for now. -->
-  <!-- Update: Switched to using cdn.jsdelivr.net to deliver fonts stored on npmjs.com  -->
-  <!--<link type="text/css"-->
-  <!--      rel="stylesheet"-->
-  <!--      fetchpriority="low"-->
-  <!--      href="https://rsms.me/inter/inter.css">-->
-  <!--<link type="text/css"-->
-  <!--      rel="stylesheet"-->
-  <!--      fetchpriority="low"-->
-  <!--      href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">-->
+        href="M/index.scss">
   <script type="module"
           rel="script"
           async
-          src="variants/M/index.mjs"></script>
+          src="M/index.mjs"></script>
+  <link rel="icon" href="/monochromatic_icon_1-lightFg_darkBg.svg">
 </head>
 <body>
-<x-wrapper>
 <header id="header">
   <!-- Using aria-hidden="true" because toggling light and dark color schemes is unnecessary when using a screen reader.
        Line Separator takes up space? -->
@@ -91,7 +79,7 @@
 
       <li>
         <p>
-          Only one stylesheet and one script is allowed for each variation. This:
+          Only one stylesheet and one script are allowed for each variation. This:
         </p>
 
         <ol>
@@ -194,8 +182,14 @@
       </li>
 
       <li>
-        <a href="#top-level_directory_variants">
-          <code>idea</code>
+        <a href="#top-level_directory_src">
+          <code>src</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#top-level_directory_docs">
+          <code>docs</code>
         </a>
       </li>
     </ul>
@@ -224,10 +218,12 @@
     </details>
 
     <details open
-             id="top-level_directory_variants">
+             id="top-level_directory_src">
       <summary>
-        <h4>Top-level Directory <code>variants</code></h4>
+        <h4>Top-level Directory <code>src</code></h4>
       </summary>
+
+      <p>Stores the source code of this HTML document.</p>
 
       <p>Stores all documentations of design decisions, design software mockups, and implementations of those mockups
          with Sass and JavaScript.
@@ -270,6 +266,25 @@
         </h5>
       </section>
     </details>
+
+    <details open id="top-level_directory_docs">
+      <summary>
+        <h4>Top-level Directory <code>docs</code></h4>
+      </summary>
+
+      <p>
+        The directory GitHub Page&apos;s &quot;Classic Pages Experience&quot; serves.
+      </p>
+
+      <p>
+        Sure, using GitHub actions sounds cool:
+        I can instruct a full Linux virtual machine to run a <code>pnpm build</code> whenever I push.
+        However, that also means there would be a lot of wasted resources.
+        It&apos;s just a simple command, at most it would take a few seconds.
+        So, the ratio of actual, necessary resource consumption over unnecessary resource consumption is very low.
+        Sure, those are not my resources, but I don&apos;t want to spend unnecessary resources anyway.
+      </p>
+    </details>
   </details>
 
   <details id="subdirectories">
@@ -310,6 +325,12 @@
           <code><strong>D</strong></code>
         </a>
       </li>
+
+      <li>
+        <a href="#subdirectory_public">
+          <code>public</code>
+        </a>
+      </li>
     </ul>
 
     <details open
@@ -329,9 +350,10 @@
       <p>
         <code>Monochromatic</code> start with the letter M.
         <br>
-        Meaning this variant of &quot;sensible set of styling&quot; is closest to what the name of the project
-        conveys.
-        Unassuming but still provides a modern reading experience.
+                                   Meaning this variant of &quot;sensible set of styling&quot; is closest to what the
+                                   name of the project
+                                   conveys.
+                                   Unassuming but still provides a modern reading experience.
       </p>
 
       <section id="specific_rules">
@@ -401,7 +423,9 @@
         </ol>
       </section>
 
-      <p>jsDelivr URL: <a href="https://cdn.jsdelivr.net/npm/monochromatic/variants/M/index.css">https://cdn.jsdelivr.net/npm/monochromatic/variants/M/index.css</a></p>
+      <p>
+        jsDelivr URL: <a href="https://cdn.jsdelivr.net/npm/monochromatic/docs/assets/style.css">https://cdn.jsdelivr.net/npm/monochromatic/docs/assets/style.css</a>
+      </p>
     </details>
 
     <details open
@@ -513,6 +537,22 @@
         Maybe allow one (or some, or many) gray and some (or one, or many) transparency levels?
         Or allow CSS features that are mainly used for showing off like `clip-path`?
         How about fancy animations?
+      </p>
+    </details>
+
+    <details open id="subdirectory_public">
+      <summary>
+        <h4>
+          Subdirectory <code>public</code>
+        </h4>
+      </summary>
+
+      <p>
+        This is the directory for public, static content that needs to be served, like the favicon.
+      </p>
+
+      <p>
+        The build system used in this project, <a href="https://vitejs.dev">Vite</a>, enforces this naming convention.
       </p>
     </details>
   </details>
@@ -642,22 +682,20 @@
     <h2>
       Copyright (&lt;)
     </h2>
-    <address>
-      <p aria-label="Aquaticat"
-         title="Aquaticat">
-        Λquᴧti&lt;&lt;ᴧt
-      </p>
-      <p class="email">
-        <span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span><span>@</span><span>a</span><span>q</span><span>u</span><span>a</span><span>t</span><span>i</span><span>.</span><span>c</span><span>a</span><span>t</span><span title="Copy my mailto link."><button aria-label="Copy my mailto link.">⎘</button></span>
-      </p>
-    </address>
-    <p>
-      <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">
-        CC0
-      </a>
-    </p>
+    <ul>
+      <li>
+        <address>
+          <span aria-label="Aquaticat"
+                title="Aquaticat">Λquᴧti&lt;&lt;ᴧt</span><span class="email"><span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span><span>@</span><span>a</span><span>q</span><span>u</span><span>a</span><span>t</span><span>i</span><span>.</span><span>c</span><span>a</span><span>t</span><span title="Copy my mailto link."><button aria-label="Copy my mailto link.">⎘</button></span></span>
+        </address>
+        <p>
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">
+            CC0
+          </a>
+        </p>
+      </li>
+    </ul>
   </article>
 </footer>
-</x-wrapper>
 </body>
 </html>
