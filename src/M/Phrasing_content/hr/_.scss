@@ -1,0 +1,24 @@
+hr {
+  color: inherit;
+
+  height: 1rem;
+  border-inline: none;
+  border-block: 0.25rem solid currentColor;
+  text-align: center;
+  inline-size: calc(100% + 2rem);
+  transform: translateX(-1rem);
+
+  // TODO: Add § decoration.
+
+  overflow: visible;
+
+  &::after {
+    content: '§';
+    font-size: 1.75rem;
+    font-weight: bold;
+    background-color: var(--background);
+    padding-inline: 0.5rem;
+    position: relative;
+    top: -1.25rem;
+  }
+}

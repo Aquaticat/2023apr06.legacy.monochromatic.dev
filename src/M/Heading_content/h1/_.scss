@@ -1,0 +1,28 @@
+h1 {
+  line-height: 2;
+  font-size: clamp(2.5rem, 4rem, 8vw);
+  font-family: x-monospace, monospace, x-sans-serif, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  margin-block-end: clamp(2rem, 4rem, 5vw);
+
+  /**
+   * Solution for font width greater than container width problem.
+   *
+   * Taken from https://stackoverflow.com/a/32570813 CC BY-SA 3.0
+   * which credited https://stackoverflow.com/a/20249560/5061744 CC BY-SA 3.0
+   *
+   * Update: Problem not solved. (Why?)
+   *         Decided to use Mono<hromᴧti< as content to give the illusion that it's centered.
+   */
+  // &::after {
+  //   display: block;
+  //   content: attr(data-content);
+  //   font-weight: 900;
+  //   color: transparent;
+  //   height: 1px;
+  //   white-space: nowrap;
+  //   overflow: hidden;
+  //   visibility: hidden;
+  // }
+}

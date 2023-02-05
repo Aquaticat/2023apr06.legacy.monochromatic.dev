@@ -1,0 +1,27 @@
+a {
+  text-underline-offset: 0.5ex;
+
+  // color not inheriting the parent element but "inheriting" what is already set in the user agent stylesheet?
+  // color: inherit;
+  color: var(--foreground);
+
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration-line: none;
+    font-size: unset;
+    color: var(--background);
+    background-color: var(--foreground);
+    box-shadow: 0.2ch 0.2ex 0 0 var(--foreground),
+    -0.2ch 0.2ex 0 0 var(--foreground),
+    0.2ch -0.2ex 0 0 var(--foreground),
+    -0.2ch -0.2ex 0 0 var(--foreground);
+
+    // FIXME: How to bold text without impacting its length?
+    //        text-shadow looks too weird.
+    // text-shadow: -0.01ch 0 0 var(--background),
+    //              0.01ch 0 0 var(--background),
+    //              0 0.01ex 0 var(--background),
+    //              0 -0.01ex 0 var(--background);
+  }
+}

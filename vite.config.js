@@ -2,8 +2,10 @@
 import * as fs from 'fs';
 import { parse } from 'node-html-parser';
 
+process.env.BROWSER = 'C:\\Program Files\\Google\\Chrome Dev\\Application\\chrome.exe';
 
 export const fixHtmlHead = () => {
+  // noinspection JSUnusedGlobalSymbols
   return {
     name: 'vite-plugin-fixHtmlHead',
     closeBundle: async () => {
@@ -20,6 +22,7 @@ export const fixHtmlHead = () => {
   };
 };
 
+// noinspection JSUnusedGlobalSymbols
 export default ({
   //region Shared Options
   root: 'src',

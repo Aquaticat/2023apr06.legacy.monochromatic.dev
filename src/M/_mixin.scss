@@ -1,0 +1,22 @@
+@mixin element_theme_alwaysDark() {
+  color: var(--light);
+  background-color: var(--dark);
+  border-color: var(--light);
+
+  // Manually overriding <a> , see the comment under a {}
+  a {
+    color: var(--light);
+    background-color: var(--dark);
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: var(--dark);
+      background-color: var(--light);
+      box-shadow: 0.2ch 0.2ex 0 0 var(--light),
+      -0.2ch 0.2ex 0 0 var(--light),
+      0.2ch -0.2ex 0 0 var(--light),
+      -0.2ch -0.2ex 0 0 var(--light);
+    }
+  }
+}

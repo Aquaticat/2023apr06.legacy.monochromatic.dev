@@ -5,6 +5,7 @@
   <meta name="viewport"
         content="width=device-width">
   <title>ΛΛono&lt;hromᴧti&lt;</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   
   
   <link rel="icon" href="monochromatic_icon_1-lightFg_darkBg.svg">
@@ -177,7 +178,13 @@
 
       <li>
         <a href="#top-level_directory_src">
-          <code>idea</code>
+          <code>src</code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#top-level_directory_docs">
+          <code>docs</code>
         </a>
       </li>
     </ul>
@@ -254,6 +261,25 @@
         </h5>
       </section>
     </details>
+
+    <details open id="top-level_directory_docs">
+      <summary>
+        <h4>Top-level Directory <code>docs</code></h4>
+      </summary>
+
+      <p>
+        The directory GitHub Page&apos;s &quot;Classic Pages Experience&quot; serves.
+      </p>
+
+      <p>
+        Sure, using GitHub actions sounds cool:
+        I can instruct a full Linux virtual machine to run a <code>pnpm build</code> whenever I push.
+        However, that also means there would be a lot of wasted resources.
+        It&apos;s just a simple command, at most it would take a few seconds.
+        So, the ratio of actual, necessary resource consumption over unnecessary resource consumption is very low.
+        Sure, those are not my resources, but I don&apos;t want to spend unnecessary resources anyway.
+      </p>
+    </details>
   </details>
 
   <details id="subdirectories">
@@ -292,6 +318,12 @@
       <li>
         <a href="#subdirectory_d">
           <code><strong>D</strong></code>
+        </a>
+      </li>
+
+      <li>
+        <a href="#subdirectory_public">
+          <code>public</code>
         </a>
       </li>
     </ul>
@@ -386,7 +418,8 @@
         </ol>
       </section>
 
-      <p>jsDelivr URL: <a href="https://cdn.jsdelivr.net/npm/monochromatic/variants/M/index.css">https://cdn.jsdelivr.net/npm/monochromatic/variants/M/index.css</a>
+      <p>
+        jsDelivr URL: <a href="https://cdn.jsdelivr.net/npm/monochromatic/docs/assets/style.css">https://cdn.jsdelivr.net/npm/monochromatic/docs/assets/style.css</a>
       </p>
     </details>
 
@@ -499,6 +532,22 @@
         Maybe allow one (or some, or many) gray and some (or one, or many) transparency levels?
         Or allow CSS features that are mainly used for showing off like `clip-path`?
         How about fancy animations?
+      </p>
+    </details>
+
+    <details open id="subdirectory_public">
+      <summary>
+        <h4>
+          Subdirectory <code>public</code>
+        </h4>
+      </summary>
+
+      <p>
+        This is the directory for public, static content that needs to be served, like the favicon.
+      </p>
+
+      <p>
+        The build system used in this project, <a href="https://vitejs.dev">Vite</a>, enforces this naming convention.
       </p>
     </details>
   </details>

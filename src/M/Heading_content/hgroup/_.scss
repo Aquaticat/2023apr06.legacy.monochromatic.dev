@@ -1,0 +1,13 @@
+hgroup {
+  // Yeah, you too. Why are you taking more space horizontally than your content?
+  max-inline-size: 60ch;
+  box-sizing: content-box;
+  padding-inline: 8vw;
+  margin-inline: auto;
+  text-align: center;
+
+  > :where(h1,h2,h3,h4,h5,h6) {
+    line-height: unset;
+    margin-block-end: clamp(0.2rem, 0.5rem, 1vw);
+  }
+}
