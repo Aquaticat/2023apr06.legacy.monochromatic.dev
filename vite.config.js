@@ -61,7 +61,7 @@ export default ({
     target: 'esnext',
     modulePreload: false,
     // For GitHub pages "classic experience".
-    emptyOutDir: true,
+    emptyOutDir: false,
     outDir: '../docs',
     assetsInlineLimit: 0,
     cssCodeSplit: false,
