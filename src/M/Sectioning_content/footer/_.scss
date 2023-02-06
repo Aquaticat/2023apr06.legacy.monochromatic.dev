@@ -6,48 +6,50 @@ footer {
   //noinspection SassScssResolvedByNameOnly
   @include mixin.element_theme_alwaysDark;
 
+  grid-area: footer;
+
   //noinspection CssInvalidPropertyValue
   border-block-start: {
     style: solid;
     width: 0.5rem;
   }
 
+  font-size: var(--font-size-ratio);
+
   //noinspection CssInvalidPropertyValue
-  padding-block: {
-    start: 4rem;
-    end: 4rem;
+  padding-block: var(--row-gap);
+
+  display: flex;
+  flex: {
+    direction: column;
   }
+  row-gap: 4em;
+  align-items: center;
 
   > article {
     box-sizing: content-box;
     max-inline-size: 90ch;
-    padding-inline: 16ch;
-    margin-inline: auto;
+    padding-inline: 4vw;
+
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1rem;
-    column-gap: 1ch;
+    flex: {
+      direction: column;
+    }
+    row-gap: 2em;
 
     * {
       line-height: 1;
-      font-size: 1em;
+      font-size: 1rem;
+      text-align: center;
     }
 
     > h2 {
       font-weight: normal;
     }
 
-    li {
-      > p {
-        > * + * {
-          margin-inline-start: 1em;
-        }
-      }
+    > :where(ul, ol) {
+      padding-inline-start: 0;
+      list-style-type: none;
     }
-  }
-
-  > * + * {
-    margin-block-start: 4rem;
   }
 }

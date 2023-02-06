@@ -34,7 +34,7 @@
    *        Update: Got it, because I was using the [title=""] selector in CSS.
    *                I'll just add the new selector besides it, then.
    */
-  await Promise.all([...(document.querySelectorAll('.email [title="Copy my mailto link."]'))]
+  await Promise.all([...(document.querySelectorAll('.email [title="Copy mailto link."]'))]
                         .map(async (mailtoCopyButton) => {
                           mailtoCopyButton.addEventListener('click', () => {
                             navigator.clipboard.writeText(

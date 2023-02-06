@@ -1,0 +1,181 @@
+/*
+ * IntelliJ Platform bugs:
+ *
+ * 1.  false positive of "Mismatched property value":
+ *
+ *     1.  when using colors for border-block/inline;
+ *
+ *     2.  when using clamp() for SCSS scoped padding-block/inline.
+ *
+ * The design right now is horrible.
+ * Maybe I really should have designed in Figma first.
+ *
+ * Also not using the :has() selector right now because Firefox doesn't fully support it and doesn't enable it by default.
+ * Considering using it anyways because every other browser has support and [We plan to work on this in the first half of this year](https://bugzilla.mozilla.org/show_bug.cgi?id=418039#c62).
+ * Update: I used it anyways.
+ *
+ * TODO: Change all clamp() to CSS variables.
+ *
+ * TODO: Use position: relative instead of transform: translateX() on <summary>.
+ *       At least make <summary> containing h2 wider than the rest!
+ */
+
+//region Content content
+
+//endregion
+
+//region Heading content
+@use 'Heading_content/h1/_.scss' as h1;
+@use 'Heading_content/h2/_.scss' as h2;
+@use 'Heading_content/h3/_.scss' as h3;
+@use 'Heading_content/h4/_.scss' as h4;
+@use 'Heading_content/h5/_.scss' as h5;
+@use 'Heading_content/h6/_.scss' as h6;
+@use 'Heading_content/hgroup/_.scss' as hgroup;
+//endregion
+
+//region Interactive content
+@use 'Interactive_content/a/_.scss' as a;
+@use 'Interactive_content/button/_.scss' as button;
+@use 'Interactive_content/details/_.scss' as details;
+@use 'Interactive_content/label/_.scss' as label;
+@use 'Interactive_content/label/_id-colorSchemeToggle.scss' as label-id-colorSchemeToggle;
+@use 'Interactive_content/select/_.scss' as select;
+@use 'Interactive_content/textarea/_.scss' as textarea;
+//endregion
+
+//region Phrasing content
+@use 'Phrasing_content/address/_.scss' as address;
+@use 'Phrasing_content/address/_class-email.scss' as address-class-email;
+@use 'Phrasing_content/hr/_.scss' as hr;
+@use 'Phrasing_content/pre_-_code/_.scss' as pre_-_code;
+@use 'Phrasing_content/ol_-_ul/_.scss' as ol_-_ul;
+//endregion
+
+//region Sectioning content
+@use 'Sectioning_content/article/_.scss' as article;
+@use 'Sectioning_content/article/_id-copyright.scss' as article-id-copyright;
+@use 'Sectioning_content/aside/_.scss' as aside;
+@use 'Sectioning_content/footer/_.scss' as footer;
+@use 'Sectioning_content/header/_.scss' as header;
+@use 'Sectioning_content/main/_.scss' as main;
+@use 'Sectioning_content/nav/_.scss' as nav;
+@use 'Sectioning_content/section/_.scss' as section;
+//endregion
+
+
+@font-face {
+  font-family: x-sans-serif;
+  font-style: normal;
+  font-weight: 100 900;
+  //noinspection CssUnknownTarget
+  src: local(Inter var),
+  local(Inter),
+    // From https://www.npmjs.com/package/@fontsource/inter/variable.css
+  url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-variable-full-normal.woff2') format('woff2'),
+  local(sans-serif);
+  // TODO: How to specify unicode range without breaking anything?
+}
+
+@font-face {
+  font-family: x-serif;
+  src: local(serif);
+}
+
+@font-face {
+  font-family: x-monospace;
+  //noinspection CssUnknownTarget
+  src: local(Fira Code VF),
+  local(Fira Code),
+  url('https://cdn.jsdelivr.net/npm/firacode/distr/woff2/FiraCode-VF.woff2') format('woff2-variations'),
+  local(monospace);
+}
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    --foreground: white;
+    --background: black;
+  }
+  @media (prefers-color-scheme: light) {
+    --foreground: black;
+    --background: white;
+  }
+
+  --light: white;
+  --dark: black;
+
+  * + {
+    section {
+      margin-block-start: 4rem;
+    }
+
+    :where(ol,ul) {
+      margin-block-start: 2rem;
+    }
+  }
+
+  li :where(ol,ul) {
+    margin-block-start: 1rem;
+  }
+
+  :where(h1,h2,h3,h4,h5) {
+    + section {
+      margin-block-start: 1rem;
+    }
+  }
+
+  // CSS Specificity fix for margin below <summary>
+  // Is this really necessary?
+  // Do I really need to write out all the tags impacted by the rule " * + " above?
+  //
+  // ```
+  // summary + :where(section, ol, ul) {
+  //   margin-block-start: 2rem;
+  // }
+  // ```
+  //
+  // Oh, it's not.
+  summary + * {
+    margin-block-start: 2rem;
+  }
+
+  details + * {
+    margin-block-start: clamp(4rem, 5rem, 10vw);
+  }
+
+  hr + * {
+    margin-block-start: clamp(4rem, 5rem, 10vw);
+  }
+
+  p > * + * {
+    margin-block-start: 0;
+  }
+
+  span > * + * {
+    margin-block-start: 0;
+  }
+}
+
+body * {
+  box-sizing: border-box;
+
+  margin-block: 0;
+}
+
+html {
+  // FIXedME: HTML and body has space in between?
+  //          Update: Got it. <main>'s margin-block caused it.
+  //                  Next time consider using * { border:1px solid red; } to debug.
+  color: var(--foreground);
+  background-color: var(--dark);
+  font-family: x-sans-serif, sans-serif;
+  letter-spacing: 0.1ch;
+  line-height: 1.75;
+
+  color-scheme: light dark;
+}
+
+body {
+  margin-inline: 0;
+  background-color: var(--background);
+}

@@ -1,61 +1,47 @@
 /**
  * FIXME: Still haven't figured out how to prevent flexbox from changing sizes when opening and closing <detail>.
  */
-summary {
-  // margin-block-end: 1.5rem;
-  outline: none;
-  display: flex;
-  flex: {
-    wrap: nowrap;
-  }
-  column-gap: 1em;
-  align-items: center;
-  inline-size: calc(100% + 2rem);
-  transform: translateX(-1rem);
-  padding-inline: 1rem;
-  padding-block: 0.5rem;
-  border: {
-    style: solid;
-    color: var(--foreground);
-    // noinspection CssInvalidPropertyValue
-    inline-start-color: var(--background);
-    width: 0.25rem;
-  }
-
-  &:has(h2) {
-    // FIXME: Somehow, using box-sizing: content-box and more translateX to achieve a "wider than content" appearance
-    //        would cause it to overflow (hidden) when vw is small?
-    // box-sizing: content-box;
-    border-width: 0.5rem;
-  }
-
-  &:has(h4) {
-    border-block-end-color: var(--background);
-    padding-block: 0.25rem;
-    inline-size: calc(100% + 0.5rem);
-    transform: translateX(-0.25rem);
-  }
-
-  &:has(h5) {
-    border-block-color: var(--background);
-    padding-block: 0;
-    inline-size: calc(100% + 0.25rem);
-    transform: translateX(-0.125rem);
-  }
-
-  // TODO: Add ::before for #, getting the link to the section.
-
-  > :where(h2,h3) {
-    flex-grow: 99;
-  }
-
-  // + * {
-  //   margin-block-start: 2rem;
-  // }
-}
 
 details {
   > summary {
+    outline: none;
+    display: flex;
+    flex: {
+      wrap: nowrap;
+    }
+    column-gap: 1em;
+    align-items: center;
+
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+
+    &:has(h2) {
+      // FIXME: Somehow, using box-sizing: content-box and more translateX to achieve a "wider than content" appearance
+      //        would cause it to overflow (hidden) when vw is small?
+      // box-sizing: content-box;
+      border-width: 0.5rem;
+    }
+
+    &:has(h4) {
+      border-block-end-color: var(--background);
+      padding-block: 0.25rem;
+      inline-size: calc(100% + 0.5rem);
+      transform: translateX(-0.25rem);
+    }
+
+    &:has(h5) {
+      border-block-color: var(--background);
+      padding-block: 0;
+      inline-size: calc(100% + 0.25rem);
+      transform: translateX(-0.125rem);
+    }
+
+    // TODO: Add ::before for #, getting the link to the section.
+
+    > :where(h2,h3) {
+      flex-grow: 99;
+    }
+
     &::after {
       margin-right: 0.875rem;
       content: '>';

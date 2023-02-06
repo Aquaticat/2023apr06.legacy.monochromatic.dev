@@ -1,0 +1,91 @@
+@use '../../_mixin.scss' as mixin;
+
+body {
+  > nav {
+    // @include mixin.element_theme_alwaysDark;
+
+    grid-area: nav;
+
+    font-size: var(--font-size-ratio);
+
+    // padding: 1rem;
+    border: {
+      style: solid;
+      width: 0.25rem;
+      color: var(--background);
+      // inline-end-color: var(--foreground);
+    }
+
+    border-inline-end-color: var(--foreground);
+
+    &:has(details[open]) {
+    }
+
+    block-size: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    overflow-y: auto;
+
+    > details {
+      font-weight: bold;
+
+      > * + * {
+        margin-block-start: calc(var(--row-gap) * 0.5);
+      }
+
+      > summary {
+        text-align: center;
+        align-items: baseline;
+
+
+        > a {
+          display: none;
+          flex-grow: 9999;
+
+          > h1 {
+            line-height: inherit;
+            font-size: 1.5em;
+            text-align: center;
+          }
+        }
+
+        &::after {
+          content: '≡';
+
+          margin-inline-end: 0;
+        }
+      }
+
+      &[open] {
+        min-inline-size: 30ch;
+
+        > summary {
+          > a {
+            display: block;
+          }
+
+          &::after {
+            content: '🡨';
+          }
+        }
+      }
+
+      a {
+        text-decoration-line: none;
+      }
+
+      ul {
+        list-style-type: none;
+        white-space: nowrap;
+      }
+
+      > ul {
+        padding-inline-start: 1em;
+        padding-inline-end: 1em;
+        // font-size: 1.5rem;
+      }
+    }
+  }
+}

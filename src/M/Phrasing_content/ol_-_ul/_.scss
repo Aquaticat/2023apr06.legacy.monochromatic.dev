@@ -21,11 +21,11 @@ li {
   }
 
   > {
-    ol > li {
+    ol {
       list-style-type: upper-roman;
     }
 
-    ul > li {
+    ul {
       list-style-type: square;
     }
   }

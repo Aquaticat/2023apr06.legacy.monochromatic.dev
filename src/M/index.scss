@@ -67,12 +67,12 @@
 @font-face {
   font-family: x-sans-serif;
   font-style: normal;
-  font-weight: 100 900;
+  // font-weight: 100 900;
   //noinspection CssUnknownTarget
   src: local(Inter var),
   local(Inter),
     // From https://www.npmjs.com/package/@fontsource/inter/variable.css
-  url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-variable-full-normal.woff2') format('woff2'),
+  url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-ext-variable-full-normal.woff2') format('woff2'),
   local(sans-serif);
   // TODO: How to specify unicode range without breaking anything?
 }
@@ -103,6 +103,8 @@
 
   --light: white;
   --dark: black;
+
+  /* TODO: Use flexbox gap instead of * + * {margin-block-start: 1rem}
 
   * + {
     section {
@@ -154,28 +156,53 @@
   span > * + * {
     margin-block-start: 0;
   }
-}
 
-* {
-  box-sizing: border-box;
-
-  margin-block: 0;
+   */
 }
 
 html {
   // FIXedME: HTML and body has space in between?
   //          Update: Got it. <main>'s margin-block caused it.
   //                  Next time consider using * { border:1px solid red; } to debug.
-  color: var(--foreground);
   background-color: var(--dark);
-  font-family: x-sans-serif, sans-serif;
-  letter-spacing: 0.1ch;
-  line-height: 1.75;
-
   color-scheme: light dark;
 }
 
 body {
-  margin-inline: 0;
+  margin: 0;
+
+  // Bump the font size up, multiply the font size down in child elements.
+  // 1.25em * 0.8 = 1em
+  --font-size: 1.25em;
+  --font-size-ratio: 0.8em;
+  font-size: var(--font-size);
+
+  // Use line-height instead of margin-block for text.
+  line-height: 1.75;
+
+  letter-spacing: 0.1ch;
+  font-family: x-sans-serif, sans-serif;
+
+  color: var(--foreground);
   background-color: var(--background);
+
+  --row-gap-root: clamp(3rem, 4rem, 10vw);
+  --row-gap: clamp(3em, 4em, 10vw);
+
+  display: grid;
+  row-gap: var(--row-gap);
+  // column-gap: c;
+
+  grid-template-columns: minmax(0, calc(50vw - 960px)) min-content max(calc(100lvw - 100svw), 0.5em) auto minmax(0, calc(50vw - 960px));
+  grid-template-areas:
+    ". nav . header ."
+    ". nav . main ."
+    ". nav . footer .";
+
+  // justify-content: center;
+
+  * {
+    box-sizing: border-box;
+    margin-block: 0;
+  }
 }

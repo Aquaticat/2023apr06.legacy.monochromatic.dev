@@ -1,0 +1,55 @@
+@use '../button/_.scss' as button;
+
+#colorSchemeToggle {
+  @include button.button_importance_tertiary(label);
+
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+
+  &::after {
+    content: '=\00a0theme';
+  }
+
+  // If set :focus, on mobile devices, the state would be continuously active until user clicks elsewhere.
+  // So no.
+  // &:focus,
+  &:hover {
+    &::after {
+      content: '\00a0!theme';
+    }
+  }
+
+  &::before {
+    // top: -0.4ex;
+    // left: 0.5ch;
+    font-size: 2em;
+    content: '☉';
+    block-size: 0;
+    inline-size: 0;
+    margin-inline-end: 1em;
+    // margin-inline-start: -0.1em;
+    transform: translateX(-0.1em) translateY(-0.8em);
+  }
+
+  &:has(input[type='checkbox']:checked)::before {
+    content: '☽';
+    transform: scale(0.8) translateX(0.1em) translateY(-0.8em);
+    // Why is this symbol going down as the viewport narrows but the other doesn't?
+    // Update: Finally, found the calc() to make it stay in the box. But why?
+    //         And it still isn't perfect...
+    // TODOne: Maybe I really shouldn't have given up the perfectly working flexbox...
+    //         Fixed. Used flexbox again.
+  }
+
+  // FIXME: No I still can't make space key work.
+  //        I'll use JavaScript for now (or forever).
+  &:has(input[type='checkbox']:focus),
+  &:focus {
+    outline: {
+      color: var(--light);
+      style: dashed;
+      width: 0.2em;
+    }
+  }
+}

@@ -4,7 +4,7 @@ h1 {
   font-family: x-monospace, monospace, x-sans-serif, sans-serif;
   font-weight: 900;
   text-align: center;
-  margin-block-end: clamp(2rem, 4rem, 5vw);
+  // margin-block-end: clamp(2rem, 4rem, 5vw);
 
   /**
    * Solution for font width greater than container width problem.
