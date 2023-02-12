@@ -1,0 +1,68 @@
+/**
+ * FIXME: Still haven't figured out how to prevent flexbox from changing sizes when opening and closing <detail>.
+ */
+
+details {
+  > summary {
+    outline: none;
+    display: flex;
+    flex: {
+      wrap: nowrap;
+    }
+    column-gap: 1em;
+    align-items: center;
+
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+
+    &:has(h2) {
+      // FIXME: Somehow, using box-sizing: content-box and more translateX to achieve a "wider than content" appearance
+      //        would cause it to overflow (hidden) when vw is small?
+      // box-sizing: content-box;
+      border-width: 0.5rem;
+    }
+
+    &:has(h4) {
+      border-block-end-color: var(--background);
+      padding-block: 0.25rem;
+      inline-size: calc(100% + 0.5rem);
+      transform: translateX(-0.25rem);
+    }
+
+    &:has(h5) {
+      border-block-color: var(--background);
+      padding-block: 0;
+      inline-size: calc(100% + 0.25rem);
+      transform: translateX(-0.125rem);
+    }
+
+    // TODO: Add ::before for #, getting the link to the section.
+
+    > :where(h2,h3) {
+      flex-grow: 99;
+    }
+
+    &::after {
+      margin-right: 0.875rem;
+      content: '>';
+      transform: translateY(0.05em);
+      font-size: 2em;
+    }
+  }
+
+  &[open] {
+    > summary {
+      // noinspection CssInvalidPropertyValue
+      border: {
+        inline-start-color: var(--foreground);
+        block-end-color: var(--background);
+      }
+
+      &::after {
+        content: 'Λ';
+        transform: translateY(0.04em);
+        font-size: 1.6em;
+      }
+    }
+  }
+}
