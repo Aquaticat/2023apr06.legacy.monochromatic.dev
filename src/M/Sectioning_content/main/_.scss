@@ -1,9 +1,9 @@
 main {
-  // z-index: 4;
+  font-size: 0.8em;
 
   background-color: var(--background);
 
-  padding-block: var(--row-gap);
+  padding-block: calc(var(--clam) * 8);
 
   // container-type: inline-size;
   // container-name: main;
@@ -14,72 +14,10 @@ main {
   // justify-self: center;
   grid-area: main;
 
-  // max-inline-size: 90ch;
-  // box-sizing: content-box;
-  // margin-inline: auto;
-  // padding-inline: 4vw;
 
-  font-size: 0.8em;
-  // margin-block: clamp(1.75rem, 4rem, 5vw);
-
-  // * + * {
-  //   margin-block-start: 1.75rem;
-  // }
 
   display: grid;
-  // FIXME: Use some actually sensible values for the filler columns.
-  //        See index.scss
-  //
-  // (Continues from ../../index.scss )
-  // The size of the content is maximally 120rem ...
-  // wait, doesn't the ( body > nav#site_navigation:first-child ) element take up horizontal space, too?
-  // (More on why I'm using not only id to select element later.)
-  // How much horizontal space does it take up, remind me?
-  // Oh, so according to ../nav/_.scss , its size is 0.25rem (left border) + 30ch (content) + 0.25rem (right border)
-  // maximum.
-  // And the filler column between #site_navigation and (header and main and footer) is about 0.5rem
-  // That leaves us with (120rem - 0.25rem - 30ch - 0.25rem - 0.5rem = 119rem - 30ch) maximum for main
-  // main, itself, includes content and aside#in_this_article:last-child , with the later taking up 30ch maximally.
-  // Therefore, that leaves us (119rem - 60ch) maximum for the actual content.
-  // There is actually another limit for the actual content: 75ch, so that words don't run across the screen.
-  //
-  // We want the actual content to be centered relative to main when its width cannot be larger.
-  // So what is the size for the leftmost filler column?
-  // ((119rem - 30ch) - min((119rem - 60ch), 75ch)) / 2 = max(15ch, 59.5rem - 52.5ch)
-  // where (59.5rem - 52.5ch) is probably the chosen value, because 15ch ~= 15*8 = 120px, whereas 59.5rem - 52.5ch ~= 532px
-  // Not very helpful.
-  // Now what?
-  // Oh, yes, we need to know when we want the actual content to not be centered relative to main.
-  // Before that, we need to figure out a few more things:
-  //
-  // 1.  The size of the filler column between the actual content and #in_this_article
-  //
-  //     I want this to be at least 2vw because I want this to be at least 2vw.
-  //     No, wait. We don't want the gap to grow as the viewport grows after main hits max width because of viewport width gets greater than 120rem!
-  //     I think we are going to put a limiter here: max(2vw, 120rem/50) = max(2vw, 2.4rem)
-  //
-  //     Much better.
-  //
-  // 2.  The difference between (left filler column) and ((content and #in_this_article gap) + #in_this_article)
-  //
-  //     Obviously, we don't want this difference to be positive.
-  //     So size of left filler column cannot be greater than 2.4rem + 30ch .
-  //     And when the content and #in_this_article gap gets smaller than 2.4rem, that's when we shrink it.
-  //
-  // 3.  How fast do we want to shrink the left filler column?
-  //
-  //     We want to prioritize the width of the content.
-  //     Therefore, when the width of the content is at risk of dropping below 75ch, we decrease the width of the left filler column.
-  //
-  //     How?
-  //     As mentioned above, the total size for main is (119rem - 30ch) maximum,
-  //     and drops when there's no
-  // With these, we have...
-  //
-  // Update: What was I doing? What was I thinking?
-  // I could have just used 50% something.
-  // I failed to consider that #site_navigation is foldable.
-  //
+
   // TODO: Do I really need CSS grid? Couldn't I have just added margin to content and used sticky positioning for the aside?
   //       And now I have to use container media queries in the body container because I cannot use @container on the container itself.
   //       So we are back to square one. Might as well have used container media queries from the start.
@@ -89,7 +27,7 @@ main {
   // }
 
   // justify-items: stretch;
-  row-gap: var(--row-gap);
+  row-gap: var(--clam);
 
   details {
     > summary {
@@ -107,34 +45,30 @@ main {
   }
 
   > * {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    justify-self: stretch;
-    // max-inline-size: 75ch;
-    // inline-size: 100%;
-  }
+    grid-column: {
+      start: 2;
+      end: 3;
+    }
 
-  // > * > * {
-  //   font-size: var(--font-size-ratio);
-  //
-  //   display: flex;
-  //   flex-direction: column;
-  //   row-gap: var(--row-gap);
-  //
-  //   :where(p,li,a) {
-  //     display: unset;
-  //   }
-  // }
+    justify-self: stretch;
+  }
 
   > aside {
     overflow-y: visible;
     height: 1px;
     position: sticky;
     top: 25vh;
-    // top: 50%;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 1;
+
+    grid: {
+      column: {
+        start: 4;
+        end: 5
+      }
+      row: {
+        start: 1;
+      }
+    }
+
     justify-self: end;
 
     a {
@@ -149,8 +83,6 @@ main {
       padding-inline-start: 0;
       overflow-y: auto;
       max-block-size: 50vh;
-
-      // transform: translateY(max(-50% , -50vh));
 
       text-align: end;
 
@@ -175,37 +107,7 @@ main {
         font-weight: bold;
       }
 
-      // scrollbar-gutter: stable;
       // TODO: Style scrollbar.
-
-      // scrollbar-color: white black;
-      // scrollbar-width: thin;
-      //
-      // &::-webkit-scrollbar {
-      //   // background-color: gray;
-      //   opacity: 0.1;
-      //   border: 1px solid red;
-      // }
-      //
-      // &::-webkit-scrollbar-button {
-      //   background-color: white;
-      //   border: 1px solid orange;
-      // }
-      //
-      // &::-webkit-scrollbar-track {
-      //   background-color: white;
-      //   border: 1px solid yellow;
-      // }
-      //
-      // &::-webkit-scrollbar-track-piece {
-      //   background-color: white;
-      //   border: 1px solid green;
-      // }
-      //
-      // &::-webkit-scrollbar-thumb {
-      //   background-color: white;
-      //   border: 1px solid blue;
-      // }
     }
   }
 }

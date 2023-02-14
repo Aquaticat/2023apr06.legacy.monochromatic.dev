@@ -1,164 +1,86 @@
-@use '../../_mixin.scss' as mixin;
+/** @format */
 
-// @container body (60rem <= width < 70 rem) {
-//   body > nav ~ main {
-//     // TODO: See, this is the result of trying to pull off something smart.
-//     //       I had to use 1fr on both "paddings",
-//     //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
-//     grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(min(4vw, 4.8rem), 1fr);
-//
-//     > aside {
-//       display: none;
-//     }
-//   }
-// }
-//
-// @container body (width < 60 rem) {
-//   body > nav {
-//     // display: none;
-//   }
-//
-//   body > nav ~ main {
-//     // TODO: See, this is the result of trying to pull off something smart.
-//     //       I had to use 1fr on both "paddings",
-//     //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
-//     grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(min(4vw, 4.8rem), 1fr);
-//
-//     > aside {
-//       display: none;
-//     }
-//   }
-// }
+@use '../../_mixin.scss' as mixin;
 
 body {
   > nav {
-
     // FIXME: Stop IntelliJ platform from adding a space between number and unit when formatting.
-  @container body (width < 70rem) {
-    ~ main {
-      // TODO: See, this is the result of trying to pull off something smart.
-      //       I had to use 1fr on both "paddings",
-      //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
-      // FIXME: Whatever, I can't afford to lose time on this right now.
-      //        I'll just push to main and see what happens.
-      grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(min(4vw, 4.8rem), 1fr);
+    @container body (width < 70rem) {
+      ~ main {
+        // TODO: See, this is the result of trying to pull off something smart.
+        //       I had to use 1fr on both "paddings",
+        //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
+        // FIXME: Whatever, I can't afford to lose time on this right now.
+        //        I'll just push to main and see what happens.
+        grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(
+            min(4vw, 4.8rem),
+            1fr
+          );
 
-      > aside {
-        display: none;
+        > aside {
+          display: none;
+        }
       }
     }
-  } @container body (width < 60rem) {
-    // position: fixed;
-    // left: 0;
-    overflow-x: visible;
 
-    // &::after {
-    //   position: absolute;
-    //   top: 0;
-    //   right: -20px;
-    //   // float: right;
-    //   content: '≡';
-    //   color: var(--background);
-    //   background-color: var(--foreground);
-    //   z-index: 3;
-    // }
-      // inline-size: 0;
+    @container body (width < 60rem) {
+      overflow-x: visible;
 
-    // FIXME: How to stop details in sidebar from expanding all the way?
+      > details {
+        min-inline-size: fit-content;
 
+        > summary {
+          &::after {
+            color: var(--foreground);
+            background-color: var(--background);
+            border: 0.25rem solid var(--foreground);
+            z-index: 5;
+          }
+        }
 
-
-    // block-size: unset;
-
-    // FIXME: Redundant, delete.
-    &:has(details[open]) {
-      // block-size: 100vh;
-      z-index: 5;
-      // &::after {
-      //   content: none;
-      // }
-    }
-
-      z-index: 3;
-    > details {
-
-      z-index: 3;
-    min-inline-size: fit-content;
-      > summary {
-        &::after {
-          // FIXME: How to make backdrop-filter actually work instead of
-          //        only inverting the foreground color of itself when it's on header?
-          //        Is it something that has to do with z-index?
-        // backdrop-filter: invert(100%);
+        &[open] {
           color: var(--foreground);
           background-color: var(--background);
-          border: 0.25rem solid var(--foreground);
-        }
-      z-index: 5;
-        // overflow-x: visible;
-        // inline-size: 0;
-        // padding-inline: 8px;
-        // transform: translateX(100%);
-      }
-      // overflow-x: visible;
-      // transform: translateX(-100%);
 
-      // color: var(--background);
-      // background-color: var(--foreground);
+          z-index: 5;
 
-      &[open] {
-        color: var(--foreground);
-        background-color: var(--background);
-        // overflow-x: unset;
-        // inline-size: unset;
-
-        z-index: 5;
-        // color: var(--foreground);
-        // background-color: var(--background);
-        > summary::after {
-          border: unset;
+          > summary::after {
+            color: unset;
+            background-color: unset;
+            border: unset;
+          }
         }
       }
     }
 
-
-  } grid-area: nav;
+    grid-area: nav;
 
     font-size: var(--font-size-ratio);
-
-    // border: {
-    //   style: solid;
-    //   width: 0.25rem;
-    //   color: var(--background);
-    // }
-    //
-    // &:has(details[open]) {
-    //   border-inline-end-color: var(--foreground);
-    // }
 
     block-size: 100vh;
 
     position: sticky;
     top: 0;
 
-
     //   transform: scaleX(-1);
 
     // overflow-y: auto;
     > details {
-
-
       // display: flex;
       // flex-direction: row;
       font-weight: bold;
       block-size: 100%;
       // transform: scaleX(-1);
 
+      a {
+        text-decoration-line: none;
+      }
+
       > * {
       }
 
       > * + * {
-        margin-block-start: calc(var(--row-gap) * 0.5);
+        margin-block-start: calc(var(--clam) * 0.5);
       }
 
       > summary {
@@ -183,58 +105,11 @@ body {
         }
       }
 
-      &[open] {
-        // Yes, this didn't work because I should have specified :has().
-        // Firefox still doesn't support it by default,
-        // so I guess I just have to use 70rem as the breakpoint,
-        // whether nav > details is open or not.
-        /*
-      @container body (width < 70rem) {
-        ~ main {
-          grid-template-columns: min(4vw, 4.8rem) minmax(auto, 75ch) min(4vw, 4.8rem);
-
-          > aside {
-            display: none;
-          }
-        }
-      }*/
-
-        overflow-y: scroll;
-        // scrollbar-gutter: stable;
-
-        // padding-inline: 1em;
-
-        // min-inline-size: 30ch;
-
-        > summary {
-          // padding: 0;
-
-          > a {
-            display: block;
-          }
-
-          &::after {
-            content: '🡨';
-          }
-        }
-
-        > ul {
-          // overflow-y: scroll;
-        }
-      }
-
-      a {
-        text-decoration-line: none;
-      }
-
       ul {
         list-style-type: none;
-        // white-space: nowrap;
       }
 
-
       > ul {
-
         // height: 100%;
         // flex-basis: 0;
         // position: fixed;
@@ -246,11 +121,9 @@ body {
         // overflow-y: auto;
         // scrollbar-gutter: stable;
 
-
         // padding-inline-start: 0;
         padding-inline-end: 1em;
         // font-size: 1.5rem;
-
 
         ul {
           border-inline-start: 0.25em solid var(--foreground);
@@ -259,6 +132,20 @@ body {
         li {
           * + ul {
             margin-block-start: 2em;
+          }
+        }
+      }
+
+      &[open] {
+        overflow-y: scroll;
+
+        > summary {
+          > a {
+            display: block;
+          }
+
+          &::after {
+            content: '🡨';
           }
         }
       }

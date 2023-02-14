@@ -1,0 +1,25 @@
+{
+  printWidth: 90,
+  semi: true,
+  singleQuote: true,
+  trailingComma: "all",
+
+  insertPragma: true,
+
+  embeddedLanguageFormatting: "off",
+
+  singleAttributePerLine: true,
+
+  overrides: [
+    {
+      files: [
+        "*.html",
+        "*.json",
+        "*.json5"
+      ],
+      options: {
+        singleQuote: false
+      }
+    },
+  ]
+}

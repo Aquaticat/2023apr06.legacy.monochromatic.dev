@@ -1,6 +1,9 @@
 // Why do I need to write this import statement?
 import * as fs from 'fs';
+
 import { parse } from 'node-html-parser';
+
+import checker from 'vite-plugin-checker';
 
 process.env.BROWSER = 'C:\\Program Files\\Google\\Chrome Dev\\Application\\chrome.exe';
 
@@ -97,7 +100,16 @@ export default ({
   //region Plugins
   plugins: [
     {
+      ...checker({
+        stylelint: {
+          lintCommand: 'stylelint ./M/**/*.scss --allowEmptyInput --config ../.stylelintrc.json --fix',
+        }
+                 }),
+      enforce: 'post',
+    },
+    {
       ...fixHtmlHead(),
+      enforce: 'post',
       apply: 'build',
     }
   ]

@@ -8,15 +8,15 @@ header {
 
   grid-area: header;
 
-  --row-gap: calc(var(--row-gap-root) * 2);
+  --clam: calc(var(--clam-root) * 2);
 
   display: flex;
   flex-direction: column;
-  row-gap: var(--row-gap-root);
+  row-gap: var(--clam-root);
   align-items: center;
 
   font-size: var(--font-size-ratio);
-  padding-block: var(--row-gap);
+  padding-block: var(--clam);
 
   // padding-block: 5rem;
   // border-block-end: var(--foreground) solid 0.5rem;

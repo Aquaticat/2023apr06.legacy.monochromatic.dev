@@ -65,29 +65,21 @@
 
 
 // From https://www.npmjs.com/package/@fontsource/inter
-/* inter-latin-ext-variable-full-oblique 0deg 10deg */
+// inter-latin-ext-variable-full-oblique 0deg 10deg
 @font-face {
-  font-family: 'InterVar';
+  font-family: InterVar;
   font-style: oblique 0deg 10deg;
-  font-display: swap;
   //noinspection CssUnknownTarget
   src: local(Inter var),
     local(Inter),
     url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-ext-variable-full-normal.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: x-serif;
-  src: local(serif);
-}
-
 // From https://www.npmjs.com/package/@fontsource/jetbrains-mono
-/* jetbrains-mono-latin-ext-variable-wghtOnly-normal */
+// jetbrains-mono-latin-ext-variable-wghtOnly-normal
 @font-face {
-  font-family: 'JetBrainsMonoVar';
+  font-family: JetBrainsMonoVar;
   font-style: normal;
-  // font-display: swap;
-  // font-weight: 100 800;
   //noinspection CssUnknownTarget
   src: local(JetbrainsMono),
     local("Jetbrains Mono"),
@@ -97,98 +89,34 @@
 }
 
 /* jetbrains-mono-latin-ext-variable-wghtOnly-italic */
-// @font-face {
-//   font-family: 'JetBrainsMonoVar';
-//   font-style: italic;
-//   font-display: swap;
-//   font-weight: 100 800;
-//   //noinspection CssUnknownTarget
-//   src: local(JetbrainsMono),
-//     local("Jetbrains Mono"),
-//     local("JetbrainsMono NL"),
-//     local("Jetbrains Mono NL"),
-//     url('https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-wghtOnly-italic.woff2') format('woff2');
-// }
+@font-face {
+  font-family: JetBrainsMonoVar;
+  font-style: italic;
+  //noinspection CssUnknownTarget
+  src: local(JetbrainsMono),
+    local("Jetbrains Mono"),
+    local("JetbrainsMono NL"),
+    local("Jetbrains Mono NL"),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-wghtOnly-italic.woff2') format('woff2');
+}
 
 :root {
+}
+
+html {
+  --light: white;
+  --dark: black;
+
   @media (prefers-color-scheme: dark) {
     --foreground: white;
     --background: black;
   }
+
   @media (prefers-color-scheme: light) {
     --foreground: black;
     --background: white;
   }
 
-  --light: white;
-  --dark: black;
-
-  /* TODO: Use flexbox gap instead of * + * {margin-block-start: 1rem}
-
-  * + {
-    section {
-      margin-block-start: 4rem;
-    }
-
-    :where(ol,ul) {
-      margin-block-start: 2rem;
-    }
-  }
-
-  li :where(ol,ul) {
-    margin-block-start: 1rem;
-  }
-
-  :where(h1,h2,h3,h4,h5) {
-    + section {
-      margin-block-start: 1rem;
-    }
-  }
-
-  // CSS Specificity fix for margin below <summary>
-  // Is this really necessary?
-  // Do I really need to write out all the tags impacted by the rule " * + " above?
-  //
-  // ```
-  // summary + :where(section, ol, ul) {
-  //   margin-block-start: 2rem;
-  // }
-  // ```
-  //
-  // Oh, it's not.
-  summary + * {
-    margin-block-start: 2rem;
-  }
-
-  details + * {
-    margin-block-start: clamp(4rem, 5rem, 10vw);
-  }
-
-  hr + * {
-    margin-block-start: clamp(4rem, 5rem, 10vw);
-  }
-
-  p > * + * {
-    margin-block-start: 0;
-  }
-
-  span > * + * {
-    margin-block-start: 0;
-  }
-
-   */
-}
-
-// FIXME: I decided to not bother with extra black at the bottom of page on firefox...for now.
-// * {
-//   outline: 1px solid red;
-// }
-
-html {
-
-  // FIXedME: HTML and body has space in between?
-  //          Update: Got it. <main>'s margin-block caused it.
-  //                  Next time consider using * { border:1px solid red; } to debug.
   color-scheme: light dark;
 }
 
@@ -199,8 +127,6 @@ html {
 }
 
 body {
-  // z-index: 3;
-
   container-type: inline-size;
   container-name: body;
 
@@ -223,18 +149,15 @@ body {
   color: var(--foreground);
   background-color: var(--background);
 
-  --row-gap-root: clamp(3rem, 4rem, 10vw);
-  --row-gap: clamp(3em, 4em, 10vw);
+  // clam: a currency. Or, a custom length unit.
+  --clam-root: clamp(0.5rem, 1rem, 2vw);
+  --clam: clamp(0.5em, 1em, 2vw);
 
   display: grid;
-  // row-gap: var(--row-gap);
+  // row-gap: var(--clam);
   // column-gap: c;
 
   // 960 (pixels) / 16 (default rem) = 60 => 60rem
-  // TODO: I'm satisfied with 50vw - 960px, but what does that really mean?
-  //       How am I going to take font size into the factor?
-  //       How do I calculate sizes of other filler columns?
-  //
   // Alright, let's get started.
   // 50vw - 960px on one side means there's a total of 100vw - 1920px of filler columns on both sides.
   // 100vw is the whole viewport, so the actual content is 1920px wide maximally.
@@ -262,33 +185,3 @@ body {
     margin-block: 0;
   }
 }
-
-// @container body (60rem <= width < 70 rem) {
-//   nav ~ main {
-//     // TODO: See, this is the result of trying to pull off something smart.
-//     //       I had to use 1fr on both "paddings",
-//     //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
-//     grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(min(4vw, 4.8rem), 1fr);
-//
-//     > aside {
-//       display: none;
-//     }
-//   }
-// }
-//
-// @container body (width < 60 rem) {
-//   nav {
-//     display: none;
-//   }
-//
-//   body > nav ~ main {
-//     // TODO: See, this is the result of trying to pull off something smart.
-//     //       I had to use 1fr on both "paddings",
-//     //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
-//     grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(min(4vw, 4.8rem), 1fr);
-//
-//     > aside {
-//       display: none;
-//     }
-//   }
-// }
