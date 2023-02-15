@@ -1,5 +1,7 @@
 /**
  * FIXME: Still haven't figured out how to prevent flexbox from changing sizes when opening and closing <detail>.
+ *
+ * @format
  */
 
 details {
@@ -9,7 +11,7 @@ details {
     flex: {
       wrap: nowrap;
     }
-    column-gap: 1em;
+    // column-gap: 1em;
     align-items: center;
 
     padding-inline: 1rem;
@@ -25,28 +27,25 @@ details {
     &:has(h4) {
       border-block-end-color: var(--background);
       padding-block: 0.25rem;
-      inline-size: calc(100% + 0.5rem);
-      transform: translateX(-0.25rem);
     }
 
     &:has(h5) {
       border-block-color: var(--background);
       padding-block: 0;
-      inline-size: calc(100% + 0.25rem);
-      transform: translateX(-0.125rem);
     }
 
     // TODO: Add ::before for #, getting the link to the section.
 
-    > :where(h2,h3) {
-      flex-grow: 99;
+    > :where(h2, h3) {
+      flex-grow: 9999;
     }
 
     &::after {
-      margin-right: 0.875rem;
+      // margin-right: 0.875rem;
       content: '>';
       transform: translateY(0.05em);
-      font-size: 2em;
+      font-size: calc(var(--clam) * 2);
+      padding-inline: calc(var(--clam) * 0.75);
     }
   }
 

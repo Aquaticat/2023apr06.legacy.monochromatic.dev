@@ -107,16 +107,6 @@ html {
   --light: white;
   --dark: black;
 
-  @media (prefers-color-scheme: dark) {
-    --foreground: white;
-    --background: black;
-  }
-
-  @media (prefers-color-scheme: light) {
-    --foreground: black;
-    --background: white;
-  }
-
   color-scheme: light dark;
 }
 
@@ -127,10 +117,16 @@ html {
 }
 
 body {
-  container-type: inline-size;
-  container-name: body;
+  @media (prefers-color-scheme: dark) {
+    --foreground: white;
+    --background: black;
+  }
 
-  // FIXME: I decided to not bother with extra black at right of page on firefox when the viewport is narrow...for now.
+  @media (prefers-color-scheme: light) {
+    --foreground: black;
+    --background: white;
+  }
+
   overflow-x: clip;
   margin: 0;
 
@@ -141,7 +137,7 @@ body {
   font-size: var(--font-size);
 
   // Use line-height instead of margin-block for text.
-  line-height: 1.75;
+  line-height: 2;
 
   letter-spacing: 0.1ch;
   font-family: InterVar, sans-serif;
@@ -150,12 +146,10 @@ body {
   background-color: var(--background);
 
   // clam: a currency. Or, a custom length unit.
-  --clam-root: clamp(0.5rem, 1rem, 2vw);
-  --clam: clamp(0.5em, 1em, 2vw);
+  --clam-root: clamp(0.75rem, 1rem, 2vw);
+  --clam: clamp(0.75em, 1em, 2vw);
 
   display: grid;
-  // row-gap: var(--clam);
-  // column-gap: c;
 
   // 960 (pixels) / 16 (default rem) = 60 => 60rem
   // Alright, let's get started.
@@ -177,8 +171,6 @@ body {
     ". nav header ."
     ". nav main ."
     ". nav footer .";
-
-  // justify-content: center;
 
   * {
     box-sizing: border-box;

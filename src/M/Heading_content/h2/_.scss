@@ -1,5 +1,9 @@
+/** @format */
+
 h2 {
-  line-height: 2;
-  font-size: clamp(1.75rem, 2.5rem, 6vw);
   text-align: center;
+
+  font-size: calc(var(--clam-root) * 3);
+
+  line-height: 2;
 }

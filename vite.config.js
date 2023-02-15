@@ -1,9 +1,10 @@
+/** @format */
+// noinspection JSUnusedGlobalSymbols
+
 // Why do I need to write this import statement?
-import * as fs from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 
 import { parse } from 'node-html-parser';
-
-import checker from 'vite-plugin-checker';
 
 process.env.BROWSER = 'C:\\Program Files\\Google\\Chrome Dev\\Application\\chrome.exe';
 
@@ -13,20 +14,27 @@ export const fixHtmlHead = () => {
     name: 'vite-plugin-fixHtmlHead',
     closeBundle: async () => {
       await (() => {
-        const html = parse(fs.readFileSync('docs/index.html', {encoding: 'utf-8'}));
+        const html = parse(readFileSync('docs/index.html', { encoding: 'utf-8' }));
 
-        html.querySelector('[src="/assets/index.js"]').removeAttribute('crossorigin').setAttribute('src', 'assets/index.js');
-        html.querySelector('[href="/assets/style.css"]').setAttribute('blocking', 'render').setAttribute('href', 'assets/style.css');
-        html.querySelector('[href="/monochromatic_icon_1-lightFg_darkBg.svg"]').setAttribute('href', 'monochromatic_icon_1-lightFg_darkBg.svg');
+        html
+          .querySelector('[src="/assets/index.js"]')
+          .removeAttribute('crossorigin')
+          .setAttribute('src', 'assets/index.js');
+        html
+          .querySelector('[href="/assets/style.css"]')
+          .setAttribute('blocking', 'render')
+          .setAttribute('href', 'assets/style.css');
+        html
+          .querySelector('[href="/monochromatic_icon_1-lightFg_darkBg.svg"]')
+          .setAttribute('href', 'monochromatic_icon_1-lightFg_darkBg.svg');
 
-        fs.writeFileSync('docs/index.html', html.toString());
+        writeFileSync('docs/index.html', html.toString());
       })();
-    }
+    },
   };
 };
 
-// noinspection JSUnusedGlobalSymbols
-export default ({
+export default {
   //region Shared Options
   root: 'src',
   css: {
@@ -50,12 +58,8 @@ export default ({
     open: 'index.html',
     fs: {
       strict: false,
-      allow: [
-        'index.html',
-        'M/index.css',
-        'M/index.mjs',
-      ]
-    }
+      allow: ['index.html', 'M/index.css', 'M/index.mjs'],
+    },
   },
   //endregion
 
@@ -84,15 +88,12 @@ export default ({
     host: true,
     strictPort: true,
     open: 'index.html',
-
   },
   //endregion
 
   //region Dep Optimization Options
   optimizeDeps: {
-    entries: [
-      'index.html'
-    ],
+    entries: ['index.html'],
     force: true,
   },
   //endregion
@@ -100,18 +101,10 @@ export default ({
   //region Plugins
   plugins: [
     {
-      ...checker({
-        stylelint: {
-          lintCommand: 'stylelint ./M/**/*.scss --allowEmptyInput --config ../.stylelintrc.json --fix',
-        }
-                 }),
-      enforce: 'post',
-    },
-    {
       ...fixHtmlHead(),
       enforce: 'post',
       apply: 'build',
-    }
-  ]
+    },
+  ],
   //endregion
-});
+};

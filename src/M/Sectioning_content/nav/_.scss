@@ -4,18 +4,12 @@
 
 body {
   > nav {
-    // FIXME: Stop IntelliJ platform from adding a space between number and unit when formatting.
-    @container body (width < 70rem) {
+    @media (width < 75rem) {
       ~ main {
-        // TODO: See, this is the result of trying to pull off something smart.
-        //       I had to use 1fr on both "paddings",
-        //       instead of just doing it the good ol' way by setting the max-inline-size, padding, and margin: 0 auto.
-        // FIXME: Whatever, I can't afford to lose time on this right now.
-        //        I'll just push to main and see what happens.
-        grid-template-columns: minmax(min(4vw, 4.8rem), 1fr) minmax(auto, 75ch) minmax(
-            min(4vw, 4.8rem),
-            1fr
-          );
+        grid-template-columns:
+          minmax(min(4vw, 4.8rem), 1fr)
+          minmax(auto, 75ch)
+          minmax(min(4vw, 4.8rem), 1fr);
 
         > aside {
           display: none;
@@ -23,7 +17,7 @@ body {
       }
     }
 
-    @container body (width < 60rem) {
+    @media (width < 60rem) {
       overflow-x: visible;
 
       > details {
@@ -34,53 +28,52 @@ body {
             color: var(--foreground);
             background-color: var(--background);
             border: 0.25rem solid var(--foreground);
-            z-index: 5;
           }
         }
 
-        &[open] {
+        // Because media query adds no specificity.
+        &[open]:not(body) {
+          padding-inline: calc(var(--clam) * 0.75);
+
           color: var(--foreground);
           background-color: var(--background);
 
-          z-index: 5;
-
           > summary::after {
+            padding-inline-end: calc(var(--clam) * 0.75);
+
             color: unset;
             background-color: unset;
             border: unset;
+            content: '\00a0\00a0\00a0\00a0🡨';
           }
         }
       }
+      z-index: 5;
     }
 
     grid-area: nav;
 
     font-size: var(--font-size-ratio);
 
-    block-size: 100vh;
-
     position: sticky;
     top: 0;
+    block-size: 100vh;
 
-    //   transform: scaleX(-1);
-
-    // overflow-y: auto;
     > details {
-      // display: flex;
-      // flex-direction: row;
       font-weight: bold;
-      block-size: 100%;
-      // transform: scaleX(-1);
+      max-block-size: 100%;
 
       a {
         text-decoration-line: none;
       }
 
-      > * {
+      ul {
+        list-style-type: none;
+        padding-inline-start: 1em;
       }
 
       > * + * {
-        margin-block-start: calc(var(--clam) * 0.5);
+        margin-block-start: calc(var(--clam) * 2);
       }
 
       > summary {
@@ -89,41 +82,25 @@ body {
 
         > a {
           display: none;
-          flex-grow: 9999;
+          // flex-grow: 9999;
 
           > h1 {
             line-height: inherit;
             font-size: 1.5em;
-            text-align: center;
+            // text-align: center;
           }
         }
 
         &::after {
+          font-size: 2em;
           content: '≡';
 
           margin-inline-end: 0;
         }
       }
 
-      ul {
-        list-style-type: none;
-      }
-
       > ul {
-        // height: 100%;
-        // flex-basis: 0;
-        // position: fixed;
-        // top: 0;
-        // Chrome does not support overflow-block ?
-        // overflow-y: scroll;
-        // block-size: 80vh;
-        // block-size: min-content;
-        // overflow-y: auto;
-        // scrollbar-gutter: stable;
-
-        // padding-inline-start: 0;
         padding-inline-end: 1em;
-        // font-size: 1.5rem;
 
         ul {
           border-inline-start: 0.25em solid var(--foreground);
@@ -131,20 +108,41 @@ body {
 
         li {
           * + ul {
-            margin-block-start: 2em;
+            margin-block-start: calc(var(--clam) * 2);
           }
         }
+
+        > li {
+          + * {
+            margin-block-start: calc(var(--clam) * 4);
+          }
+
+          > ul {
+            li + li {
+              margin-block-start: calc(var(--clam) * 1);
+            }
+          }
+        }
+
       }
 
       &[open] {
-        overflow-y: scroll;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        padding-inline: 0;
 
+        // TODO: Fix this dirty fix for Clicking area of link on mobile devices being too much.
         > summary {
           > a {
-            display: block;
+            display: inline;
+
+            > h1 {
+              display: inline;
+            }
           }
 
           &::after {
+            padding-inline-end: 0;
             content: '🡨';
           }
         }

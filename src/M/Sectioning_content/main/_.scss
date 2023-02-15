@@ -1,39 +1,35 @@
-main {
-  font-size: 0.8em;
+/**
+ * @no_format
+ * @no_prettier
+ * Prettier is breaking selector into multiple lines.
+ */
 
+main {
   background-color: var(--background);
 
-  padding-block: calc(var(--clam) * 8);
-
-  // container-type: inline-size;
-  // container-name: main;
-
-  overflow-y: clip;
-  contain: content;
-
-  // justify-self: center;
+  //region Parent
   grid-area: main;
+  //endregion
 
+  //region Define
+  font-size: 0.8em;
+  //endregion
 
-
-  display: grid;
-
-  // TODO: Do I really need CSS grid? Couldn't I have just added margin to content and used sticky positioning for the aside?
-  //       And now I have to use container media queries in the body container because I cannot use @container on the container itself.
-  //       So we are back to square one. Might as well have used container media queries from the start.
-  grid-template-columns: minmax(min(4vw, 4.8rem), calc(50% - 37.5ch)) minmax(auto, 75ch) minmax(min(4vw, 4.8rem), 1fr) minmax(20ch, 30ch);
-  // @container body (width < 1024px) {
-  // grid-template-columns: minmax(max(2vw, 2.4rem), calc(50% - 37.5ch)) minmax(45ch, 75ch) minmax(min(4vw, 4.8rem), 1fr);
-  // }
-
-  // justify-items: stretch;
-  row-gap: var(--clam);
+  //region Style
+  padding-block: calc(var(--clam) * 4);
+  //noinspection CssInvalidPropertyValue
+  border-block: {
+    style: solid;
+    width: 0.25rem;
+    color: var(--light);
+  }
 
   details {
-    > summary {
-      inline-size: calc(100% + 2rem);
-      transform: translateX(-1rem);
+    > * {
+      padding-inline: 1rem;
+    }
 
+    > summary {
       border: {
         style: solid;
         color: var(--foreground);
@@ -43,34 +39,175 @@ main {
       }
     }
   }
+  //endregion
 
+  //region Child
+  display: grid;
+  grid-template-columns:
+    minmax(min(4vw, 4.8rem), calc(50% - 37.5ch))
+    minmax(auto, 75ch)
+    minmax(min(4vw, 4.8rem), 1fr)
+    minmax(20ch, 30ch);
+  row-gap: calc(var(--clam) * 4);
+
+  overflow-y: clip;
+  //endregion
+
+  //region Children
+  /* stylelint-disable-next-line no-descending-specificity */
   > * {
+    //region Parent
     grid-column: {
       start: 2;
       end: 3;
     }
 
     justify-self: stretch;
+    //endregion
+
+    // From https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+    /* stylelint-disable-next-line no-descending-specificity */
+    * + :is(
+        address,
+        article,
+        aside,
+        blockquote,
+        details,
+        dialog,
+        div,
+        dl,
+        fieldset,
+        figure,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hgroup,
+        hr,
+        ol,
+        pre,
+        section,
+        table,
+        ul
+      ) {
+      margin-block-start: calc(var(--clam) * 4);
+    }
+
+    :is(
+        address,
+        article,
+        aside,
+        blockquote,
+        details,
+        dialog,
+        div,
+        dl,
+        fieldset,
+        figure,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hgroup,
+        hr,
+        ol,
+        pre,
+        section,
+        table,
+        ul
+      ) {
+      * + :is(
+          address,
+          article,
+          aside,
+          blockquote,
+          details,
+          dialog,
+          div,
+          dl,
+          fieldset,
+          figure,
+          form,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          hgroup,
+          hr,
+          ol,
+          pre,
+          section,
+          table,
+          ul
+        ) {
+        margin-block-start: calc(var(--clam) * 3);
+      }
+    }
+
+    // * + :is(address, article, aside, blockquote, details, dialog, dd, div, dl, dt, fieldset, figcaption, figure, form, h1, h2, h3, h4, h5, h6, hgroup, hr, li, ol, p, pre, section, table, ul) {
+    //   margin-block-start: calc(var(--clam) * 2);
+    // }
+    * + :is(dd, dt, figcaption, h1, h2, h3, h4, h5, h6, hgroup, hr, li, p) {
+      margin-block-start: calc(var(--clam) * 2);
+    }
+
+    :is(
+        address,
+        article,
+        aside,
+        blockquote,
+        details,
+        dialog,
+        div,
+        dl,
+        fieldset,
+        figure,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hgroup,
+        pre,
+        section,
+        table
+      ) > :first-child + * {
+      margin-block-start: calc(var(--clam) * 2);
+    }
+
+    li > p:first-child + :is(ul, ol) {
+      margin-block-start: calc(var(--clam) * 1);
+    }
   }
 
   > aside {
-    overflow-y: visible;
-    height: 1px;
-    position: sticky;
-    top: 25vh;
-
+    //region Parent
     grid: {
       column: {
         start: 4;
-        end: 5
+        end: 5;
       }
       row: {
         start: 1;
       }
     }
-
     justify-self: end;
 
+    position: sticky;
+    top: 25vh;
+    //endregion
+
+    //region Style
     a {
       text-decoration-line: none;
     }
@@ -78,7 +215,14 @@ main {
     ul {
       list-style-type: none;
     }
+    //endregion
 
+    //region Child > ul
+    height: 1px;
+    overflow-y: visible;
+    //endregion
+
+    //region Children
     > ul {
       padding-inline-start: 0;
       overflow-y: auto;
@@ -99,7 +243,21 @@ main {
         }
 
         * + ul {
-          margin-block-start: 1em;
+          margin-block-start: calc(var(--clam) * 2);
+        }
+      }
+
+      /* stylelint-disable-next-line no-descending-specificity */
+      > li {
+        /* stylelint-disable-next-line no-descending-specificity */
+        + * {
+          margin-block-start: calc(var(--clam) * 4);
+        }
+
+        > ul {
+          li + li {
+            margin-block-start: calc(var(--clam) * 1);
+          }
         }
       }
 
@@ -109,7 +267,7 @@ main {
 
       // TODO: Style scrollbar.
     }
+    //endregion
   }
+  //endregion
 }
-
-

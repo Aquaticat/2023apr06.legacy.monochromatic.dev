@@ -1,31 +1,21 @@
+/** @format */
+
 @use '../../_mixin.scss' as mixin;
 
 footer {
-  // TODO: Set up sticky footer.
-
-  //noinspection SassScssResolvedByNameOnly
-  @include mixin.element_theme_alwaysDark;
-
-  z-index: 4;
-
   grid-area: footer;
-
-  //noinspection CssInvalidPropertyValue
-  border-block-start: {
-    style: solid;
-    width: 0.5rem;
-  }
 
   font-size: var(--font-size-ratio);
 
-  //noinspection CssInvalidPropertyValue
-  padding-block: var(--clam);
+  @include mixin.element_theme_alwaysDark;
+
+  padding-block: calc(var(--clam) * 8);
 
   display: flex;
   flex: {
     direction: column;
   }
-  row-gap: 4em;
+  row-gap: calc(var(--clam) * 6);
   align-items: center;
 
   > article {
@@ -40,18 +30,19 @@ footer {
     row-gap: 2em;
 
     * {
-      line-height: 1;
+      // line-height: 1;
       font-size: 1rem;
       text-align: center;
-    }
-
-    > h2 {
       font-weight: normal;
     }
 
     > :where(ul, ol) {
       padding-inline-start: 0;
       list-style-type: none;
+
+      > li + li {
+        margin-block-start: calc(var(--clam) * 1);
+      }
     }
   }
 }

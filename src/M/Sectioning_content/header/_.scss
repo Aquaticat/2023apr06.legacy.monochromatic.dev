@@ -1,42 +1,18 @@
+/** @format */
+
 @use '../../_mixin.scss' as mixin;
 
 header {
-  //noinspection SassScssResolvedByNameOnly
-  @include mixin.element_theme_alwaysDark;
-
-  z-index: 2;
+  position: relative;
 
   grid-area: header;
 
-  --clam: calc(var(--clam-root) * 2);
+  @include mixin.element_theme_alwaysDark;
+  font-size: var(--font-size-ratio);
+  padding-block: calc(var(--clam) * 8);
 
   display: flex;
   flex-direction: column;
-  row-gap: var(--clam-root);
+  row-gap: 4em;
   align-items: center;
-
-  font-size: var(--font-size-ratio);
-  padding-block: var(--clam);
-
-  // padding-block: 5rem;
-  // border-block-end: var(--foreground) solid 0.5rem;
-  //noinspection CssInvalidPropertyValue
-  border-block-end: {
-    style: solid;
-    width: 0.5rem;
-  }
-
-  // FIXME: Why would setting font-size would cause the <p> to take the whole width?
-  //        Setting font-size: 2rem; inside > hgroup or inside > hgroup > * causes the same issue.
-  //        Whatever, I'll just change <p>'s font-size inside by hand for now.
-  // font-size: 2em;
-  > hgroup {
-    > h1 {
-      + p {
-        // Still couldn't figure out why it's taking more space horizontally than its contents.
-        // Decided to center the title and left align p but wasn't able to.
-        font-size: clamp(1.25rem, 1.75rem, 2vw);
-      }
-    }
-  }
 }

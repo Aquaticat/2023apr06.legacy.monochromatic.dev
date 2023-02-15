@@ -1,4 +1,7 @@
+/** @format */
+
 h3 {
-  line-height: 1.75;
-  font-size: clamp(1.2rem, 1.5rem, 4vw);
+  font-size: calc(var(--clam-root) * 2);
+
+  line-height: 1.5;
 }

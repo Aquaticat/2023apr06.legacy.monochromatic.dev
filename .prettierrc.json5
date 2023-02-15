@@ -3,7 +3,9 @@
   semi: true,
   singleQuote: true,
   trailingComma: "all",
+  bracketSameLine: true,
 
+  requirePragma: true,
   insertPragma: true,
 
   embeddedLanguageFormatting: "off",

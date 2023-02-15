@@ -1,24 +1,37 @@
+/** @format */
+
 hr {
-  color: inherit;
+  &::before {
+    display: block;
+    content: '';
+    margin-block-start: 0.5em;
+    height: 0.5em;
+    inline-size: 100%;
+    border-block: 0.2em solid currentColor;
+  }
 
-  height: 1rem;
-  border-inline: none;
-  border-block: 0.25rem solid currentColor;
+  // display: inline-block;
+
+  inline-size: 100%;
+
+  // color: inherit;
+
+  border: none;
+  block-size: 2em;
+  // border-inline: none;
+  // border-block: 0.25rem solid currentColor;
   text-align: center;
-  inline-size: calc(100% + 2rem);
-  transform: translateX(-1rem);
 
-  // TODO: Add § decoration.
-
-  overflow: visible;
+  // overflow-y: visible;
 
   &::after {
     content: '§';
-    font-size: 1.75rem;
+    font-size: 2em;
     font-weight: bold;
     background-color: var(--background);
-    padding-inline: 0.5rem;
+    padding-inline: 0.5em;
+    // padding-block: 0.5em;
     position: relative;
-    top: -1.25rem;
+    top: -1.3em;
   }
 }

@@ -1,23 +1,17 @@
-:where(ol,ul) {
+/** @format */
+
+:where(ol, ul) {
   line-height: 1.5;
-  padding-inline-start: 2ch;
-
-  + * {
-    margin-block-start: 1.5rem;
-  }
-
-  * + * {
-    margin-block-start: 1.75rem;
-  }
+  list-style: {
+    position: outside;
+  };
 }
 
 li {
-  + li {
-    margin-block-start: 3em;
-  }
-
-  li + li {
-    margin-block-start: 1.25rem;
+  li {
+    li {
+      line-height: 1.4;
+    }
   }
 
   > {
@@ -32,6 +26,11 @@ li {
 }
 
 .ul_direction_inlineStart {
+
+  list-style: {
+    position: inside;
+  };
+
   display: flex;
   flex: {
     direction: row;
@@ -45,4 +44,3 @@ li {
     margin-block-start: 0;
   }
 }
-

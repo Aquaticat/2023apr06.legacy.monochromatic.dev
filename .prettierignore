@@ -217,7 +217,11 @@ archive/
 
 # Static Content
 src/public/
+src/public-unused/
 
 # GitHub Pages
 docs/
 .github/
+
+# Prettier Bugs causing these files to become unusable after formatting
+src/M/Sectioning_content/main/_.scss

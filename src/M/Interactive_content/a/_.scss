@@ -1,33 +1,56 @@
-a {
-  text-underline-offset: 0.5ex;
+/** @format */
 
-  // color not inheriting the parent element but "inheriting" what is already set in the user agent stylesheet?
-  // color: inherit;
+a {
   color: var(--foreground);
+  text-underline-offset: 0.5ex;
 
   &:focus,
   &:hover,
   &:active {
-    font-size: unset;
     color: var(--background);
+
     background-color: var(--foreground);
-    box-shadow: 0.5ch 0.5ex 0 0 var(--foreground),
-    -0.5ch 0.5ex 0 0 var(--foreground),
-    0.5ch -0.5ex 0 0 var(--foreground),
-    -0.5ch -0.5ex 0 0 var(--foreground);
-
-
     // FIXME: How to bold text without impacting its length?
-    //        text-shadow looks too weird.
-    // text-shadow: -0.01ch 0 0 var(--background),
-    //              0.01ch 0 0 var(--background),
-    //              0 0.01ex 0 var(--background),
-    //              0 -0.01ex 0 var(--background);
+    box-shadow: 0.5ch 0.5ex 0 0 var(--foreground), -0.5ch 0.5ex 0 0 var(--foreground),
+      0.5ch -0.5ex 0 0 var(--foreground), -0.5ch -0.5ex 0 0 var(--foreground);
   }
-
-  transition: background-color 0s ease-out 0.5s, color 0s ease-out 0.5s, box-shadow 0s ease-out 0.5s;
+  transition: background-color 0s ease-out 0.5s, color 0s ease-out 0.5s,
+    box-shadow 0s ease-out 0.5s;
 
   &:hover {
-    transition: background-color 0s ease-out 0s, color 0s ease-out 0s, box-shadow 0s ease-out 0s;
+    transition: background-color 0s ease-out 0s, color 0s ease-out 0s,
+      box-shadow 0s ease-out 0s;
+  }
+
+  &[href^='http'] {
+    &::after {
+      content: '\00a0🡥';
+    }
+
+    &:hover::before {
+      content: 'insecure link';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: 0.5em;
+      border: {
+        style: solid;
+        width: 1px;
+        color: var(--foreground);
+      }
+    }
+  }
+
+  :where(&[href^="https://"][href^="https://"], &[href^="#"][href^="#"])
+  {
+    &:hover::before {
+      content: none;
+    }
+  }
+
+  &[href^='#'][href^='#'], &[href^="https://aquati.cat/"][href^="https://aquati.cat/"] {
+    &::after {
+      content: none;
+    }
   }
 }

@@ -1,5 +1,6 @@
-'use strict';
+/** @format */
 
+'use strict';
 
 {
   /**
@@ -29,22 +30,22 @@
 }
 
 {
-  /**
-   * FIXedME: Why is this changing the location of the "button"?
-   *        Update: Got it, because I was using the [title=""] selector in CSS.
-   *                I'll just add the new selector besides it, then.
-   */
-  await Promise.all([...(document.querySelectorAll('.email [title="Copy mailto link."]'))]
-                        .map(async (mailtoCopyButton) => {
-                          mailtoCopyButton.addEventListener('click', () => {
-                            navigator.clipboard.writeText(
-                                         'mailto:contact@aquati.cat?subject=Message_to_the_author_of_Monochromatic')
-                                     .then(() => {
-                                       mailtoCopyButton.title = 'mailto link copied!';
-                                       mailtoCopyButton.querySelector('button').ariaLabel = 'mailto link copied!';
-                                     });
-                          });
-                        }));
+  await Promise.all(
+    [...document.querySelectorAll('.email [title="Copy mailto link."]')].map(
+      async (mailtoCopyButton) => {
+        mailtoCopyButton.addEventListener('click', () => {
+          navigator.clipboard
+            .writeText(
+              'mailto:contact@aquati.cat?subject=Message_to_the_author_of_Monochromatic',
+            )
+            .then(() => {
+              mailtoCopyButton.title = 'mailto link copied!';
+              mailtoCopyButton.querySelector('button').ariaLabel = 'mailto link copied!';
+            });
+        });
+      },
+    ),
+  );
 }
 
 {
@@ -53,26 +54,26 @@
 
   const setDarkColorScheme = () => {
     colorSchemeToggleInputElement.checked = true;
-    document.documentElement.style.setProperty('--foreground', 'white');
-    document.documentElement.style.setProperty('--background', 'black');
+    document.body.style.setProperty('--foreground', 'var(--light)');
+    document.body.style.setProperty('--background', 'var(--dark)');
     localStorage.setItem('color-scheme', 'dark');
   };
 
   const setLightColorScheme = () => {
     colorSchemeToggleInputElement.checked = false;
-    document.documentElement.style.setProperty('--foreground', 'black');
-    document.documentElement.style.setProperty('--background', 'white');
+    document.body.style.setProperty('--foreground', 'var(--dark)');
+    document.body.style.setProperty('--background', 'var(--light)');
     localStorage.setItem('color-scheme', 'light');
   };
 
   const setColorSchemeAccordingToCheckedState = () => {
     colorSchemeToggleInputElement.checked
-    ? (() => {
-      setDarkColorScheme();
-    })()
-    : (() => {
-      setLightColorScheme();
-    })();
+      ? (() => {
+          setDarkColorScheme();
+        })()
+      : (() => {
+          setLightColorScheme();
+        })();
   };
 
   switch (localStorage.getItem('color-scheme')) {
@@ -84,12 +85,12 @@
       break;
     default:
       window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? (() => {
-        setDarkColorScheme();
-      })()
-      : (() => {
-        setLightColorScheme();
-      })();
+        ? (() => {
+            setDarkColorScheme();
+          })()
+        : (() => {
+            setLightColorScheme();
+          })();
   }
 
   colorSchemeToggleElement.addEventListener('keydown', (e) => {
@@ -99,14 +100,26 @@
 
       setColorSchemeAccordingToCheckedState();
 
+      // noinspection JSUnresolvedReference
       colorSchemeToggleElement.blur();
     }
   });
 
-
   colorSchemeToggleInputElement.addEventListener('change', () => {
     setColorSchemeAccordingToCheckedState();
 
+    // noinspection JSUnresolvedReference
     colorSchemeToggleElement.blur();
   });
+}
+
+{
+  window.matchMedia('(width >= 60rem)').matches &&
+    (() => {
+      document.getElementById('site_navigation-links').open = true;
+    })();
+}
+
+{
+  document.getElementById('site_navigation').style.minBlockSize = `${window.innerHeight}px`;
 }

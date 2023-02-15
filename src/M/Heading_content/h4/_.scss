@@ -1,6 +1,8 @@
+/** @format */
+
 h4 {
   font: {
-    size: clamp(1rem, 1.25rem, 3vw);
+    size: calc(var(--clam-root) * 1.5);
     weight: normal;
   }
 }
