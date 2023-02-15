@@ -61,7 +61,10 @@ body {
 
     > details {
       font-weight: bold;
-      max-block-size: 100%;
+
+      // TODO: (notFIXME) There has to be a way to not make it take up 100% space but still...
+      //       Oh, I see. I should have just put other possible controls like the language switcher inside it.
+      block-size: 100%;
 
       a {
         text-decoration-line: none;
