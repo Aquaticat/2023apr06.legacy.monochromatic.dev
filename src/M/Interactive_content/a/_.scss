@@ -41,14 +41,14 @@ a {
     }
   }
 
-  :where(&[href^="https://"][href^="https://"], &[href^="#"][href^="#"])
+  :is(&[href^="https://"][href^="https://"], &[href^="#"][href^="#"])
   {
     &:hover::before {
       content: none;
     }
   }
 
-  :where(&[href^='#'][href^='#'],
+  :is(&[href^='#'][href^='#'],
    &[href^="https://aquati.cat/"][href^="https://aquati.cat/"],
     &[href^="https://monochromatic.dev/"][href^="https://monochromatic.dev/"],
     &[href^="https://anyfeedback.community/"][href^="https://anyfeedback.community/"]
