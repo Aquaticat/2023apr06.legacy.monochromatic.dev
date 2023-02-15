@@ -48,7 +48,11 @@ a {
     }
   }
 
-  &[href^='#'][href^='#'], &[href^="https://aquati.cat/"][href^="https://aquati.cat/"] {
+  :where(&[href^='#'][href^='#'],
+   &[href^="https://aquati.cat/"][href^="https://aquati.cat/"],
+    &[href^="https://monochromatic.dev/"][href^="https://monochromatic.dev/"],
+    &[href^="https://anyfeedback.community/"][href^="https://anyfeedback.community/"]
+    ) {
     &::after {
       content: none;
     }
