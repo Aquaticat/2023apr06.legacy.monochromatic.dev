@@ -116,6 +116,10 @@ body {
         }
 
         > li {
+          > a {
+            font-weight: 900;
+          }
+
           + * {
             margin-block-start: calc(var(--clam) * 4);
           }
