@@ -47,7 +47,7 @@ main {
     minmax(min(4vw, 4.8rem), calc(50% - 37.5ch))
     minmax(auto, 75ch)
     minmax(min(4vw, 4.8rem), 1fr)
-    minmax(20ch, 30ch);
+    minmax(0, 30ch);
   row-gap: calc(var(--clam) * 4);
 
   overflow-y: clip;
