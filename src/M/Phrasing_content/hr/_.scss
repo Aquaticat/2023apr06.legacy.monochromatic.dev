@@ -1,6 +1,9 @@
 /** @format */
 
 hr {
+  // Override firefox default user agent stylesheet.
+  color: var(--foreground);
+
   &::before {
     display: block;
     content: '';
@@ -10,16 +13,10 @@ hr {
     border-block: 0.2em solid currentColor;
   }
 
-  // display: inline-block;
-
   inline-size: 100%;
-
-  // color: inherit;
 
   border: none;
   block-size: 2em;
-  // border-inline: none;
-  // border-block: 0.25rem solid currentColor;
   text-align: center;
 
   // overflow-y: visible;
@@ -30,7 +27,6 @@ hr {
     font-weight: bold;
     background-color: var(--background);
     padding-inline: 0.5em;
-    // padding-block: 0.5em;
     position: relative;
     top: -1.3em;
   }

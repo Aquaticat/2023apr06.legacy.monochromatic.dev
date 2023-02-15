@@ -211,6 +211,7 @@ main {
     //region Style
     a {
       text-decoration-line: none;
+      font-weight: bold;
     }
 
     ul {
@@ -263,7 +264,7 @@ main {
       }
 
       > li > a {
-        font-weight: bold;
+        font-weight: 900;
       }
 
       // TODO: Style scrollbar.
