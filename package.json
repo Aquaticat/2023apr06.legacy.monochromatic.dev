@@ -41,6 +41,7 @@
   "license": "CC0-1.0",
   "private": false,
   "devDependencies": {
+    "eslint": "^8.34.0",
     "node-html-parser": "^6.1.4",
     "prettier": "2.8.4",
     "sass": "^1.58.0",
