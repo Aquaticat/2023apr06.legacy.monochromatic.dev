@@ -73,6 +73,7 @@
   src: local(Inter var),
     local(Inter),
     url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-ext-variable-full-normal.woff2') format('woff2');
+    unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 // From https://www.npmjs.com/package/@fontsource/jetbrains-mono
@@ -86,6 +87,7 @@
     local("JetbrainsMono NL"),
     local("Jetbrains Mono NL"),
     url('https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-wghtOnly-normal.woff2') format('woff2');
+    unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* jetbrains-mono-latin-ext-variable-wghtOnly-italic */
@@ -98,6 +100,7 @@
     local("JetbrainsMono NL"),
     local("Jetbrains Mono NL"),
     url('https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-wghtOnly-italic.woff2') format('woff2');
+    unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 :root {
@@ -139,7 +142,6 @@ body {
   // Use line-height instead of margin-block for text.
   line-height: 2;
 
-  letter-spacing: 0.1ch;
   font-family: InterVar, sans-serif;
 
   color: var(--foreground);
