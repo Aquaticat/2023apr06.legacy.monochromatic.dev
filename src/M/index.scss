@@ -121,13 +121,13 @@ html {
 
 body {
   @media (prefers-color-scheme: dark) {
-    --foreground: white;
-    --background: black;
+    --fg: var(--light);
+    --bg: var(--dark);
   }
 
   @media (prefers-color-scheme: light) {
-    --foreground: black;
-    --background: white;
+    --fg: var(--dark);
+    --bg: var(--light);
   }
 
   overflow-x: clip;
@@ -144,8 +144,8 @@ body {
 
   font-family: InterVar, sans-serif;
 
-  color: var(--foreground);
-  background-color: var(--background);
+  color: var(--fg);
+  background-color: var(--bg);
 
   // clam: a currency. Or, a custom length unit.
   --clam-root: clamp(0.75rem, 1rem, 2vw);

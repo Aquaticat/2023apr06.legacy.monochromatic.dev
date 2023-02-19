@@ -1,8 +1,14 @@
 {
   printWidth: 90,
+
   semi: true,
+
   singleQuote: true,
+
+  quoteProps: "consistent",
+
   trailingComma: "all",
+
   bracketSameLine: true,
 
   requirePragma: true,
@@ -23,5 +29,15 @@
         singleQuote: false
       }
     },
+    {
+      files: [
+        "*.js",
+        "*.ts"
+      ],
+      options: {
+        // Handled by Eslint 'quote-props': ['error', 'consistent-as-needed']
+        quoteProps: "preserve"
+      }
+    }
   ]
 }

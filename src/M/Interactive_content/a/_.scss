@@ -1,18 +1,18 @@
 /** @format */
 
 a {
-  color: var(--foreground);
+  color: var(--fg);
   text-underline-offset: 0.5ex;
 
   &:focus,
   &:hover,
   &:active {
-    color: var(--background);
+    color: var(--bg);
 
-    background-color: var(--foreground);
+    background-color: var(--fg);
     // FIXME: How to bold text without impacting its length?
-    box-shadow: 0.5ch 0.5ex 0 0 var(--foreground), -0.5ch 0.5ex 0 0 var(--foreground),
-      0.5ch -0.5ex 0 0 var(--foreground), -0.5ch -0.5ex 0 0 var(--foreground);
+    box-shadow: 0.5ch 0.5ex 0 0 var(--fg), -0.5ch 0.5ex 0 0 var(--fg),
+      0.5ch -0.5ex 0 0 var(--fg), -0.5ch -0.5ex 0 0 var(--fg);
   }
   transition: background-color 0s ease-out 0.5s, color 0s ease-out 0.5s,
     box-shadow 0s ease-out 0.5s;
@@ -36,7 +36,7 @@ a {
       border: {
         style: solid;
         width: 1px;
-        color: var(--foreground);
+        color: var(--fg);
       }
     }
   }

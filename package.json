@@ -1,6 +1,6 @@
 {
   "name": "monochromatic",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.",
   "browser": "docs/index.html",
   "files": [

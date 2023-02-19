@@ -25,9 +25,9 @@ body {
 
         > summary {
           &::after {
-            color: var(--foreground);
-            background-color: var(--background);
-            border: 0.25rem solid var(--foreground);
+            color: var(--fg);
+            background-color: var(--bg);
+            border: 0.25rem solid var(--fg);
           }
         }
 
@@ -35,8 +35,8 @@ body {
         &[open]:not(body) {
           padding-inline: calc(var(--clam) * 0.75);
 
-          color: var(--foreground);
-          background-color: var(--background);
+          color: var(--fg);
+          background-color: var(--bg);
 
           > summary::after {
             padding-inline-end: calc(var(--clam) * 0.75);
@@ -106,7 +106,7 @@ body {
         padding-inline-end: 1em;
 
         ul {
-          border-inline-start: 0.25em solid var(--foreground);
+          border-inline-start: 0.25em solid var(--fg);
         }
 
         li {
