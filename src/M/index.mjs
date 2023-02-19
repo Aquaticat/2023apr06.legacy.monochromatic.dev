@@ -4,18 +4,20 @@
  Prettier is changing this part:
 
  document.getElementById('site_navigation')
-   .style
-   .minBlockSize = `${window.innerHeight}px`;
+ .style
+ .minBlockSize = `${window.innerHeight}px`;
 
  to
 
  document.getElementById(
-   'site_navigation',
-   ).style.minBlockSize = `${window.innerHeight}px`;
+ 'site_navigation',
+ ).style.minBlockSize = `${window.innerHeight}px`;
 
  , which is highly undesirable.
 
  And the override of printWidth in .prettierrc.json5 doesn't work.
+
+ FIXME: Why is Eslint not linting this file?
  */
 
 'use strict';
@@ -53,13 +55,13 @@
       async (mailtoCopyButton) => {
         mailtoCopyButton.addEventListener('click', () => {
           navigator.clipboard
-            .writeText(
-              'mailto:contact@aquati.cat?subject=Message_to_the_author_of_Monochromatic',
-            )
-            .then(() => {
-              mailtoCopyButton.title = 'mailto link copied!';
-              mailtoCopyButton.querySelector('button').ariaLabel = 'mailto link copied!';
-            });
+                   .writeText(
+                     'mailto:contact@aquati.cat?subject=Message_to_the_author_of_Monochromatic',
+                   )
+                   .then(() => {
+                     mailtoCopyButton.title = 'mailto link copied!';
+                     mailtoCopyButton.querySelector('button').ariaLabel = 'mailto link copied!';
+                   });
         });
       },
     ),
@@ -94,12 +96,12 @@
 
   const setColorSchemeAccordingToCheckedState = () => {
     colorSchemeToggleInputElement.checked
-      ? (() => {
-          setDarkColorScheme();
-        })()
-      : (() => {
-          setLightColorScheme();
-        })();
+    ? (() => {
+      setDarkColorScheme();
+    })()
+    : (() => {
+      setLightColorScheme();
+    })();
   };
 
   switch (localStorage.getItem('color-scheme')) {
@@ -111,12 +113,12 @@
       break;
     default:
       window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? (() => {
-            setDarkColorScheme();
-          })()
-        : (() => {
-            setLightColorScheme();
-          })();
+      ? (() => {
+        setDarkColorScheme();
+      })()
+      : (() => {
+        setLightColorScheme();
+      })();
   }
 
   colorSchemeToggleElement.addEventListener('keydown', (e) => {
@@ -141,13 +143,22 @@
 
 {
   window.matchMedia('(width >= 60rem)').matches &&
-    (() => {
-      document.getElementById('site_navigation-links').open = true;
-    })();
-}
+  (() => {
+    document.getElementById('site_navigation-details').open = true;
+  })();
 
-{
   document.getElementById('site_navigation')
-    .style
-    .minBlockSize = `${window.innerHeight}px`;
+          .style
+          .minBlockSize = `${window.innerHeight}px`;
+
+  [
+    document.querySelector('header'),
+    document.querySelector('main'),
+    document.querySelector('footer')
+  ].forEach((element) => {
+    element.addEventListener('click', () => {
+                               document.getElementById('site_navigation-details').open = false;
+                             }
+    );
+  });
 }

@@ -8,7 +8,7 @@ body {
       ~ main {
         grid-template-columns:
           minmax(min(4vw, 4.8rem), 1fr)
-          minmax(auto, 75ch)
+          minmax(30ch, 75ch)
           minmax(min(4vw, 4.8rem), 1fr);
 
         > aside {
@@ -25,22 +25,21 @@ body {
 
         > summary {
           &::after {
+            // TODO: Why do I need to write this?
+            margin-block-start: -0.1rem;
             color: var(--fg);
             background-color: var(--bg);
-            border: 0.25rem solid var(--fg);
+            border: 0.2rem solid var(--fg);
           }
         }
 
         // Because media query adds no specificity.
         &[open]:not(body) {
-          padding-inline: calc(var(--clam) * 0.75);
 
           color: var(--fg);
           background-color: var(--bg);
 
           > summary::after {
-            padding-inline-end: calc(var(--clam) * 0.75);
-
             color: unset;
             background-color: unset;
             border: unset;
@@ -72,7 +71,6 @@ body {
 
       ul {
         list-style-type: none;
-        padding-inline-start: 1em;
       }
 
       > * + * {
@@ -80,6 +78,8 @@ body {
       }
 
       > summary {
+        padding-inline: 0;
+
         text-align: center;
         align-items: baseline;
 
@@ -102,11 +102,16 @@ body {
         }
       }
 
+      > hr {
+        font-size: var(--font-size-ratio);
+      }
+
       > ul {
-        padding-inline-end: 1em;
+        padding-inline-start: 0;
 
         ul {
           border-inline-start: 0.25em solid var(--fg);
+          padding-inline-start: 1em;
         }
 
         li {
@@ -137,6 +142,10 @@ body {
         overflow-y: auto;
         scrollbar-gutter: stable;
         padding-inline: 0;
+
+        > * {
+          margin-inline-start: 1em;
+        }
 
         // TODO: Fix this dirty fix for Clicking area of link on mobile devices being too much.
         > summary {

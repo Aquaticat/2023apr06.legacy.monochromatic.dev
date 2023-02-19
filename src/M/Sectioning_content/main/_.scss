@@ -31,6 +31,10 @@ main {
     color: var(--light);
   }
 
+  hr {
+    inline-size: 100%;
+  }
+
   details {
     > * {
       padding-inline: 1rem;

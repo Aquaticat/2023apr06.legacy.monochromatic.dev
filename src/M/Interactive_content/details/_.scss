@@ -15,7 +15,7 @@ details {
     align-items: center;
 
     padding-inline: 1rem;
-    padding-block: 0.5rem;
+    // padding-block: 0.5rem;
 
     &:has(h2) {
       // FIXME: Somehow, using box-sizing: content-box and more translateX to achieve a "wider than content" appearance
