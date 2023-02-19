@@ -16,10 +16,9 @@ hr {
   block-size: 2em;
   text-align: center;
 
-  // overflow-y: visible;
-
   &::after {
-    content: '§';
+    // '§'
+    content: '\00a7';
     font-size: 2em;
     font-weight: bold;
     background-color: var(--bg);

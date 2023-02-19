@@ -3,8 +3,6 @@
 @use '../../_mixin.scss' as mixin;
 
 header {
-  position: relative;
-
   grid-area: header;
 
   @include mixin.element_theme_alwaysDark;

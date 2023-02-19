@@ -43,7 +43,8 @@ body {
             color: unset;
             background-color: unset;
             border: unset;
-            content: '\00a0\00a0\00a0\00a0🡨';
+            // content: '\00a0\00a0\00a0\00a0🡨';
+            content: '\00a0\00a0\00a0\00a0\1f868';
           }
         }
       }
@@ -78,6 +79,8 @@ body {
       }
 
       > summary {
+        line-height: 4em;
+
         padding-inline: 0;
 
         text-align: center;
@@ -96,9 +99,14 @@ body {
 
         &::after {
           font-size: 2em;
-          content: '≡';
+          // content: '≡';
+          content: '\2261';
 
           margin-inline-end: 0;
+        }
+
+        + * {
+          margin-block-start: calc(var(--clam) * 2);
         }
       }
 
@@ -140,15 +148,31 @@ body {
 
       &[open] {
         overflow-y: auto;
-        scrollbar-gutter: stable;
         padding-inline: 0;
 
         > * {
-          margin-inline-start: 1em;
+          margin-inline: 1em;
         }
 
         // TODO: Fix this dirty fix for Clicking area of link on mobile devices being too much.
         > summary {
+          border: {
+            //noinspection CssInvalidPropertyValue
+            block: {
+              style: solid;
+
+              start: {
+                color: var(--bg);
+                width: 0.2em;
+              }
+
+              end: {
+              width: 0.2em;
+                color: var(--fg);
+              }
+            }
+          }
+
           > a {
             display: inline;
 
@@ -159,7 +183,7 @@ body {
 
           &::after {
             padding-inline-end: 0;
-            content: '🡨';
+            content: '\1f868';
           }
         }
       }

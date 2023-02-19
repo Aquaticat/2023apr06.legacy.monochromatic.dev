@@ -55,9 +55,7 @@
       async (mailtoCopyButton) => {
         mailtoCopyButton.addEventListener('click', () => {
           navigator.clipboard
-                   .writeText(
-                     'mailto:contact@aquati.cat?subject=Message_to_the_author_of_Monochromatic',
-                   )
+                   .writeText('mailto:contact@aquati.cat?subject=Message_to_the_author_of_Monochromatic')
                    .then(() => {
                      mailtoCopyButton.title = 'mailto link copied!';
                      mailtoCopyButton.querySelector('button').ariaLabel = 'mailto link copied!';
@@ -76,9 +74,9 @@
     colorSchemeToggleInputElement.checked = true;
 
     document.body.style
-            .setProperty('--fg', 'var(--light)');
+                 .setProperty('--fg', 'var(--light)');
     document.body.style
-            .setProperty('--bg', 'var(--dark)');
+                 .setProperty('--bg', 'var(--dark)');
 
     localStorage.setItem('color-scheme', 'dark');
   };
@@ -87,9 +85,9 @@
     colorSchemeToggleInputElement.checked = false;
 
     document.body.style
-            .setProperty('--fg', 'var(--dark)');
+                 .setProperty('--fg', 'var(--dark)');
     document.body.style
-            .setProperty('--bg', 'var(--light)');
+                 .setProperty('--bg', 'var(--light)');
 
     localStorage.setItem('color-scheme', 'light');
   };

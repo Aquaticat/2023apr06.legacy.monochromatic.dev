@@ -24,7 +24,8 @@ a {
 
   &[href^='http'] {
     &::after {
-      content: '\00a0🡥';
+      // content: '\00a0🡥';
+      content: '\00a0\1f865';
     }
 
     &:hover::before {
@@ -48,11 +49,7 @@ a {
     }
   }
 
-  :is(&[href^='#'][href^='#'],
-   &[href^="https://aquati.cat/"][href^="https://aquati.cat/"],
-    &[href^="https://monochromatic.dev/"][href^="https://monochromatic.dev/"],
-    &[href^="https://anyfeedback.community/"][href^="https://anyfeedback.community/"]
-    ) {
+  :is(&[href^='#'][href^='#']) {
     &::after {
       content: none;
     }

@@ -12,9 +12,19 @@
   
   
   <link rel="icon" href="monochromatic_icon_1-lightFg_darkBg.svg">
+
+  
+  <style>
+    a:is([href^='https://aquati.cat/'][href^='https://aquati.cat/'],
+      [href^='https://monochromatic.dev/'][href^='https://monochromatic.dev/'],
+      [href^='https://anyfeedback.community/'][href^='https://anyfeedback.community/'])::after {
+      content: none;
+    }
+  </style>
   <script async type="module" src="assets/index.js"></script>
   <link rel="stylesheet" href="assets/style.css" blocking="render">
 </head>
+
 <body>
 <nav id="site_navigation">
   <details id="site_navigation-details">
@@ -754,7 +764,8 @@
 
 <footer id="footer">
   <article id="powered_by">
-  <h2 title="Powered By" aria-label="Powered By">
+  <h2 title="Powered By"
+      aria-label="Powered By">
     Powered By:
   </h2>
   <ul>
@@ -778,14 +789,16 @@
 
     <li>
       <address>
-        <a href="https://www.jetbrains.com/lp/mono">JetBrains Mono</a> @ <a href="https://www.jetbrains.com">JetBrains</a>
+        <a href="https://www.jetbrains.com/lp/mono">JetBrains Mono</a> @
+        <a href="https://www.jetbrains.com">JetBrains</a>
       </address>
     </li>
   </ul>
   </article>
 
   <article id="copyright">
-  <h2 title="Copyright" aria-label="Copyright">
+  <h2 title="Copyright"
+      aria-label="Copyright">
     Copyright (&lt;)
   </h2>
   <ul>

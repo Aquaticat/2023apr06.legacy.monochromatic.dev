@@ -41,6 +41,8 @@ main {
     }
 
     > summary {
+      padding-block: 0.5em;
+
       border: {
         style: solid;
         color: var(--fg);
@@ -106,7 +108,7 @@ main {
         table,
         ul
       ) {
-      margin-block-start: calc(var(--clam) * 4);
+      margin-block-start: calc(var(--clam) * 5);
     }
 
     :is(
@@ -161,7 +163,7 @@ main {
           table,
           ul
         ) {
-        margin-block-start: calc(var(--clam) * 3);
+        margin-block-start: calc(var(--clam) * 4);
       }
     }
 

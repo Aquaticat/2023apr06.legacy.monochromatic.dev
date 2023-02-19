@@ -41,8 +41,8 @@ details {
     }
 
     &::after {
-      // margin-right: 0.875rem;
-      content: '>';
+      // content: '>';
+      content: '\003e';
       transform: translateY(0.05em);
       font-size: calc(var(--clam) * 2);
       padding-inline: calc(var(--clam) * 0.75);
@@ -58,7 +58,8 @@ details {
       }
 
       &::after {
-        content: 'Λ';
+        // content: 'Λ';
+        content: '\039b';
         transform: translateY(0.04em);
         font-size: 1.6em;
       }
