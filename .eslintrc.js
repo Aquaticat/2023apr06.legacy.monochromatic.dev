@@ -310,6 +310,9 @@ module.exports = {
         allowArrayEnd: true,
         allowClassStart: true,
         allowClassEnd: true,
+
+        ignorePattern: 'endregion',
+
         applyDefaultIgnorePatterns: true,
       },
     ],

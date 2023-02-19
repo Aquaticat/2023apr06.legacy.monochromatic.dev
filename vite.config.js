@@ -18,15 +18,10 @@ export const fixHtmlHead = () => {
 
         html
           .querySelector('[src="/assets/index.js"]')
-          .removeAttribute('crossorigin')
-          .setAttribute('src', 'assets/index.js');
+          .removeAttribute('crossorigin');
         html
           .querySelector('[href="/assets/style.css"]')
-          .setAttribute('blocking', 'render')
-          .setAttribute('href', 'assets/style.css');
-        html
-          .querySelector('[href="/monochromatic_icon_1-lightFg_darkBg.svg"]')
-          .setAttribute('href', 'monochromatic_icon_1-lightFg_darkBg.svg');
+          .setAttribute('blocking', 'render');
 
         writeFileSync('docs/index.html', html.toString());
       })();
@@ -58,7 +53,11 @@ export default {
     open: 'index.html',
     fs: {
       strict: false,
-      allow: ['index.html', 'M/index.css', 'M/index.mjs'],
+      allow: [
+        'index.html',
+        'M/index.css',
+        'M/index.mjs',
+      ],
     },
   },
   //endregion
@@ -67,6 +66,7 @@ export default {
   build: {
     target: 'esnext',
     modulePreload: false,
+
     // For GitHub pages "classic experience".
     emptyOutDir: false,
     outDir: '../docs',

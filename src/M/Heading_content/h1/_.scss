@@ -4,7 +4,7 @@ h1 {
   text-align: center;
 
   font: {
-    size: calc(var(--clam-root) * 5);
+    size: clamp(2.5em, 5em, 10vw);
     family: JetBrainsMonoVar, monospace, InterVar, sans-serif;
     weight: 900;
   }

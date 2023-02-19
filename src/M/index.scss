@@ -68,25 +68,37 @@ TODO: Use position: relative instead of transform: translateX() on <summary>.
 
 //region font-face InterVar
 
-// From https://www.npmjs.com/package/@fontsource/inter
-// inter-latin-ext-variable-full-oblique 0deg 10deg
 @font-face {
   font-family: InterVar;
   font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  font-display: swap;
+
+  // Sorry, I really don't know what to do to make it display all the characters I need correctly.
   //noinspection CssUnknownTarget
-  src: local(Inter var),
-    url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-variable-full-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  src: url('/Inter.var.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: InterVar;
-  font-style: oblique 0deg 10deg;
-  //noinspection CssUnknownTarget
-  src: local(Inter var),
-    url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-ext-variable-full-normal.woff2') format('woff2');
-  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
-}
+// From https://www.npmjs.com/package/@fontsource/inter
+// inter-latin-ext-variable-full-oblique 0deg 10deg
+// @font-face {
+//   font-family: InterVar;
+//   font-style: oblique 0deg 10deg;
+//   //noinspection CssUnknownTarget
+//   src: local(Inter var),
+//     url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-variable-full-normal.woff2') format('woff2');
+//   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+//   // unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD,U+2190;
+// }
+//
+// @font-face {
+//   font-family: InterVar;
+//   font-style: oblique 0deg 10deg;
+//   //noinspection CssUnknownTarget
+//   src: local(Inter var),
+//     url('https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-ext-variable-full-normal.woff2') format('woff2');
+//   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+// }
 
 //endregion
 

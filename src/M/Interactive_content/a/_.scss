@@ -24,8 +24,11 @@ a {
 
   &[href^='http'] {
     &::after {
-      // content: '\00a0🡥';
-      content: '\00a0\1f865';
+      // content: '\00a0↗';
+      content: '\00a0\2197';
+      font-weight: bold;
+      position: relative;
+      top: 0.2ex;
     }
 
     &:hover::before {

@@ -44,7 +44,8 @@ body {
             background-color: unset;
             border: unset;
             // content: '\00a0\00a0\00a0\00a0🡨';
-            content: '\00a0\00a0\00a0\00a0\1f868';
+            // content: '\00a0\00a0\00a0\00a0\1f868';
+            content: '\00a0\00a0\00a0\00a0\2190';
           }
         }
       }
@@ -183,7 +184,7 @@ body {
 
           &::after {
             padding-inline-end: 0;
-            content: '\1f868';
+            content: '\2190';
           }
         }
       }
