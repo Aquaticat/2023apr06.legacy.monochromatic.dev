@@ -17,7 +17,7 @@
 </head>
 <body>
 <nav id="site_navigation">
-  <details id="site_navigation-links">
+  <details id="site_navigation-details">
     <summary>
       <a href="#header"
          aria-label="Jump to Top of Homepage"
@@ -27,6 +27,14 @@
         </h1>
       </a>
     </summary>
+
+    
+    <label aria-hidden="true"
+           id="colorSchemeToggle"
+           tabindex="1"
+    ><input type="checkbox">theme&nbsp;=</label>
+
+    <hr>
 
     <ul>
       <li>
@@ -57,11 +65,6 @@
 </nav>
 
 <header id="header">
-  
-  <label aria-hidden="true"
-         id="colorSchemeToggle"
-         tabindex="1"
-  ><input type="checkbox">theme&nbsp;=</label>
   <hgroup>
     <h1 aria-label="Monochromatic"
         title="Monochromatic"
