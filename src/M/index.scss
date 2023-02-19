@@ -1,23 +1,25 @@
-/*
- * IntelliJ Platform bugs:
- *
- * 1.  false positive of "Mismatched property value":
- *
- *     1.  when using colors for border-block/inline;
- *
- *     2.  when using clamp() for SCSS scoped padding-block/inline.
- *
- * The design right now is horrible.
- * Maybe I really should have designed in Figma first.
- *
- * Also not using the :has() selector right now because Firefox doesn't fully support it and doesn't enable it by default.
- * Considering using it anyways because every other browser has support and [We plan to work on this in the first half of this year](https://bugzilla.mozilla.org/show_bug.cgi?id=418039#c62).
- * Update: I used it anyways.
- *
- * TODO: Change all clamp() to CSS variables.
- *
- * TODO: Use position: relative instead of transform: translateX() on <summary>.
- *       At least make <summary> containing h2 wider than the rest!
+/**
+@format
+
+IntelliJ Platform bugs:
+
+1.  false positive of "Mismatched property value":
+
+    1.  when using colors for border-block/inline;
+
+    2.  when using clamp() for SCSS scoped padding-block/inline.
+
+The design right now is horrible.
+Maybe I really should have designed in Figma first.
+
+Also not using the :has() selector right now because Firefox doesn't fully support it and doesn't enable it by default.
+Considering using it anyways because every other browser has support and [We plan to work on this in the first half of this year](https://bugzilla.mozilla.org/show_bug.cgi?id=418039#c62).
+Update: I used it anyways.
+
+TODO: Change all clamp() to CSS variables.
+
+TODO: Use position: relative instead of transform: translateX() on <summary>.
+      At least make <summary> containing h2 wider than the rest!
  */
 
 //region Content content

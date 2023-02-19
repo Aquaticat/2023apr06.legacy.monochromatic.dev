@@ -1,14 +1,32 @@
-/** @format */
+/**
+ Disabled Prettier because:
+
+ Prettier is changing this part:
+
+ document.getElementById('site_navigation')
+   .style
+   .minBlockSize = `${window.innerHeight}px`;
+
+ to
+
+ document.getElementById(
+   'site_navigation',
+   ).style.minBlockSize = `${window.innerHeight}px`;
+
+ , which is highly undesirable.
+
+ And the override of printWidth in .prettierrc.json5 doesn't work.
+ */
 
 'use strict';
 
 {
   /**
-   * When clicking link to something within the "details" element,
-   * unfold all parent details elements.
-   *
-   * Should have been implemented in the browser itself.
-   * No need to check if the first parentElement exists because the "body" element has a parent.
+   When clicking link to something within the "details" element,
+   unfold all parent details elements.
+
+   Should have been implemented in the browser itself.
+   No need to check if the first parentElement exists because the "body" element has a parent.
    */
   window.onhashchange = () => {
     const element = document.getElementById(location.hash.slice(1));
@@ -54,15 +72,23 @@
 
   const setDarkColorScheme = () => {
     colorSchemeToggleInputElement.checked = true;
-    document.body.style.setProperty('--foreground', 'var(--light)');
-    document.body.style.setProperty('--background', 'var(--dark)');
+
+    document.body.style
+            .setProperty('--foreground', 'var(--light)');
+    document.body.style
+            .setProperty('--background', 'var(--dark)');
+
     localStorage.setItem('color-scheme', 'dark');
   };
 
   const setLightColorScheme = () => {
     colorSchemeToggleInputElement.checked = false;
-    document.body.style.setProperty('--foreground', 'var(--dark)');
-    document.body.style.setProperty('--background', 'var(--light)');
+
+    document.body.style
+            .setProperty('--foreground', 'var(--dark)');
+    document.body.style
+            .setProperty('--background', 'var(--light)');
+
     localStorage.setItem('color-scheme', 'light');
   };
 
@@ -121,5 +147,7 @@
 }
 
 {
-  document.getElementById('site_navigation').style.minBlockSize = `${window.innerHeight}px`;
+  document.getElementById('site_navigation')
+    .style
+    .minBlockSize = `${window.innerHeight}px`;
 }

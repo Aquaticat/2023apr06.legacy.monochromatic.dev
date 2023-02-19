@@ -1,13 +1,14 @@
 /**
- * @no_format
- * @no_prettier
- * Prettier is breaking selector into multiple lines.
- * Re-enable Prettier when the GitHub issue
- * Support prettier-ignore-start/end for other languages (not only Markdown)
-#5287
- * https://github.com/prettier/prettier/issues/5287
- * is resolved.
- * But really, I should open an issue for Prettier on that particular problem.
+ Disabled Prettier because:
+
+ Prettier is breaking selector into multiple lines.
+ Re-enable Prettier when the GitHub issue
+ Support prettier-ignore-start/end for other languages (not only Markdown)
+ #5287
+ https://github.com/prettier/prettier/issues/5287
+ is resolved.
+
+ But really, I should open an issue for Prettier on that particular problem.
  */
 
 main {

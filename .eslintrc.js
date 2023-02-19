@@ -74,7 +74,8 @@ module.exports = {
       { enforceForIfStatements: true },
     ],
 
-    'multiline-comment-style': 'warn',
+    // Using bare-block instead of default starred-block because it's easier to format.
+    'multiline-comment-style': ['warn', 'bare-block'],
 
     'no-array-constructor': 'error',
 

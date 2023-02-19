@@ -35,6 +35,25 @@
         "*.ts"
       ],
       options: {
+        /* Because Prettier is changing this part:
+
+           document.getElementById('site_navigation')
+             .style
+             .minBlockSize = `${window.innerHeight}px`;
+
+           to
+
+           document.getElementById(
+             'site_navigation',
+              ).style.minBlockSize = `${window.innerHeight}px`;
+
+           , which is highly undesirable.
+
+           Edit: this override doesn't work.
+                 Disabled Prettier instead.
+         */
+        printWidth: 999,
+
         // Handled by Eslint 'quote-props': ['error', 'consistent-as-needed']
         quoteProps: "preserve"
       }
