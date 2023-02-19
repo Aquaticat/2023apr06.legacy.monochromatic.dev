@@ -74,9 +74,9 @@
     colorSchemeToggleInputElement.checked = true;
 
     document.body.style
-            .setProperty('--foreground', 'var(--light)');
+            .setProperty('--fg', 'var(--light)');
     document.body.style
-            .setProperty('--background', 'var(--dark)');
+            .setProperty('--bg', 'var(--dark)');
 
     localStorage.setItem('color-scheme', 'dark');
   };
@@ -85,9 +85,9 @@
     colorSchemeToggleInputElement.checked = false;
 
     document.body.style
-            .setProperty('--foreground', 'var(--dark)');
+            .setProperty('--fg', 'var(--dark)');
     document.body.style
-            .setProperty('--background', 'var(--light)');
+            .setProperty('--bg', 'var(--light)');
 
     localStorage.setItem('color-scheme', 'light');
   };
