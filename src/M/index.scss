@@ -22,6 +22,12 @@ TODO: Use position: relative instead of transform: translateX() on <summary>.
       At least make <summary> containing h2 wider than the rest!
  */
 
+//region Libraries
+
+@use 'the-new-css-reset/css/reset.css';
+
+//endregion
+
 //region Content content
 
 //endregion

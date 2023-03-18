@@ -1,7 +1,7 @@
 {
   "name": "monochromatic",
-  "version": "1.0.9",
-  "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.",
+  "version": "1.0.10",
+  "description": "Monochromatic aims to define some sensible sets of styling for text-heavy websites.\nCurrently under big refactor, do not use this package.",
   "browser": "docs/index.html",
   "files": [
     "src/index.html",
@@ -31,7 +31,8 @@
   "keywords": [
     "design",
     "design_system",
-    "design-system"
+    "design-system",
+    "monochromatic"
   ],
   "author": {
     "name": "Aquaticat",
@@ -48,5 +49,8 @@
     "stylelint": "^15.1.0",
     "stylelint-config-standard-scss": "^7.0.0",
     "vite": "^4.1.1"
+  },
+  "dependencies": {
+    "the-new-css-reset": "^1.8.4"
   }
 }
